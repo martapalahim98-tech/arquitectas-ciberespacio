@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* RESET*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES*/
+:root {
+    height: 100%;
+    font-size: 16px;
+
+    /* tipografías */
+    --font-text: 'Arial', sans-serif;
+    --font-headings: 'Times new roman', serif;
+
+    /* Tamaños fluidos */
+    --text-base: clamp(1rem, 2vw, 1.2rem);
+    --text-h1: clamp(1.8rem, 4vw, 3rem);
+    --text-h2: clamp(1.4rem, 3vw, 2rem);
+    --text-h3: clamp(1.2rem, 2.5vw, 1.6rem);
+    --text-h4: clamp(1rem, 2vw, 1.2rem);
+
+    /* colores */
+    --color-bg: #fff;
+    --color-text: #000;
+    --color-accent: #666;
+    --color-surface: #f5f5f5;
+    --color-border: #333;
+
+    /* Espaciado */
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 2rem;
+
+    /* Extras */
+    --radius: 8px;
+    --transition-base: 0.3s ease;
+}
+
