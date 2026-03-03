@@ -1,42 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="desciption" content="">
     <title>Arquitectas del ciberespacio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <h1>Womans</h1>
         <nav>
             <ul>
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#biografia">Bio</a></li>
-                <li><a href="#legado">Legado</a></li>
+                <li><a href="#hero" class="nav-link">Inicio</a></li>
+                <li><a href="#biografia" class="nav-link">Bio</a></li>
+                <li><a href="#legado" class="nav-link">Legado</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main -->
-    <main>
-        <section id="hero" class="section--hero">
+    <main class="scroll-container">
+        <section id="hero" class="section section--hero">
             <h2>Ada Lovelace</h2>
         </section>
 
-        <section id="biografia" class="section--bio">
-            <h2>La Visionaria</h2>
+        <section id="biografia" class="section section--bio">
+            <div class="content">
+                <h2>La Visionaria</h2>
+                <p>Lorem ipsum dolor sit amet consectetur...</p>
+                <p>Si este contenido es muy largo, ahora el scroll será fluido dentro de la sección antes de saltar a la
+                    siguiente.</p>
+            </div>
         </section>
 
-        <section id="legado" class="section--legacy">
+        <section id="legado" class="section section--legacy">
             <h2>Su Legado</h2>
         </section>
 
-        <footer class="section--footer">
+        <footer id="footer" class="section section--footer">
             <h3>© 2024 Arquitectas del Ciberespacio</h3>
         </footer>
     </main>
