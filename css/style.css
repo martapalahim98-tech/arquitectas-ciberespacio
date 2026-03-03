@@ -15,8 +15,9 @@
     font-size: 16px;
 
     /* tipografías */
-    --font-text: 'Arial', sans-serif;
-    --font-headings: 'Times new roman', serif;
+    --font-heading: 'League Spartan', sans-serif;
+    --font-subheading: 'Playfair Display', serif;
+    --font-text: 'DM Sans', sans-serif;
 
     /* Tamaños fluidos */
     --text-base: clamp(1rem, 2vw, 1.2rem);
