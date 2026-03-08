@@ -36,7 +36,9 @@
     --color-secondary: #37557b;
     --color-accent: #ef4035;
 
+    --color-background-primary: #edeae1;
     --color-background-secondary: #06080a;
+    
 
     /* Espaciado */
     --space-small: 0.5rem;
@@ -62,8 +64,8 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1.5rem 5%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: var(--color-background-secondary);
+
 }
 
 header ul {
@@ -74,7 +76,7 @@ header ul {
 }
 
 header a {
-    color: var(--color-light);
+    color: var(--color-background-primary);
     text-decoration: none;
     opacity: 0.7;
     transition: 0.3s;
@@ -83,7 +85,7 @@ header a {
 header a.active {
     opacity: 1;
     font-weight: bold;
-    border-bottom: 2px solid var(--color-light);
+    border-bottom: 2px solid var(--color-background-primary);
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -106,14 +108,43 @@ header a.active {
 
 .section--hero {
     background: var(--color-background-secondary);
+    background-image: url(../assets/img/hero-eniac6.webp) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: flex-start;
+}
+
+.section--hero > h2,
+.section--hero > p {
+    text-align: center;
+}
+
+.section--hero > h2 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    font-size: 10rem;
+    margin-top: 10rem;
+}
+
+.section--hero >p{
+    font-family: var(--font-subheading);
+    font-size: 1.2rem;
+    color: var(--color-background-primary);
+    letter-spacing: 0.2rem;
+}
+
+.section--hero >p:first-of-type{
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
 }
 
 .section--bio {
-    background: var(--color-secondary);
+    background: var(--color-background-primary)
 }
 
 .section--legacy {
-    background: var(--color-accent);
+    background: var(--color-background-primary);
 }
 
 .section--footer {
@@ -129,4 +160,5 @@ header a.active {
 h1{
     font-family: var(--font-heading);
     text-transform: uppercase;
+    color: #37557b;
 }
