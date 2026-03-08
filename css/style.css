@@ -70,7 +70,9 @@ header {
 h2 {
     font-family: var(--font-subheading);
     color: var(--color-secondary);
+    margin-top: 8rem;
 }
+
 
 header ul {
     display: flex;
@@ -168,39 +170,82 @@ h1 {
 }
 
 .section--eniac {
+    display: block;
+    min-height: 400vh;
+    padding: 0;
+}
+
+.eniac--sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 2rem;
     align-items: start;
+    padding: 80px 10%;
     background: var(--color-background-primary);
     color: var(--color-background-secondary);
+    overflow: hidden;
 }
 
-.section--eniac > h2 {
+.eniac--sticky > h2 {
     grid-column: 1 / -1;
     color: var(--color-secondary);
 }
 
-.eniac__figure {
+/* Figure area: CSS Grid stacking — all figures share the same cell */
+.eniac--figure-area {
     grid-column: 1;
+    display: grid;
 }
 
-.eniac__figure img {
+.eniac--figure {
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    transform: translateY(70px);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.eniac--figure.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.eniac--figure.exit-up {
+    opacity: 0;
+    transform: translateY(-70px);
+}
+
+.eniac--figure.exit-down {
+    opacity: 0;
+    transform: translateY(70px);
+}
+
+.eniac--figure.enter-from-top {
+    opacity: 0;
+    transform: translateY(-70px);
+    transition: none;
+}
+
+.eniac--figure img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
 }
 
-.eniac__figure figcaption {
+.eniac--figure figcaption {
     font-size: 0.85rem;
     text-align: center;
     margin-top: 0.5rem;
     opacity: 0.6;
 }
 
-.eniac__stats {
+.eniac--stats {
     grid-column: 2;
     display: flex;
     flex-direction: column;
@@ -215,7 +260,7 @@ h1 {
     text-align: center;
 }
 
-.stat__number {
+.stat--number {
     display: block;
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 3vw, 2.8rem);
@@ -223,19 +268,50 @@ h1 {
     color: var(--color-secondary);
 }
 
-.stat__label {
+.stat--label {
     font-size: 0.85rem;
     opacity: 0.65;
     letter-spacing: 0.05rem;
 }
 
-.eniac__text {
+/* Text area: CSS Grid stacking — all text groups share the same cell */
+.eniac--texts {
     grid-column: 1 / -1;
+    display: grid;
+}
+
+.eniac--text {
+    grid-column: 1;
+    grid-row: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     font-size: 0.9rem;
     line-height: 1.7;
     color: var(--color-text);
-    opacity: 0.8;
+    visibility: hidden;
+}
+
+.eniac--text.active {
+    visibility: visible;
+}
+
+.eniac--text p {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.eniac--text.active p:nth-child(1) {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.eniac--text.active p:nth-child(2) {
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+
+.eniac--text.active p:nth-child(3) {
+    opacity: 1;
+    transition-delay: 1.2s;
 }
