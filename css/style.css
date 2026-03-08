@@ -31,6 +31,7 @@
     --color-text: #000;
     --color-surface: #f5f5f5;
     --color-border: #333;
+    --color-card: #e3dacc;
 
     --color-primary: #3d5552;
     --color-secondary: #37557b;
@@ -38,7 +39,6 @@
 
     --color-background-primary: #edeae1;
     --color-background-secondary: #06080a;
-    
 
     /* Espaciado */
     --space-small: 0.5rem;
@@ -52,7 +52,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-text);
     overflow: hidden;
 }
 
@@ -65,7 +65,11 @@ header {
     justify-content: space-between;
     padding: 1.5rem 5%;
     background-color: var(--color-background-secondary);
+}
 
+h2 {
+    font-family: var(--font-subheading);
+    color: var(--color-secondary);
 }
 
 header ul {
@@ -108,7 +112,7 @@ header a.active {
 
 .section--hero {
     background: var(--color-background-secondary);
-    background-image: url(../assets/img/hero-eniac6.webp) ;
+    background-image: url(../assets/img/hero-eniac6.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -127,20 +131,20 @@ header a.active {
     margin-top: 10rem;
 }
 
-.section--hero >p{
+.section--hero > p {
     font-family: var(--font-subheading);
     font-size: 1.2rem;
     color: var(--color-background-primary);
     letter-spacing: 0.2rem;
 }
 
-.section--hero >p:first-of-type{
+.section--hero > p:first-of-type {
     font-size: 2rem;
     letter-spacing: 0.3rem;
 }
 
 .section--bio {
-    background: var(--color-background-primary)
+    background: var(--color-background-primary);
 }
 
 .section--legacy {
@@ -157,8 +161,81 @@ header a.active {
     text-align: center;
 }
 
-h1{
+h1 {
     font-family: var(--font-heading);
     text-transform: uppercase;
     color: #37557b;
+}
+
+.section--eniac {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    align-items: start;
+    background: var(--color-background-primary);
+    color: var(--color-background-secondary);
+}
+
+.section--eniac > h2 {
+    grid-column: 1 / -1;
+    color: var(--color-secondary);
+}
+
+.eniac__figure {
+    grid-column: 1;
+}
+
+.eniac__figure img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+.eniac__figure figcaption {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    opacity: 0.6;
+}
+
+.eniac__stats {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-self: stretch;
+}
+
+.stat {
+    background: var(--color-card);
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.stat__number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+
+.stat__label {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    letter-spacing: 0.05rem;
+}
+
+.eniac__text {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    opacity: 0.8;
 }
