@@ -1,9 +1,56 @@
 const container = document.querySelector(".scroll-container");
 const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll(".nav-link");
+const progressBar = document.querySelector(".progress-bar");
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+
 let isScrolling = false;
 let scrollEndTimer;
 
+/* ===== MENU TOGGLE ===== */
+menuToggle.addEventListener("click", () => nav.classList.toggle("open"));
+
+/* ===== CLICK EN LINKS ===== */
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    nav.classList.remove("open"); // cerrar menú
+    targetSection.scrollIntoView({ behavior: "smooth" }); // scroll suave
+    updateActiveLink(targetId); // actualizar link activo
+  });
+});
+
+/* ===== PROGRESS BAR ===== */
+container.addEventListener("scroll", () => {
+  progressBar.style.width =
+    (container.scrollTop / (container.scrollHeight - container.clientHeight)) *
+      100 +
+    "%";
+});
+
+/* ===== NAV ACTIVE SECTION ===== */
+function updateActiveLink(id) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+  });
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) updateActiveLink(entry.target.id);
+    });
+  },
+  { root: container, threshold: 0.6 },
+);
+
+sections.forEach((section) => observer.observe(section));
+
+/* ===== SCROLL LOCK ===== */
 function releaseScrollLock() {
   clearTimeout(scrollEndTimer);
   scrollEndTimer = setTimeout(() => {
@@ -11,18 +58,15 @@ function releaseScrollLock() {
   }, 150);
 }
 
-// Función para mover a la sección
+/* ===== SCROLL TO SECTION POR RUEDA ===== */
 function scrollToSection(index) {
   if (index >= 0 && index < sections.length) {
     isScrolling = true;
     sections[index].scrollIntoView({ behavior: "smooth" });
-
-    // Actualizar menú
     updateActiveLink(sections[index].id);
   }
 }
 
-// Detectar rueda del ratón
 container.addEventListener(
   "wheel",
   (e) => {
@@ -36,9 +80,8 @@ container.addEventListener(
     if (!currentSection) return;
     const currentIndex = [...sections].indexOf(currentSection);
 
-    // Si scrolleamos hacia abajo
     if (e.deltaY > 0) {
-      // Solo saltar si estamos al final de la sección actual
+      // Scroll hacia abajo
       if (
         container.scrollTop + container.clientHeight >=
         currentSection.offsetTop + currentSection.offsetHeight - 5
@@ -48,10 +91,8 @@ container.addEventListener(
           scrollToSection(currentIndex + 1);
         }
       }
-    }
-    // Si scrolleamos hacia arriba
-    else {
-      // Solo saltar si estamos al inicio de la sección actual
+    } else {
+      // Scroll hacia arriba
       if (container.scrollTop <= currentSection.offsetTop + 5) {
         if (currentIndex > 0) {
           e.preventDefault();
@@ -63,25 +104,7 @@ container.addEventListener(
   { passive: false },
 );
 
-// Actualizar links activos
-function updateActiveLink(id) {
-  navLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-  });
-}
-
-// Click en los links
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior: "instant" });
-    updateActiveLink(targetId);
-  });
-});
-
-// ---- ENIAC Slideshow ----
+/* ===== ENIAC SLIDESHOW ===== */
 const eniacSection = document.getElementById("eniac");
 const eniacFigures = document.querySelectorAll(".eniac--figure");
 const eniacTexts = document.querySelectorAll(".eniac--text");
@@ -104,28 +127,24 @@ function changeEniacSlide(newIndex, goingDown) {
 
   currentEniacSlide = newIndex;
 
-  // Exit old figure (slides up when going down, slides down when going up)
   oldFigure.classList.add(goingDown ? "exit-up" : "exit-down");
   oldFigure.classList.remove("active");
   oldText.classList.remove("active");
 
-  // Position new figure at its entry point
   newFigure.classList.remove("exit-up", "exit-down");
   if (!goingDown) newFigure.classList.add("enter-from-top");
-  void newFigure.offsetWidth; // force reflow to commit the starting position
+  void newFigure.offsetWidth; // force reflow
 
-  // Animate new figure in
   newFigure.classList.remove("enter-from-top");
   newFigure.classList.add("active");
   newText.classList.add("active");
 
-  // Clean up exit classes after animation completes
   setTimeout(() => oldFigure.classList.remove("exit-up", "exit-down"), 400);
 }
 
 container.addEventListener("scroll", () => {
   if (isScrolling) {
-    releaseScrollLock(); // release only after scroll events stop (150ms silence)
+    releaseScrollLock();
     return;
   }
   const newIndex = getEniacSlideIndex();

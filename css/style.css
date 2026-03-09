@@ -60,45 +60,89 @@ body {
 h1 {
   font-family: var(--font-heading);
   text-transform: uppercase;
-  color: #37557b;
+  color: var(--color-secondary);
 }
 
 h2 {
   font-family: var(--font-subheading);
   color: var(--color-secondary);
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 
 /* ── HEADER ─────────────────────────────────────────────────────────────── */
 header {
-  display: none;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 100;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  background-color: var(--color-background-secondary);
+  padding: 1rem 6%;
+  background: var(--color-background-secondary);
+  z-index: 100;
 }
 
-header ul {
+.menu-toggle {
   display: flex;
-  list-style: none;
-  gap: 20px;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  width: 24px;
+  height: 2px;
+  background: white;
 }
 
-header a {
-  color: var(--color-background-primary);
+.nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: var(--color-background-secondary);
+  transition: 0.3s;
+  padding-top: 6rem;
+}
+
+.nav.open {
+  right: 0;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2rem;
+}
+
+.nav a {
+  color: white;
   text-decoration: none;
-  opacity: 0.7;
+  font-size: 1.2rem;
+  opacity: 0.6;
   transition: 0.3s;
 }
 
-header a.active {
+.nav a.active {
   opacity: 1;
   font-weight: bold;
-  border-bottom: 2px solid var(--color-background-primary);
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: var(--color-accent);
+  z-index: 200;
 }
 
 /* ── SCROLL CONTAINER ───────────────────────────────────────────────────── */
@@ -391,8 +435,23 @@ header a.active {
 
 /* Tablet landscape / small desktop (≥1024px) */
 @media (min-width: 1024px) {
-  header {
-    display: flex;
+  /* Header Nav */
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+  }
+
+  .nav ul {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
   }
 
   .section {
