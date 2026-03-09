@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="desciption" content="Las ENIAC 6 y las heroínas anónimas de los 40's: la marginación de género que sostuvo una guerra, fue ignorada por la historia y aún resuena hoy.">
+    <meta name="desciption" content="Revista digital que reivindica los aportes de las mujeres en la tecnología y su integración en el presente y futuro de la informática">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="">
-    <title>Arquitectas del ciberespacio</title>
+    <title>ENIAC 6</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -22,6 +22,7 @@
                 <li><a href="#eniac" class="nav-link">ENIAC</a></li>
                 <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
                 <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
+                <li><a href="#revista" class="nav-link">La revista</a></li>
             </ul>
         </nav>
     </header>
@@ -31,6 +32,7 @@
             <h2>ENIAC 6</h2>
             <p>Las primeras programadoras del mundo.</p>
             <p>-Reivindicamos su impacto en la historia de la computación-</p>
+            <button><a href="#contexto">Te lo contamos</a></button>
         </section>
 
         <section id="contexto" class="section section--contexto">
@@ -48,22 +50,32 @@
 
                 <!-- All figures stacked in the same grid cell -->
                 <div class="eniac--figure-area">
-                    <figure class="eniac--figure active">
-                        <img src="assets/img/inventores-eniac.webp" alt="Inventores del ENIAC">
-                        <figcaption>El físico John Mauchly y el ingeniero electrónico J. Presper Eckert</figcaption>
-                    </figure>
-                    <figure class="eniac--figure">
-                        <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC">
-                        <figcaption>Los 17.468 tubos de vacío que alimentaban el ENIAC</figcaption>
-                    </figure>
-                    <figure class="eniac--figure">
-                        <img src="assets/img/ilustracion eniac.png" alt="Ilustración del ENIAC">
-                        <figcaption>Ilustración técnica del ENIAC</figcaption>
-                    </figure>
-                    <figure class="eniac--figure">
-                        <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC">
-                        <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
-                    </figure>
+                    <div class="eniac--figures">
+                        <figure class="eniac--figure active">
+                            <img src="assets/img/inventores-eniac.webp" alt="Inventores del ENIAC">
+                            <figcaption>El físico John Mauchly y el ingeniero electrónico J. Presper Eckert</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC">
+                            <figcaption>Los 17.468 tubos de vacío que alimentaban el ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/ilustracion eniac.png" alt="Ilustración del ENIAC">
+                            <figcaption>Ilustración técnica del ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC">
+                            <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
+                        </figure>
+                    </div>
+                    <div class="eniac--nav">
+                        <button class="eniac--btn eniac--btn-prev" aria-label="Anterior">
+                            <img src="assets/img/flecha-izq.svg" alt="Anterior">
+                        </button>
+                        <button class="eniac--btn eniac--btn-next" aria-label="Siguiente">
+                            <img src="assets/img/flecha-der.svg" alt="Siguiente">
+                        </button>
+                    </div>
                 </div>
 
                 <div class="eniac--stats">
@@ -120,6 +132,9 @@
         </section>
 
         <section id="entrevista" class="section section--entrevista">
+            <h2>Su Legado</h2>
+        </section>
+        <section id="revista" class="section section--revista">
             <h2>Su Legado</h2>
         </section>
 

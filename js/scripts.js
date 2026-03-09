@@ -73,19 +73,11 @@ navLinks.forEach(link => {
 });
 
 // ---- ENIAC Slideshow ----
-const eniacSection = document.getElementById('eniac');
 const eniacFigures = document.querySelectorAll('.eniac--figure');
 const eniacTexts = document.querySelectorAll('.eniac--text');
 let currentEniacSlide = 0;
 
-function getEniacSlideIndex() {
-    const scrollable = eniacSection.offsetHeight - container.clientHeight;
-    if (scrollable <= 0) return 0;
-    const progress = (container.scrollTop - eniacSection.offsetTop) / scrollable;
-    return Math.floor(Math.max(0, Math.min(0.9999, progress)) * eniacFigures.length);
-}
-
-function changeEniacSlide(newIndex, goingDown) {
+function changeEniacSlide(newIndex, goingNext) {
     const oldFigure = eniacFigures[currentEniacSlide];
     const newFigure = eniacFigures[newIndex];
     const oldText = eniacTexts[currentEniacSlide];
@@ -93,32 +85,29 @@ function changeEniacSlide(newIndex, goingDown) {
 
     currentEniacSlide = newIndex;
 
-    // Exit old figure (slides up when going down, slides down when going up)
-    oldFigure.classList.add(goingDown ? 'exit-up' : 'exit-down');
+    oldFigure.classList.add(goingNext ? 'exit-left' : 'exit-right');
     oldFigure.classList.remove('active');
     oldText.classList.remove('active');
 
-    // Position new figure at its entry point
-    newFigure.classList.remove('exit-up', 'exit-down');
-    if (!goingDown) newFigure.classList.add('enter-from-top');
-    void newFigure.offsetWidth; // force reflow to commit the starting position
+    newFigure.classList.remove('exit-left', 'exit-right');
+    if (!goingNext) newFigure.classList.add('enter-from-left');
+    void newFigure.offsetWidth; // force reflow
 
-    // Animate new figure in
-    newFigure.classList.remove('enter-from-top');
+    newFigure.classList.remove('enter-from-left');
     newFigure.classList.add('active');
     newText.classList.add('active');
 
-    // Clean up exit classes after animation completes
-    setTimeout(() => oldFigure.classList.remove('exit-up', 'exit-down'), 400);
+    setTimeout(() => oldFigure.classList.remove('exit-left', 'exit-right'), 400);
 }
 
+document.querySelector('.eniac--btn-prev').addEventListener('click', () => {
+    changeEniacSlide((currentEniacSlide - 1 + eniacFigures.length) % eniacFigures.length, false);
+});
+
+document.querySelector('.eniac--btn-next').addEventListener('click', () => {
+    changeEniacSlide((currentEniacSlide + 1) % eniacFigures.length, true);
+});
+
 container.addEventListener('scroll', () => {
-    if (isScrolling) {
-        releaseScrollLock(); // release only after scroll events stop (150ms silence)
-        return;
-    }
-    const newIndex = getEniacSlideIndex();
-    if (newIndex !== currentEniacSlide) {
-        changeEniacSlide(newIndex, newIndex > currentEniacSlide);
-    }
+    if (isScrolling) releaseScrollLock();
 });
