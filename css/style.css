@@ -41,4 +41,202 @@
     --radius: 8px;
     --transition-base: 0.3s ease;
 }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html{
+font-size: clamp(0.85rem, 1vw, 1rem);
+}
+:root{
+--negro: #000000;
+--gris-oscuro: #333333;
+--gris: #888888;
+--gris-claro: #e0e0e0;
+--blanco: #ffffff;
+}
+
+body{
+font-family: serif;
+}
+
+/* HEADER */
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:1em;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:100;
+}
+/* CHECKBOX HIDDEN */
+#menu-toggle{
+display:none;
+}
+/* ICONO HAMBURGUESA */
+label{
+font-size:1rem;
+cursor:pointer;
+}
+/* MENU MOBILE */
+nav{
+position:fixed;
+top:0;
+left:50%;
+transform:translateX(-50%) scale(0);
+width:60%;
+max-width:30rem;
+padding:2rem;
+background:var(--gris-claro);
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:2rem;
+transition:0.3s;
+border-radius:1rem;
+}
+/* CUANDO SE ABRE */
+#menu:checked ~ nav{
+transform:translateX(-50%) scale(1);
+}
+#menu{
+display:none;
+}
+/* LINKS */
+nav a{
+text-decoration:none;
+font-size:1em;
+color: var(--negro);
+}
+/* SECCIONES */
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+/* HERO */
+.inicio{
+background:var(--gris);
+}
+/* HISTORIA */
+.historia{
+background:var(--gris);
+}
+/* SCROLL SUAVE ONE PAGE */
+html{
+scroll-behavior:smooth;
+scroll-snap-type:y mandatory;
+}
+section{
+scroll-snap-align:start;
+}
+/*PANTALLA2*/
+.historia{
+    display: flex;
+    flex-direction: column; /* uno debajo de otro */
+    height: 50vh; /* o la altura que quieras */
+    gap: 0.5em
+}
+.historia > *{
+    flex: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.historia figure img{
+    max-width: 60%;
+    height: auto;
+}
+.historia article{
+    background: var(--gris-oscuro);
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+.historia article span{
+    background: red;
+    color: white;
+    width: fit-content;
+    padding: 0.5em 1em;
+    font-weight: bold;
+}
+.historia article h3{
+    margin-top: 1em;
+}
+.historia article p{
+    margin-top: 0.5em;
+}
+/* DESKTOP */
+@media (min-width: 768px){
+label{
+display:none;
+}
+nav{
+position:static;
+transform:none;
+width:auto;
+max-width:none;
+background:none;
+padding:0;
+flex-direction:row;
+justify-content:center;
+gap:8rem;
+flex:1; /* esto hace que ocupe el espacio central */
+}
+.historia{
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:auto auto auto;
+row-gap:0rem;
+column-gap:0rem;
+}
+.historia article,
+.historia figure{
+max-width:30rem;
+margin:auto;
+}
+.a1943{
+grid-column:1;
+grid-row:1;
+}
+.a1944{
+grid-column:2;
+grid-row:2;
+}
+.a1945{
+grid-column:1;
+grid-row:3;
+}
+.historia figure:nth-of-type(1){
+grid-column:2;
+grid-row:1;
+}
+.historia figure:nth-of-type(2){
+grid-column:1;
+grid-row:2;
+}
+.historia figure img{
+    max-width: 60%;}
+   
+.historia .a1943 span{
+align-self:flex-end;
+}
+.historia .a1944 span{
+ align-self:flex-start;
+}
+.historia .a1945 span{
+ align-self:flex-end;
+}
+
+}
+
 
