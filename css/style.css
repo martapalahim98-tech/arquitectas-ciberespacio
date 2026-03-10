@@ -4,9 +4,9 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* ── VARIABLES ──────────────────────────────────────────────────────────── */
@@ -46,7 +46,7 @@
     --space-large: 2rem;
 
     /* Extras */
-    --radius: 8px;
+    --radius: 0.5rem;
     --transition-base: 0.3s ease;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -60,15 +60,22 @@ body {
 }
 
 h1 {
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  color: var(--color-secondary);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    color: #37557b;
 }
 
 h2 {
     font-family: var(--font-subheading);
     color: var(--color-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: var(--text-h2);
+}
+
+h3{
+    font-size: var(--text-h3);
+    font-family: var(--font-subheading);
+    color: var(--color-primary);
 }
 
 /* ── HEADER ─────────────────────────────────────────────────────────────── */
@@ -87,7 +94,7 @@ header {
 header ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 1.2rem;
 }
 
 a {
@@ -105,9 +112,9 @@ header a.active {
 
 /* ── SCROLL CONTAINER ───────────────────────────────────────────────────── */
 .scroll-container {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 /* ── SECTIONS (base) ────────────────────────────────────────────────────── */
@@ -123,58 +130,53 @@ header a.active {
     background-color: var(--color-background-primary);
 }
 
-.content {
-  max-width: 800px;
-  text-align: center;
-}
-
 .section--bio {
-  background: var(--color-background-primary);
+    background: var(--color-background-primary);
 }
 
 .section--legacy {
-  background: var(--color-background-primary);
+    background: var(--color-background-primary);
 }
 
 .section--footer {
-  background: var(--color-background-secondary);
-  min-height: 40vh;
+    background: var(--color-background-secondary);
+    min-height: 40vh;
 }
 
 /* ── HERO ───────────────────────────────────────────────────────────────── */
 .section--hero {
-  background: var(--color-background-secondary);
-  background-image: url(../assets/img/hero-eniac6.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  justify-content: flex-start;
-  padding: 2rem 6%;
+    background: var(--color-background-secondary);
+    background-image: url(../assets/img/hero-eniac6.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: flex-start;
+    padding: 2rem 6%;
 }
 
 .section--hero > h2,
 .section--hero > p {
-  text-align: center;
+    text-align: center;
 }
 
 .section--hero > h2 {
-  font-family: var(--font-heading);
-  color: var(--color-accent);
-  font-size: clamp(3.5rem, 18vw, 10rem);
-  margin-top: clamp(2rem, 10vh, 10rem);
-  line-height: 1;
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    font-size: clamp(3.5rem, 18vw, 10rem);
+    margin-top: clamp(2rem, 10vh, 10rem);
+    line-height: 1;
 }
 
 .section--hero > p {
-  font-family: var(--font-subheading);
-  font-size: clamp(0.85rem, 2.5vw, 1.2rem);
-  color: var(--color-background-primary);
-  letter-spacing: 0.1rem;
+    font-family: var(--font-subheading);
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+    color: var(--color-background-primary);
+    letter-spacing: 0.1rem;
 }
 
 .section--hero > p:first-of-type {
-  font-size: clamp(1rem, 4vw, 2rem);
-  letter-spacing: 0.15rem;
+    font-size: clamp(1rem, 4vw, 2rem);
+    letter-spacing: 0.15rem;
 }
 
 .section--hero button{
@@ -184,7 +186,7 @@ header a.active {
     font-family: var(--font-text);
     width: 150px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: var(--radius);
     font-size: var(--transition-base);
     border: none;
     transition: ease-out 0.2s;
@@ -205,11 +207,12 @@ header a.active {
     margin-top: 5rem;
 }
 #intro p {
+    font-size: var(--text-base);
     width: 60%;
     padding-bottom: 0.5rem;
 }
 
-/* ── ENIAC SECTION — mobile first (475px reference) ────────────────────── */
+/* ── ENIAC SECTION */
 .section--eniac {
     display: block;
     padding: 0;
@@ -234,12 +237,11 @@ header a.active {
 }
 
 .eniac--sticky > h2 {
-  grid-area: h2;
-  color: var(--color-secondary);
-  margin-top: 0;
+    grid-area: h2;
+    color: var(--color-secondary);
+    margin-top: 0;
 }
 
-/* Figure area: flex column — figures stacked, nav below */
 .eniac--figure-area {
     grid-area: figure;
     display: flex;
@@ -310,11 +312,11 @@ header a.active {
 
 
 .eniac--figure img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius);
 }
 
 .eniac--figure figcaption {
@@ -327,132 +329,130 @@ header a.active {
 }
 
 .eniac--stats {
-  grid-area: stats;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
+    grid-area: stats;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
 }
 
 .eniac--stats .stat:nth-child(5) {
-  display: none;
+    display: none;
 }
 
 .stat {
-  background: var(--color-card);
-  padding: 0.6rem 0.75rem;
-  border-radius: var(--radius);
-  text-align: center;
+    background: var(--color-card);
+    padding: 0.6rem 0.75rem;
+    border-radius: var(--radius);
+    text-align: center;
 }
 
 .stat--number {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 4vw, 1.6rem);
-  font-weight: 700;
-  color: var(--color-secondary);
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-weight: 700;
+    color: var(--color-secondary);
 }
 
 .stat--label {
-  font-size: 0.75rem;
-  opacity: 0.65;
-  letter-spacing: 0.03rem;
+    font-size: 0.75rem;
+    opacity: 0.65;
+    letter-spacing: 0.03rem;
 }
 
-/* Text area: CSS Grid stacking — all text groups share the same cell */
 .eniac--texts {
-  grid-area: texts;
-  display: grid;
+    grid-area: texts;
+    display: grid;
 }
 
 .eniac--text {
-  grid-column: 1;
-  grid-row: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.6rem;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: var(--color-text);
-  visibility: hidden;
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    visibility: hidden;
 }
 
 .eniac--text.active {
-  visibility: visible;
+    visibility: visible;
 }
 
-.eniac--text p {
-  opacity: 0;
-  transition: opacity 0.6s ease;
+.eniac--text p,
+.eniac--text h3 {
+    opacity: 0;
+    transition: opacity 0.6s ease;
 }
 
 .eniac--text p:nth-child(3) {
-  display: none;
+    display: none;
 }
 
-.eniac--text.active p {
-  opacity: 1;
+.eniac--text.active p,
+.eniac--text.active h3 {
+    opacity: 1;
 }
 
 /* ── MEDIA QUERIES ──────────────────────────────────────────────────────── */
 
 /* Mobile landscape (≥576px) */
 @media (min-width: 576px) {
-  .section--hero {
-    padding: 3rem 8%;
-  }
+    .section--hero {
+        padding: 3rem 8%;
+    }
 
-  .section--hero > p {
-    letter-spacing: 0.2rem;
-  }
+    .section--hero > p {
+        letter-spacing: 0.2rem;
+    }
 
-  .section--hero > p:first-of-type {
-    letter-spacing: 0.3rem;
-  }
+    .section--hero > p:first-of-type {
+        letter-spacing: 0.3rem;
+    }
 
-  .eniac--sticky {
-    padding: 3rem 6% 1.5rem;
-    gap: 1rem;
-  }
+    .eniac--sticky {
+        padding: 3rem 6% 1.5rem;
+        gap: 1rem;
+    }
 
-  .stat {
-    padding: 0.75rem 1rem;
-  }
+    .stat {
+        padding: 0.75rem 1rem;
+    }
 
-  .stat--number {
-    font-size: clamp(1.4rem, 4vw, 1.8rem);
-  }
+    .stat--number {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+    }
 
-  .eniac--text {
-    font-size: 0.85rem;
-  }
+    .eniac--text {
+        font-size: 0.85rem;
+    }
 }
 
 /* Tablet portrait (≥768px) */
 @media (min-width: 768px) {
-  .eniac--sticky {
-    padding: 2rem 8% 2rem;
-    gap: 1.25rem;
-  }
+    .eniac--sticky {
+        padding: 2rem 8% 2rem;
+        gap: 1.25rem;
+    }
 
-  .eniac--stats .stat:nth-child(5) {
-    display: block;
-  }
+    .eniac--stats .stat:nth-child(5) {
+        display: block;
+    }
 
-  .stat--number {
-    font-size: clamp(1.6rem, 3vw, 2rem);
-  }
+    .stat--number {
+        font-size: clamp(1.6rem, 3vw, 2rem);
+    }
 
-  .stat--label {
-    font-size: 0.8rem;
-  }
+    .stat--label {
+        font-size: 0.8rem;
+    }
 
-  .eniac--figure figcaption {
-    font-size: 0.8rem;
-  }
+    .eniac--figure figcaption {
+        font-size: 0.8rem;
+    }
 
-  .eniac--text {
-    font-size: 0.875rem;
-  }
 }
 
 /* Tablet landscape / small desktop (≥1024px) */
@@ -462,7 +462,7 @@ header a.active {
     }
 
     .section {
-        padding: 80px 10%;
+        padding: 5rem 10%;
     }
 
     .section--eniac {
@@ -470,7 +470,7 @@ header a.active {
     }
 
     .section--hero {
-        padding: 80px 10%;
+        padding: 5rem 10%;
     }
 
     .eniac--sticky {
@@ -481,13 +481,13 @@ header a.active {
             "figure stats"
             "texts  texts";
         gap: 2rem;
-        padding: 80px 10%;
+        padding: 5rem 10%;
     }
 
     .eniac--stats {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
+        gap: 0.5rem;
         align-self: stretch;
     }
 
@@ -514,7 +514,10 @@ header a.active {
 
     .eniac--text {
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        column-gap: 2rem;
+        row-gap: 0.4rem;
         font-size: var(--text-base);
     }
 
@@ -522,16 +525,29 @@ header a.active {
         display: block;
     }
 
-    .eniac--text.active p:nth-child(1) {
+    .eniac--text.active :nth-child(1) {
         transition-delay: 0.1s;
     }
 
-    .eniac--text.active p:nth-child(2) {
-        transition-delay: 0.15s;
+    .eniac--text.active :nth-child(2) {
+        transition-delay: 0.2s;
     }
 
-    .eniac--text.active p:nth-child(3) {
-        transition-delay: 0.25s;
+
+    .eniac--text.active :nth-child(3) {
+        transition-delay: 0.35s;
+    }
+
+    .eniac--text.active :nth-child(4) {
+        transition-delay: 0.45s;
+    }
+
+    .eniac--text.active :nth-child(5) {
+        transition-delay: 0.6s;
+    }
+
+    .eniac--text.active :nth-child(6) {
+        transition-delay: 0.7s;
     }
 }
 
@@ -544,15 +560,17 @@ header a.active {
     }
 
     .eniac--texts {
-        margin-top: 3rem;
+        margin-top: 0.5rem;
     }
 
     .eniac--stats {
         gap: 2rem;
+        align-self: center;
+        margin-bottom: 5rem;
     }
 
     .stat {
-        padding: 1.2rem 1.5rem;
+        padding: 0.7rem 0.7rem;
     }
 
     .stat--number {
