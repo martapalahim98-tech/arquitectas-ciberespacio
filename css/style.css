@@ -37,31 +37,19 @@
     --color-secondary: #37557b;
     --color-accent: #ef4035;
 
-<<<<<<< HEAD
-  --color-background-primary: #edeae1;
-  --color-backsground-secondary: #06080a;
-=======
     --color-background-primary: #edeae1;
     --color-background-secondary: #06080a;
->>>>>>> main
 
     /* Espaciado */
     --space-small: 0.5rem;
     --space-medium: 1rem;
     --space-large: 2rem;
 
-<<<<<<< HEAD
-  /* Extras */
-  --radius: 8px;
-  --transition-base: 0.3s ease;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-=======
     /* Extras */
     --radius: 0.5rem;
     --transition-base: 0.3s ease;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
->>>>>>> main
+    --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 /* ── BASE ───────────────────────────────────────────────────────────────── */
@@ -717,20 +705,6 @@ header a.active {
         font-size: 0.8rem;
     }
 
-<<<<<<< HEAD
-  .eniac--text {
-    font-size: 0.875rem;
-  }
-
-
-  /* SECCIÓN -- INVISIBILIZACIÓN -- TIMELINE */
-
-  .secret-connector {
-    display: none;
-  }
-
-=======
->>>>>>> main
 }
 
 /* Tablet landscape / small desktop (≥1024px) */
