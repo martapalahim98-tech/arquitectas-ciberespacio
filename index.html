@@ -1,192 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Las ENIAC 6 y las heroínas anónimas de los años 40 que programaron el primer ordenador electrónico."
-    />
-    <title>Arquitectas del Ciberespacio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="desciption" content="Revista digital que reivindica los aportes de las mujeres en la tecnología y su integración en el presente y futuro de la informática">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <title>ENIAC 6</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans&family=League+Spartan&family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-
-  <body>
+<body>
     <header>
-      <h1>Arquitectas</h1>
-
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav">
-        <ul>
-          <li><a href="#hero" class="nav-link">Inicio</a></li>
-          <li><a href="#contexto" class="nav-link">Contexto</a></li>
-          <li><a href="#eniac" class="nav-link">ENIAC</a></li>
-          <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
-          <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
-        </ul>
-      </nav>
+        <h1>Legado</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero" class="nav-link">Inicio</a></li>
+                <li><a href="#contexto" class="nav-link">Contexto</a></li>
+                <li><a href="#eniac" class="nav-link">ENIAC</a></li>
+                <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
+                <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
+                <li><a href="#revista" class="nav-link">La revista</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="scroll-container">
-      <section id="hero" class="section section--hero">
-        <h2>ENIAC 6</h2>
-        <p>Las primeras programadoras del mundo.</p>
-        <p>-Reivindicamos su impacto en la historia de la computación-</p>
-      </section>
+        <section id="hero" class="section section--hero">
+            <h2>ENIAC 6</h2>
+            <p>Las primeras programadoras del mundo.</p>
+            <p>-Reivindicamos su impacto en la historia de la computación-</p>
+            <button><a href="#contexto">Conoce más</a></button>
+        </section>
 
+<<<<<<< HEAD
       <section id="contexto" class="section section--contexto">
       </section>
+=======
+        <section id="contexto" class="section section--contexto">
+            <div id="intro">
+                <h2>Introducción</h2>
+                <p>En 1945, seis mujeres escribieron el futuro con sus manos. Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Ruth Lichterman y Frances Bilas cablearon, codificaron y ejecutaron los primeros programas de la historia de la computación moderna. El mundo aplaudió la máquina pero silenció sus nombres.</p>
+                <p>Durante décadas, la fotografía más famosa del ENIAC circuló sin pie de foto. Nadie preguntó quiénes eran las mujeres que aparecían en ella. Se asumió que eran modelos, decoración, fondo.</p>
+                <p>Este sitio existe para no olvidar. Para devolver el nombre a quienes el relato oficial convirtió en sombras. Porque la historia de la tecnología no puede contarse bien si se cuenta a medias.</p>
+            </div>
+        </section>
+>>>>>>> main
 
-      <section id="eniac" class="section section--eniac">
-        <div class="eniac--sticky">
-          <h2>Electronic Numerical Integrator and Computer</h2>
+        <section id="eniac" class="section section--eniac">
+            <div class="eniac--sticky">
+                <h2>Electronic Numerical Integrator and Computer</h2>
+                <div class="eniac--figure-area">
+                    <div class="eniac--figures">
+                        <figure class="eniac--figure active">
+                            <img src="assets/img/inventores-eniac.webp" alt="Inventores del ENIAC">
+                            <figcaption>El físico John Mauchly y el ingeniero electrónico J. Presper Eckert</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC">
+                            <figcaption>Los 17.468 tubos de vacío que alimentaban el ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/ilustracion eniac.png" alt="Ilustración del ENIAC">
+                            <figcaption>Ilustración técnica del ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC">
+                            <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
+                        </figure>
+                    </div>
+                    <div class="eniac--nav">
+                        <button class="eniac--btn eniac--btn-prev" aria-label="Anterior">
+                            <img src="assets/img/flecha-izq.svg" alt="Anterior">
+                        </button>
+                        <button class="eniac--btn eniac--btn-next" aria-label="Siguiente">
+                            <img src="assets/img/flecha-der.svg" alt="Siguiente">
+                        </button>
+                    </div>
+                </div>
 
-          <!-- All figures stacked in the same grid cell -->
-          <div class="eniac--figure-area">
-            <figure class="eniac--figure active">
-              <img
-                src="assets/img/inventores-eniac.webp"
-                alt="Inventores del ENIAC"
-              />
-              <figcaption>
-                El físico John Mauchly y el ingeniero electrónico J. Presper
-                Eckert
-              </figcaption>
-            </figure>
-            <figure class="eniac--figure">
-              <img
-                src="assets/img/tubos-eniac.webp"
-                alt="Tubos de vacío del ENIAC"
-              />
-              <figcaption>
-                Los 17.468 tubos de vacío que alimentaban el ENIAC
-              </figcaption>
-            </figure>
-            <figure class="eniac--figure">
-              <img
-                src="assets/img/ilustracion eniac.png"
-                alt="Ilustración del ENIAC"
-              />
-              <figcaption>Ilustración técnica del ENIAC</figcaption>
-            </figure>
-            <figure class="eniac--figure">
-              <img
-                src="assets/img/diagrama-eniac.webp"
-                alt="Diagrama del ENIAC"
-              />
-              <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
-            </figure>
-          </div>
+                <div class="eniac--stats">
+                    <div class="stat">
+                        <span class="stat--number">27</span>
+                        <span class="stat--label">toneladas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat--number">167</span>
+                        <span class="stat--label">metros cuadrados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat--number">5.000</span>
+                        <span class="stat--label">operaciones/seg</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat--number">17.468</span>
+                        <span class="stat--label">tubos de vacío</span>
+                    </div>
+                </div>
 
-          <div class="eniac--stats">
-            <div class="stat">
-              <span class="stat--number">27</span>
-              <span class="stat--label">toneladas</span>
+                <div class="eniac--texts">
+                    <div class="eniac--text active">
+                        <h3>Creadores</h3>
+                        <p>John Mauchly y John Presper Eckert diseñaron la ENIAC en la Universidad de Pensilvania para el ejército estadounidense con el objetivo de calcular trayectorias balísticas.</p>
+                        <h3>Propósito</h3>
+                        <p>Fue uno de los primeros ordenadores electrónicos de gran escala. Fue creado para realizar cálculos complejos miles de veces más rápido que cualquier humano.</p>
+                        <h3>Escala</h3>
+                        <p>ENIAC ocupaba 167 metros cuadrados y pesaba aproximadamente 27 toneladas. Era una de las computadoras más grandes construidas hasta ese momento, distribuyéndose a lo largo de una gran sala. </p>
+                    </div>
+                    <div class="eniac--text">
+                        <h3>Componentes</h3>
+                        <p>ENIAC contaba con 17,468 tubos de vacío, 70,000 resistencias, 10,000 condensadores y 7,200 diodos de cristal. </p>
+                        <h3>Funcionamiento</h3>
+                        <p>Cada tubo de vacío funcionaba como un interruptor electrónico, permitiendo que los circuitos realizaran operaciones lógicas.</p>
+                        <h3>Digitalización</h3>
+                        <p>En lugar de utilizar métodos mecánicos o electromagnéticos para representar datos, ENIAC usaba pulsos eléctricos para manipular la información en binario (1 y 0). </p>
+                    </div>
+                    <div class="eniac--text">
+                        <h3>Programación</h3>
+                        <p>Para programar ENIAC, sus operadoras debían manipular más de 6,000 interruptores y conectar un entramado de cables de manera física.</p>
+                        <h3>Dificultad</h3>
+                        <p>Cada nueva tarea requería una reconfiguración manual, lo que podía tomar días o incluso semanas. Este proceso era tedioso, lo que impulsó el desarrollo de un programación y la automatización de procesos.</p>
+                        <h3>Capacidades</h3>
+                        <p>Podía realizar 5,000 sumas o 300 multiplicaciones por segundo, algo insignificante hoy en día pero revolucionario para la época. </p>
+                    </div>
+                    <div class="eniac--text">
+                        <h3>Consumo energético</h3>
+                        <p>Consumía aproximadamente 150 kW a 160 kW, generando apagones ocasionales en la ciudad de Filadelfia.</p>
+                        <h3>Calor</h3>
+                        <p>Para evitar el sobrecalentamiento, era necesario instalar sistemas de ventilación avanzados y en ocasiones incluso abrir puertas y ventanas para permitir la disipación del calor.</p>
+                        <h3>Fallas</h3>
+                        <p>Se estima que cada 48 horas una o varias de estas válvulas fallaban, interrumpiendo el funcionamiento del sistema. Comenzaron a dejarlo encedido continuamente para minimizar estos problemas. </p>
+                    </div>
+                </div>
             </div>
-            <div class="stat">
-              <span class="stat--number">167</span>
-              <span class="stat--label">metros cuadrados</span>
-            </div>
-            <div class="stat">
-              <span class="stat--number">5.000</span>
-              <span class="stat--label">operaciones/seg</span>
-            </div>
-            <div class="stat">
-              <span class="stat--number">17.468</span>
-              <span class="stat--label">tubos de vacío</span>
-            </div>
-            <div class="stat">
-              <span class="stat--number">70.000</span>
-              <span class="stat--label">resistencias</span>
-            </div>
-          </div>
+        </section>
 
-          <!-- All text groups stacked in the same grid cell -->
-          <div class="eniac--texts">
-            <div class="eniac--text active">
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-            </div>
-            <div class="eniac--text">
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-            </div>
-            <div class="eniac--text">
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-            </div>
-            <div class="eniac--text">
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-              <p>
-                Los cavallers observaven aquell segons la fi per què fonc.
-                Agreujada Al matí lo Comte se féu. Cavaller; la sisena és dels
-                actes e costumes que.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section id="secret" class="section section--secret">
+            <h2>Su Legado</h2>
+        </section>
 
+<<<<<<< HEAD
       <!-- SECCIÓN -- INVISIBILIZACIÓN -- TIMELINE -->
         <section id="secret" class="section section--secret">
             <div class="secret-wrapper">
@@ -287,17 +242,21 @@
                     </article>
                 </div>
             </div>
+=======
+        <section id="entrevista" class="section section--entrevista">
+            <h2>Su Legado</h2>
+        </section>
+        <section id="revista" class="section section--revista">
+            <h2>Su Legado</h2>
+>>>>>>> main
         </section>
 
-      <section id="entrevista" class="section section--entrevista">
-        <h2>Su Legado</h2>
-      </section>
-
-      <footer id="footer" class="section section--footer">
-        <h3>© 2024 Arquitectas del Ciberespacio</h3>
-      </footer>
+        <footer id="footer" class="section section--footer">
+            <h3>© 2024 Arquitectas del Ciberespacio</h3>
+        </footer>
     </main>
 
     <script src="js/scripts.js"></script>
-  </body>
+</body>
+
 </html>
