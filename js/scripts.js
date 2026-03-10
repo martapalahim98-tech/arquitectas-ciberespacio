@@ -1,56 +1,104 @@
-const container = document.querySelector('.scroll-container');
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
+const container = document.querySelector(".scroll-container");
+const sections = document.querySelectorAll(".section");
+const navLinks = document.querySelectorAll(".nav-link");
+const progressBar = document.querySelector(".progress-bar");
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+
 let isScrolling = false;
 let scrollEndTimer;
 
+/* ===== MENU TOGGLE ===== */
+menuToggle.addEventListener("click", () => nav.classList.toggle("open"));
+
+/* ===== CLICK EN LINKS ===== */
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    nav.classList.remove("open"); // cerrar menú
+    targetSection.scrollIntoView({ behavior: "smooth" }); // scroll suave
+    updateActiveLink(targetId); // actualizar link activo
+  });
+});
+
+/* ===== PROGRESS BAR ===== */
+container.addEventListener("scroll", () => {
+  progressBar.style.width =
+    (container.scrollTop / (container.scrollHeight - container.clientHeight)) *
+      100 +
+    "%";
+});
+
+/* ===== NAV ACTIVE SECTION ===== */
+function updateActiveLink(id) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+  });
+}
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) updateActiveLink(entry.target.id);
+    });
+  },
+  { root: container, threshold: 0.6 },
+);
+
+sections.forEach((section) => observer.observe(section));
+
+/* ===== SCROLL LOCK ===== */
 function releaseScrollLock() {
-    clearTimeout(scrollEndTimer);
-    scrollEndTimer = setTimeout(() => { isScrolling = false; }, 150);
+  clearTimeout(scrollEndTimer);
+  scrollEndTimer = setTimeout(() => {
+    isScrolling = false;
+  }, 150);
 }
 
-// Función para mover a la sección
+/* ===== SCROLL TO SECTION POR RUEDA ===== */
 function scrollToSection(index) {
-    if (index >= 0 && index < sections.length) {
-        isScrolling = true;
-        sections[index].scrollIntoView({ behavior: 'smooth' });
-
-        // Actualizar menú
-        updateActiveLink(sections[index].id);
-    }
+  if (index >= 0 && index < sections.length) {
+    isScrolling = true;
+    sections[index].scrollIntoView({ behavior: "smooth" });
+    updateActiveLink(sections[index].id);
+  }
 }
 
-// Detectar rueda del ratón
-container.addEventListener('wheel', (e) => {
+container.addEventListener(
+  "wheel",
+  (e) => {
     if (isScrolling) return;
 
-    const currentSection = [...sections].find(s => {
-        const rect = s.getBoundingClientRect();
-        return rect.top >= -50 && rect.top <= 50;
+    const currentSection = [...sections].find((s) => {
+      const rect = s.getBoundingClientRect();
+      return rect.top >= -50 && rect.top <= 50;
     });
 
     if (!currentSection) return;
     const currentIndex = [...sections].indexOf(currentSection);
 
-    // Si scrolleamos hacia abajo
     if (e.deltaY > 0) {
-        // Solo saltar si estamos al final de la sección actual
-        if (container.scrollTop + container.clientHeight >= currentSection.offsetTop + currentSection.offsetHeight - 5) {
-            if (currentIndex < sections.length - 1) {
-                e.preventDefault();
-                scrollToSection(currentIndex + 1);
-            }
+      // Scroll hacia abajo
+      if (
+        container.scrollTop + container.clientHeight >=
+        currentSection.offsetTop + currentSection.offsetHeight - 5
+      ) {
+        if (currentIndex < sections.length - 1) {
+          e.preventDefault();
+          scrollToSection(currentIndex + 1);
         }
-    }
-    // Si scrolleamos hacia arriba
-    else {
-        // Solo saltar si estamos al inicio de la sección actual
-        if (container.scrollTop <= currentSection.offsetTop + 5) {
-            if (currentIndex > 0) {
-                e.preventDefault();
-                scrollToSection(currentIndex - 1);
-            }
+      }
+    } else {
+      // Scroll hacia arriba
+      if (container.scrollTop <= currentSection.offsetTop + 5) {
+        if (currentIndex > 0) {
+          e.preventDefault();
+          scrollToSection(currentIndex - 1);
         }
+      }
     }
 }, { passive: false });
 
