@@ -11,50 +11,52 @@
 
 /* ── VARIABLES ──────────────────────────────────────────────────────────── */
 :root {
-  height: 100%;
-  font-size: 16px;
+    height: 100%;
+    font-size: 16px;
 
-  /* tipografías */
-  --font-heading: "League Spartan", sans-serif;
-  --font-subheading: "Playfair Display", serif;
-  --font-text: "DM Sans", sans-serif;
+    /* tipografías */
+    --font-heading: 'League Spartan', sans-serif;
+    --font-subheading: 'Playfair Display', serif;
+    --font-text: 'DM Sans', sans-serif;
 
-  /* Tamaños fluidos */
-  --text-base: clamp(1rem, 2vw, 1.2rem);
-  --text-h1: clamp(1.8rem, 4vw, 3rem);
-  --text-h2: clamp(1.4rem, 3vw, 2rem);
-  --text-h3: clamp(1.2rem, 2.5vw, 1.6rem);
-  --text-h4: clamp(1rem, 2vw, 1.2rem);
+    /* Tamaños fluidos */
+    --text-base: clamp(1rem, 2vw, 1.2rem);
+    --text-h1: clamp(1.8rem, 4vw, 3rem);
+    --text-h2: clamp(1.4rem, 3vw, 2rem);
+    --text-h3: clamp(1.2rem, 2.5vw, 1.6rem);
+    --text-h4: clamp(1rem, 2vw, 1.2rem);
 
-  /* colores */
-  --color-light: #fff;
-  --color-text: #000;
-  --color-surface: #f5f5f5;
-  --color-border: #333;
-  --color-card: #e3dacc;
+    /* colores */
+    --color-light: #fff;
+    --color-text: #333;
+    --color-surface: #f5f5f5;
+    --color-border: #333;
+    --color-card: #e3dacc;
 
-  --color-primary: #3d5552;
-  --color-secondary: #37557b;
-  --color-accent: #ef4035;
+    --color-primary: #3d5552;
+    --color-secondary: #37557b;
+    --color-accent: #ef4035;
 
-  --color-background-primary: #edeae1;
-  --color-background-secondary: #06080a;
+    --color-background-primary: #edeae1;
+    --color-background-secondary: #06080a;
 
-  /* Espaciado */
-  --space-small: 0.5rem;
-  --space-medium: 1rem;
-  --space-large: 2rem;
+    /* Espaciado */
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 2rem;
 
-  /* Extras */
-  --radius: 8px;
-  --transition-base: 0.3s ease;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Extras */
+    --radius: 8px;
+    --transition-base: 0.3s ease;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── BASE ───────────────────────────────────────────────────────────────── */
 body {
-  font-family: var(--font-text);
-  overflow: hidden;
+    font-family: var(--font-text);
+    overflow: hidden;
+    scroll-behavior: smooth;
+    color: var(--color-text);
 }
 
 h1 {
@@ -64,85 +66,41 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-subheading);
-  color: var(--color-secondary);
-  margin-top: 4rem;
+    font-family: var(--font-subheading);
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
 }
 
 /* ── HEADER ─────────────────────────────────────────────────────────────── */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 6%;
-  background: var(--color-background-secondary);
-  z-index: 100;
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--color-background-secondary);
 }
 
-.menu-toggle {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.menu-toggle span {
-  width: 24px;
-  height: 2px;
-  background: white;
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 70%;
-  height: 100vh;
-  background: var(--color-background-secondary);
-  transition: 0.3s;
-  padding-top: 6rem;
+a {
+    color: var(--color-background-primary);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.3s;
 }
 
-.nav.open {
-  right: 0;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding-left: 2rem;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  opacity: 0.6;
-  transition: 0.3s;
-}
-
-.nav a.active {
-  opacity: 1;
-  font-weight: bold;
-  color: var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
-}
-
-/* PROGRESS BAR */
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 0;
-  background: var(--color-accent);
-  z-index: 200;
+header a.active {
+    opacity: 1;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-background-primary);
 }
 
 /* ── SCROLL CONTAINER ───────────────────────────────────────────────────── */
@@ -154,15 +112,15 @@ header {
 
 /* ── SECTIONS (base) ────────────────────────────────────────────────────── */
 .section {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 6%;
-  color: var(--color-light);
-  background-color: var(--color-background-primary);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 6%;
+    color: var(--color-text);
+    background-color: var(--color-background-primary);
 }
 
 .content {
@@ -219,31 +177,60 @@ header {
   letter-spacing: 0.15rem;
 }
 
+.section--hero button{
+    margin-top: 3rem;
+    background-color: var(--color-secondary);
+    color: var(--color-background-primary);
+    font-family: var(--font-text);
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: var(--transition-base);
+    border: none;
+    transition: ease-out 0.2s;
+
+}
+
+.section--hero button:hover{
+    background-color: var(--color-primary);
+    transition: ease-in 0.2s;
+}
+
+/* CONTEXTO*/
+#contexto{
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+#intro{
+    margin-top: 5rem;
+}
+#intro p {
+    width: 60%;
+    padding-bottom: 0.5rem;
+}
+
 /* ── ENIAC SECTION — mobile first (475px reference) ────────────────────── */
 .section--eniac {
-  display: block;
-  min-height: 400vh;
-  padding: 0;
+    display: block;
+    padding: 0;
 }
 
 .eniac--sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
-  grid-template-areas:
-    "h2"
-    "stats"
-    "figure"
-    "texts";
-  gap: 0.75rem;
-  align-items: start;
-  padding: 1.5rem 5% 1rem;
-  background: var(--color-background-primary);
-  color: var(--color-background-secondary);
-  overflow: hidden;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "h2"
+        "stats"
+        "figure"
+        "texts";
+    gap: 0.75rem;
+    align-items: start;
+    padding: 1.5rem 5% 1rem;
+    background: var(--color-background-primary);
+    color: var(--color-background-secondary);
+    overflow: hidden;
 }
 
 .eniac--sticky > h2 {
@@ -252,42 +239,75 @@ header {
   margin-top: 0;
 }
 
-/* Figure area: CSS Grid stacking — all figures share the same cell */
+/* Figure area: flex column — figures stacked, nav below */
 .eniac--figure-area {
-  grid-area: figure;
-  display: grid;
+    grid-area: figure;
+    display: flex;
+    flex-direction: column;
+}
+
+.eniac--figures {
+    display: grid;
+}
+
+.eniac--nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.eniac--btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.eniac--btn:hover {
+    opacity: 1;
+}
+
+.eniac--btn img {
+    width: 2rem;
+    height: 2rem;
 }
 
 .eniac--figure {
-  grid-column: 1;
-  grid-row: 1;
-  opacity: 0;
-  transform: translateY(70px);
-  transition:
-    transform 0.35s ease,
-    opacity 0.35s ease;
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 .eniac--figure.active {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.eniac--figure.exit-up {
-  opacity: 0;
-  transform: translateY(-70px);
+.eniac--figure.exit-left {
+    opacity: 0;
+    transform: translateX(-70px);
 }
 
-.eniac--figure.exit-down {
-  opacity: 0;
-  transform: translateY(70px);
+.eniac--figure.exit-right {
+    opacity: 0;
+    transform: translateX(70px);
 }
 
-.eniac--figure.enter-from-top {
-  opacity: 0;
-  transform: translateY(-70px);
-  transition: none;
+.eniac--figure.enter-from-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: none;
 }
+
 
 .eniac--figure img {
   width: 100%;
@@ -298,10 +318,12 @@ header {
 }
 
 .eniac--figure figcaption {
-  font-size: 0.75rem;
-  text-align: center;
-  margin-top: 0.4rem;
-  opacity: 0.6;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    opacity: 0.6;
 }
 
 .eniac--stats {
@@ -435,120 +457,110 @@ header {
 
 /* Tablet landscape / small desktop (≥1024px) */
 @media (min-width: 1024px) {
-  /* Header Nav */
-  .menu-toggle {
-    display: none;
-  }
+    header {
+        display: flex;
+    }
 
-  .nav {
-    position: static;
-    width: auto;
-    height: auto;
-    background: none;
-    padding: 0;
-  }
+    .section {
+        padding: 80px 10%;
+    }
 
-  .nav ul {
-    flex-direction: row;
-    gap: 20px;
-    padding: 0;
-  }
+    .section--eniac {
+        padding: 0;
+    }
 
-  .section {
-    padding: 80px 10%;
-  }
+    .section--hero {
+        padding: 80px 10%;
+    }
 
-  .section--eniac {
-    padding: 0;
-  }
+    .eniac--sticky {
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "h2     h2"
+            "figure stats"
+            "texts  texts";
+        gap: 2rem;
+        padding: 80px 10%;
+    }
 
-  .section--hero {
-    padding: 80px 10%;
-  }
+    .eniac--stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        align-self: stretch;
+    }
 
-  .eniac--sticky {
-    grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      "h2     h2"
-      "figure stats"
-      "texts  texts";
-    gap: 2rem;
-    padding: 80px 10%;
-  }
+    .eniac--btn img {
+        width: 3rem;
+        height: 3rem;
+    }
 
-  .eniac--stats {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    align-self: stretch;
-  }
+    .stat {
+        padding: 1rem 1.25rem;
+    }
 
-  .stat {
-    padding: 1rem 1.25rem;
-  }
+    .stat--number {
+        font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    }
 
-  .stat--number {
-    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-  }
+    .stat--label {
+        font-size: 0.85rem;
+    }
 
-  .stat--label {
-    font-size: 0.85rem;
-  }
+    .eniac--figure figcaption {
+        font-size: var(--text-base);
+    }
 
-  .eniac--figure figcaption {
-    font-size: var(--text-base);
-  }
+    .eniac--text {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        font-size: var(--text-base);
+    }
 
-  .eniac--text {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    font-size: var(--text-base);
-  }
+    .eniac--text p:nth-child(3) {
+        display: block;
+    }
 
-  .eniac--text p:nth-child(3) {
-    display: block;
-  }
+    .eniac--text.active p:nth-child(1) {
+        transition-delay: 0.1s;
+    }
 
-  .eniac--text.active p:nth-child(1) {
-    transition-delay: 0.2s;
-  }
+    .eniac--text.active p:nth-child(2) {
+        transition-delay: 0.15s;
+    }
 
-  .eniac--text.active p:nth-child(2) {
-    transition-delay: 0.7s;
-  }
-
-  .eniac--text.active p:nth-child(3) {
-    transition-delay: 1.2s;
-  }
+    .eniac--text.active p:nth-child(3) {
+        transition-delay: 0.25s;
+    }
 }
 
 /* Desktop (≥1280px) */
 @media (min-width: 1280px) {
-  .eniac--sticky {
-    padding-top: 20rem;
-    padding-bottom: 12%;
-    align-content: center;
-  }
+    .eniac--sticky {
+        padding-top: 10rem;
+        padding-bottom: 12%;
+        align-content: center;
+    }
 
-  .eniac--texts {
-    margin-top: 3rem;
-  }
+    .eniac--texts {
+        margin-top: 3rem;
+    }
 
-  .eniac--stats {
-    gap: 2rem;
-  }
+    .eniac--stats {
+        gap: 2rem;
+    }
 
-  .stat {
-    padding: 1.2rem 1.5rem;
-  }
+    .stat {
+        padding: 1.2rem 1.5rem;
+    }
 
-  .stat--number {
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-  }
+    .stat--number {
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+    }
 
-  .stat--label {
-    font-size: 0.85rem;
-    letter-spacing: 0.05rem;
-  }
+    .stat--label {
+        font-size: 0.85rem;
+        letter-spacing: 0.05rem;
+    }
 }

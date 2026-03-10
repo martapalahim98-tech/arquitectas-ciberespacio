@@ -1,13 +1,16 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Las ENIAC 6 y las heroínas anónimas de los años 40 que programaron el primer ordenador electrónico."
-    />
-    <title>Arquitectas del Ciberespacio</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="desciption" content="Revista digital que reivindica los aportes de las mujeres en la tecnología y su integración en el presente y futuro de la informática">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <title>ENIAC 6</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,83 +23,69 @@
 
   <body>
     <header>
-      <h1>Arquitectas</h1>
-
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav">
-        <ul>
-          <li><a href="#hero" class="nav-link">Inicio</a></li>
-          <li><a href="#contexto" class="nav-link">Contexto</a></li>
-          <li><a href="#eniac" class="nav-link">ENIAC</a></li>
-          <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
-          <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
-        </ul>
-      </nav>
+        <h1>Legado</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero" class="nav-link">Inicio</a></li>
+                <li><a href="#contexto" class="nav-link">Contexto</a></li>
+                <li><a href="#eniac" class="nav-link">ENIAC</a></li>
+                <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
+                <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
+                <li><a href="#revista" class="nav-link">La revista</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="scroll-container">
-      <section id="hero" class="section section--hero">
-        <h2>ENIAC 6</h2>
-        <p>Las primeras programadoras del mundo.</p>
-        <p>-Reivindicamos su impacto en la historia de la computación-</p>
-      </section>
+        <section id="hero" class="section section--hero">
+            <h2>ENIAC 6</h2>
+            <p>Las primeras programadoras del mundo.</p>
+            <p>-Reivindicamos su impacto en la historia de la computación-</p>
+            <button><a href="#contexto">Conoce más</a></button>
+        </section>
 
-      <section id="contexto" class="section section--contexto">
-        <div class="content">
-          <h2>La Visionaria</h2>
-          <p>Lorem ipsum dolor sit amet consectetur...</p>
-          <p>
-            Si este contenido es muy largo, ahora el scroll será fluido dentro
-            de la sección antes de saltar a la siguiente.
-          </p>
-        </div>
-      </section>
+        <section id="contexto" class="section section--contexto">
+            <div id="intro">
+                <h2>Introducción</h2>
+                <p>En 1945, seis mujeres escribieron el futuro con sus manos. Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Ruth Lichterman y Frances Bilas cablearon, codificaron y ejecutaron los primeros programas de la historia de la computación moderna. El mundo aplaudió la máquina pero silenció sus nombres.</p>
+                <p>Durante décadas, la fotografía más famosa del ENIAC circuló sin pie de foto. Nadie preguntó quiénes eran las mujeres que aparecían en ella. Se asumió que eran modelos, decoración, fondo.</p>
+                <p>Este sitio existe para no olvidar. Para devolver el nombre a quienes el relato oficial convirtió en sombras. Porque la historia de la tecnología no puede contarse bien si se cuenta a medias.</p>
+            </div>
+        </section>
 
       <section id="eniac" class="section section--eniac">
         <div class="eniac--sticky">
           <h2>Electronic Numerical Integrator and Computer</h2>
 
-          <!-- All figures stacked in the same grid cell -->
-          <div class="eniac--figure-area">
-            <figure class="eniac--figure active">
-              <img
-                src="assets/img/inventores-eniac.webp"
-                alt="Inventores del ENIAC"
-              />
-              <figcaption>
-                El físico John Mauchly y el ingeniero electrónico J. Presper
-                Eckert
-              </figcaption>
-            </figure>
-            <figure class="eniac--figure">
-              <img
-                src="assets/img/tubos-eniac.webp"
-                alt="Tubos de vacío del ENIAC"
-              />
-              <figcaption>
-                Los 17.468 tubos de vacío que alimentaban el ENIAC
-              </figcaption>
-            </figure>
-            <figure class="eniac--figure">
-              <img
-                src="assets/img/ilustracion eniac.png"
-                alt="Ilustración del ENIAC"
-              />
-              <figcaption>Ilustración técnica del ENIAC</figcaption>
-            </figure>
-            <figure class="eniac--figure">
-              <img
-                src="assets/img/diagrama-eniac.webp"
-                alt="Diagrama del ENIAC"
-              />
-              <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
-            </figure>
-          </div>
+                <!-- All figures stacked in the same grid cell -->
+                <div class="eniac--figure-area">
+                    <div class="eniac--figures">
+                        <figure class="eniac--figure active">
+                            <img src="assets/img/inventores-eniac.webp" alt="Inventores del ENIAC">
+                            <figcaption>El físico John Mauchly y el ingeniero electrónico J. Presper Eckert</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC">
+                            <figcaption>Los 17.468 tubos de vacío que alimentaban el ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/ilustracion eniac.png" alt="Ilustración del ENIAC">
+                            <figcaption>Ilustración técnica del ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC">
+                            <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
+                        </figure>
+                    </div>
+                    <div class="eniac--nav">
+                        <button class="eniac--btn eniac--btn-prev" aria-label="Anterior">
+                            <img src="assets/img/flecha-izq.svg" alt="Anterior">
+                        </button>
+                        <button class="eniac--btn eniac--btn-next" aria-label="Siguiente">
+                            <img src="assets/img/flecha-der.svg" alt="Siguiente">
+                        </button>
+                    </div>
+                </div>
 
           <div class="eniac--stats">
             <div class="stat">
@@ -199,9 +188,12 @@
         <h2>Su Legado</h2>
       </section>
 
-      <section id="entrevista" class="section section--entrevista">
-        <h2>Su Legado</h2>
-      </section>
+        <section id="entrevista" class="section section--entrevista">
+            <h2>Su Legado</h2>
+        </section>
+        <section id="revista" class="section section--revista">
+            <h2>Su Legado</h2>
+        </section>
 
       <footer id="footer" class="section section--footer">
         <h3>© 2024 Arquitectas del Ciberespacio</h3>
