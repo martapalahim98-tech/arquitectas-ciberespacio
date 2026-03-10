@@ -1,92 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto ENIAC</title>
-<link rel="stylesheet" href="eniac.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="desciption" content="Revista digital que reivindica los aportes de las mujeres en la tecnología y su integración en el presente y futuro de la informática">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="">
+    <title>ENIAC 6</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <header>
+        <h1>Legado</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero" class="nav-link">Inicio</a></li>
+                <li><a href="#contexto" class="nav-link">Contexto</a></li>
+                <li><a href="#eniac" class="nav-link">ENIAC</a></li>
+                <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
+                <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
+                <li><a href="#revista" class="nav-link">La revista</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <header>
-
-            <input type="checkbox" id="menu">
-
-                <label for="menu">☰</label>
-
-                    <nav>
-                        <a href="#inicio">INICIO</a>
-                        <a href="#historia">HISTORIA</a>
-                        <a href="#impacto">IMPACTO</a>
-                        <a href="#seis">LAS SEIS</a>
-                        <a href="#entrevista">ENTREVISTA</a>
-                    </nav>
-
-        </header>
-
-
-        <section class="inicio">
-            <h1>TÍTULO DEL HERO AQUÍ</h1>
-            <p>Desliza para descubrir la historia REAL</p>
+    <main class="scroll-container">
+        <section id="hero" class="section section--hero">
+            <h2>ENIAC 6</h2>
+            <p>Las primeras programadoras del mundo.</p>
+            <p>-Reivindicamos su impacto en la historia de la computación-</p>
+            <button><a href="#contexto">Conoce más</a></button>
         </section>
 
-        <section class="historia">
-            <article class="a1943">
-                <span>1943</span>
-                <h3>LA GUERRA NECESITA CÁLCULOS</h3>
-                <p>El ejército estadounidense necesitaba miles de cálculos balísticos
-                para mejorar la precisión de su artillería.
-                Hacerlos a mano llevaba horas.
-                A veces días.</p>
+        <section id="contexto" class="section section--contexto">
+        <div class="contexto-wrapper">
+
+          <div class="contexto-timeline">
+            <div class="contexto-line"></div>
+
+            <!-- CARD 1 -->
+            <article class="contexto-card contexto-card--left">
+              <span class="contexto-year">1943</span>
+              <h3>LA GUERRA NECESITA CÁLCULOS</h3>
+
+              <figure>
+                <img
+                  src="assets/img/segunda-guerra-mundial.jpg"
+                  alt="Escena urbana durante la Segunda Guerra Mundial"
+                />
+              </figure>
+
+              <figure>
+                <img
+                  src="assets/img/womans-working.png"
+                  alt="Mujeres realizando cálculos a mano en una sala de trabajo"
+                />
+              </figure>
+
+              <p>
+                El ejército estadounidense necesitaba miles de cálculos balísticos para mejorar la precisión de su artillería.
+              </p>
+              <p>
+                Hacerlos a mano llevaba horas. A veces días.
+              </p>
             </article>
 
-            <figure>
-                <img src="ok.dw.jpg" alt="ENIAC">
-            </figure>
+            <!-- CARD 2 -->
+            <article class="contexto-card contexto-card--right">
+              <span class="contexto-year">1944</span>
+              <h3>LOS HOMBRES ESTÁN EN EL FRENTE</h3>
 
-            <article class="a1944">
-                <span>1944</span>
-                <h3>LOS HOMBRES ESTÁN EN EL FRENTE</h3>
-                <p>
-                Había ingenieros pero muchos estaban en el frente.
-                Las universidades recurrieron a contratar jóvenes
-                mujeres como computadoras humanas.
-                </p>
+              <figure>
+                <img
+                  src="assets/img/eniac6-working.webp"
+                  alt="Mujeres trabajando con cableado y paneles de una máquina"
+                />
+              </figure>
+
+              <p>
+                Muchos ingenieros habían sido enviados a la guerra. Las universidades comenzaron a contratar jóvenes matemáticas como “computadoras humanas”.
+              </p>
+              <p>
+                No eran consideradas ingenieras. Solo asistentes técnicas.
+              </p>
             </article>
 
-            <figure>
-                <img src="ok.dw.jpg" alt="ENIAC">
-            </figure>
+            <!-- Texto puente -->
+            <div class="contexto-claim">
+              <p>La programación aún no existía.</p>
+              <strong>ELLAS LA INVENTARON</strong>
+            </div>
 
-            <article class="a1945">
-                <span>1945</span>
-                <h3>NACE ENIAC</h3>
-                <p>
+            <!-- CARD 3 -->
+            <article class="contexto-card contexto-card--last">
+              <span class="contexto-year">1945</span>
+              <h3>NACE ENIAC</h3>
+
+              <p>
                 El ENIAC fue el primer ordenador electrónico de gran escala.
-                -Diseñado para cálculos militares
-                -Programado manualmente con cables y paneles
-                -No existía el concepto de “programador”
-                La programación aún no existía.
-                Ellas la inventaron.
-                </p>
+              </p>
+              <p>
+                Diseñado para cálculos militares, y programado manualmente con cables y paneles.
+              </p>
+              <p>
+                No existía el software: se programaba moviendo cables y paneles manualmente. Un reto físico y lógico.
+              </p>
             </article>
+
+            <!-- puntos -->
+            <span class="contexto-dot contexto-dot--1"></span>
+            <span class="contexto-dot contexto-dot--2"></span>
+            <span class="contexto-dot contexto-dot--3"></span>
+
+            <!-- conectores -->
+            <span class="contexto-connector contexto-connector--1"></span>
+            <span class="contexto-connector contexto-connector--2"></span>
+            <span class="contexto-connector contexto-connector--3"></span>
+          </div>
+
+          <div class="contexto-bottom-mark">
+            <span class="contexto-bottom-line"></span>
+            <span class="contexto-bottom-circle">⌄</span>
+          </div>
+        </div>
+
+        <section id="eniac" class="section section--eniac">
+            <div class="eniac--sticky">
+                <h2>Electronic Numerical Integrator and Computer</h2>
+                <div class="eniac--figure-area">
+                    <div class="eniac--figures">
+                        <figure class="eniac--figure active">
+                            <img src="assets/img/inventores-eniac.webp" alt="Inventores del ENIAC">
+                            <figcaption>El físico John Mauchly y el ingeniero electrónico J. Presper Eckert</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC">
+                            <figcaption>Los 17.468 tubos de vacío que alimentaban el ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/ilustracion eniac.png" alt="Ilustración del ENIAC">
+                            <figcaption>Ilustración técnica del ENIAC</figcaption>
+                        </figure>
+                        <figure class="eniac--figure">
+                            <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC">
+                            <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
+                        </figure>
+                    </div>
+                    <div class="eniac--nav">
+                        <button class="eniac--btn eniac--btn-prev" aria-label="Anterior">
+                            <img src="assets/img/flecha-izq.svg" alt="Anterior">
+                        </button>
+                        <button class="eniac--btn eniac--btn-next" aria-label="Siguiente">
+                            <img src="assets/img/flecha-der.svg" alt="Siguiente">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="eniac--stats">
+                    <div class="stat">
+                        <span class="stat--number">27</span>
+                        <span class="stat--label">toneladas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat--number">167</span>
+                        <span class="stat--label">metros cuadrados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat--number">5.000</span>
+                        <span class="stat--label">operaciones/seg</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat--number">17.468</span>
+                        <span class="stat--label">tubos de vacío</span>
+                    </div>
+                </div>
+
+                <div class="eniac--texts">
+                    <div class="eniac--text active">
+                        <h3>Creadores</h3>
+                        <p>John Mauchly y John Presper Eckert diseñaron la ENIAC en la Universidad de Pensilvania para el ejército estadounidense con el objetivo de calcular trayectorias balísticas.</p>
+                        <h3>Propósito</h3>
+                        <p>Fue uno de los primeros ordenadores electrónicos de gran escala. Fue creado para realizar cálculos complejos miles de veces más rápido que cualquier humano.</p>
+                        <h3>Escala</h3>
+                        <p>ENIAC ocupaba 167 metros cuadrados y pesaba aproximadamente 27 toneladas. Era una de las computadoras más grandes construidas hasta ese momento, distribuyéndose a lo largo de una gran sala. </p>
+                    </div>
+                    <div class="eniac--text">
+                        <h3>Componentes</h3>
+                        <p>ENIAC contaba con 17,468 tubos de vacío, 70,000 resistencias, 10,000 condensadores y 7,200 diodos de cristal. </p>
+                        <h3>Funcionamiento</h3>
+                        <p>Cada tubo de vacío funcionaba como un interruptor electrónico, permitiendo que los circuitos realizaran operaciones lógicas.</p>
+                        <h3>Digitalización</h3>
+                        <p>En lugar de utilizar métodos mecánicos o electromagnéticos para representar datos, ENIAC usaba pulsos eléctricos para manipular la información en binario (1 y 0). </p>
+                    </div>
+                    <div class="eniac--text">
+                        <h3>Programación</h3>
+                        <p>Para programar ENIAC, sus operadoras debían manipular más de 6,000 interruptores y conectar un entramado de cables de manera física.</p>
+                        <h3>Dificultad</h3>
+                        <p>Cada nueva tarea requería una reconfiguración manual, lo que podía tomar días o incluso semanas. Este proceso era tedioso, lo que impulsó el desarrollo de un programación y la automatización de procesos.</p>
+                        <h3>Capacidades</h3>
+                        <p>Podía realizar 5,000 sumas o 300 multiplicaciones por segundo, algo insignificante hoy en día pero revolucionario para la época. </p>
+                    </div>
+                    <div class="eniac--text">
+                        <h3>Consumo energético</h3>
+                        <p>Consumía aproximadamente 150 kW a 160 kW, generando apagones ocasionales en la ciudad de Filadelfia.</p>
+                        <h3>Calor</h3>
+                        <p>Para evitar el sobrecalentamiento, era necesario instalar sistemas de ventilación avanzados y en ocasiones incluso abrir puertas y ventanas para permitir la disipación del calor.</p>
+                        <h3>Fallas</h3>
+                        <p>Se estima que cada 48 horas una o varias de estas válvulas fallaban, interrumpiendo el funcionamiento del sistema. Comenzaron a dejarlo encedido continuamente para minimizar estos problemas. </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section id="secret" class="section section--secret">
+            <h2>Su Legado</h2>
+        </section>
 
-<section class="impacto">
-    <h2>PROYECTO ENIAC</h2>
-    
-</section>
+        <section id="entrevista" class="section section--entrevista">
+            <h2>Su Legado</h2>
+        </section>
+        <section id="revista" class="section section--revista">
+            <h2>Su Legado</h2>
+        </section>
 
-<section class="eniacsix">
-    <h2>LAS SEIS PROGRAMADORAS</h2>
-</section>
+        <footer id="footer" class="section section--footer">
+            <h3>© 2024 Arquitectas del Ciberespacio</h3>
+        </footer>
+    </main>
 
-<section class="entrevista">
-    <h2>ENTREVISTA</h2>
-</section>
-
+    <script src="js/scripts.js"></script>
 </body>
+
 </html>
