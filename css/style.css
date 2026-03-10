@@ -38,7 +38,7 @@
   --color-accent: #ef4035;
 
   --color-background-primary: #edeae1;
-  --color-background-secondary: #06080a;
+  --color-backsground-secondary: #06080a;
 
   /* Espaciado */
   --space-small: 0.5rem;
@@ -49,6 +49,7 @@
   --radius: 8px;
   --transition-base: 0.3s ease;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 /* ── BASE ───────────────────────────────────────────────────────────────── */
@@ -410,9 +411,9 @@ header {
   border-radius: var(--radius);
   padding: 2rem;
   color: var(--color-text);
+  box-shadow: var(--box-shadow);
   
 }
-
 
 .secret-card h2,
 .secret-feature h2,
@@ -424,12 +425,11 @@ header {
 }
 
 .secret-card h2 {
-  font-size: clamp(1.2rem, 2vw, 2rem);
   margin: 1.1rem 0 1rem;
 }
 
 .secret-card p {
-  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  font-size: var(--text-base);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -438,6 +438,7 @@ header {
   width: 100%;
   display: block;
   margin: 1rem 0;
+  border-radius: var(--radius);
 }
 
 .secret-card--left {
@@ -448,27 +449,31 @@ header {
 .secret-card--right {
   right: 0;
   top: 18rem;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-background-primary);
+}
+
+.secret-card--right img{
+  filter: grayscale(100%);
+  transition: ease-out 0.5s;
+}
+
+.secret-card--right img:hover {
+  filter: grayscale(0%);
+  transition: ease-in 0.5s;
 }
 
 .secret-year {
   display: inline-block;
   padding: 0.75rem 1rem 0.55rem;
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  font-size: var(--text-h4);
   line-height: 1;
   color: var(--color-light);
+  background: var(--color-accent);
 }
 
-.secret-year--red {
-  background: #a94741;
-}
 
-.secret-year--gray {
-  background: #7d776f;
-}
 
+/* puntos timeline */
 .secret-dot {
   position: absolute;
   left: 50%;
@@ -491,6 +496,7 @@ header {
 .secret-dot--bottom {
   bottom: 0;
 }
+
 
 /* FRASE PUENTE */
 .secret-bridge {
@@ -672,6 +678,14 @@ header {
   .eniac--text {
     font-size: 0.875rem;
   }
+
+
+  /* SECCIÓN -- INVISIBILIZACIÓN -- TIMELINE */
+
+  .secret-connector {
+    display: none;
+  }
+
 }
 
 /* Tablet landscape / small desktop (≥1024px) */
