@@ -181,7 +181,10 @@ header a.active {
     letter-spacing: 0.15rem;
 }
 
-.section--hero button{
+.section--hero .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 3rem;
     background-color: var(--color-secondary);
     color: var(--color-background-primary);
@@ -189,13 +192,11 @@ header a.active {
     width: 150px;
     height: 40px;
     border-radius: var(--radius);
-    font-size: var(--transition-base);
-    border: none;
+    text-decoration: none;
     transition: ease-out 0.2s;
-
 }
 
-.section--hero button:hover{
+.section--hero .btn:hover {
     background-color: var(--color-primary);
     transition: ease-in 0.2s;
 }
@@ -249,6 +250,7 @@ header a.active {
     grid-area: figure;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .eniac--figures {
@@ -256,31 +258,36 @@ header a.active {
 }
 
 .eniac--nav {
+    position: absolute;
+    bottom: 2rem;
+    right: 0.5rem;
     display: flex;
-    justify-content: flex-end;
     gap: 0.25rem;
-    margin-top: 0.25rem;
+    z-index: 2;
 }
 
 .eniac--btn {
-    background: none;
+    background: var(--color-card);
     border: none;
-    padding: 0;
+    border-radius: var(--radius);
+    padding: 0.5rem 0.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     color: var(--color-secondary);
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: 0.75;
+    transition: ease-out 0.2s;
+    box-shadow: var(--box-shadow);
 }
 
 .eniac--btn:hover {
-    opacity: 1;
+    opacity: 0.85;
+    transition:  ease-in 0.2s;
 }
 
 .eniac--btn img {
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
 }
 
 .eniac--figure {
@@ -320,6 +327,7 @@ header a.active {
     object-fit: cover;
     display: block;
     border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
 }
 
 .eniac--figure figcaption {
@@ -347,6 +355,7 @@ header a.active {
     padding: 0.6rem 0.75rem;
     border-radius: var(--radius);
     text-align: center;
+    box-shadow: var(--box-shadow);
 }
 
 .stat--number {
@@ -355,6 +364,11 @@ header a.active {
     font-size: clamp(1.2rem, 4vw, 1.6rem);
     font-weight: 700;
     color: var(--color-secondary);
+    transition: opacity 0.2s ease;
+}
+
+.stat--number.stat--fade {
+    opacity: 0;
 }
 
 .stat--label {
@@ -744,8 +758,8 @@ header a.active {
     }
 
     .eniac--btn img {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .stat {
@@ -811,7 +825,7 @@ header a.active {
     }
 
     .eniac--texts {
-        margin-top: 0.5rem;
+        margin-top: 0.1rem;
     }
 
     .eniac--stats {
@@ -819,6 +833,13 @@ header a.active {
         align-self: center;
         margin-bottom: 5rem;
     }
+    .eniac--btn{
+        margin-bottom: 0.5rem;
+    }.eniac--btn img {
+        width: 3rem;
+        height: 3rem;
+    }
+
 
     .stat {
         padding: 0.7rem 0.7rem;
