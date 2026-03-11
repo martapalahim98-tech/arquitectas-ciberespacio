@@ -115,6 +115,27 @@ const eniacFigures = document.querySelectorAll(".eniac--figure");
 const eniacTexts = document.querySelectorAll(".eniac--text");
 let currentEniacSlide = 0;
 
+/* Stats data read from each slide's data-stats attribute in the HTML */
+const slideStats = [...eniacFigures].map(fig => JSON.parse(fig.dataset.stats));
+
+function updateStats(slideIndex) {
+    const stats = slideStats[slideIndex];
+    if (!stats) return;
+
+    statNumbers.forEach((el, i) => {
+        const labelEl = el.nextElementSibling; // .stat--label
+        el.classList.add("stat--fade");
+
+        setTimeout(() => {
+            el.dataset.formatted = stats[i].formatted;
+            el.dataset.target = stats[i].number;
+            if (labelEl) labelEl.textContent = stats[i].label;
+            el.classList.remove("stat--fade");
+            animateCounter(el, parseFloat(stats[i].number));
+        }, 200);
+    });
+}
+
 function changeEniacSlide(newIndex, goingNext) {
     const oldFigure = eniacFigures[currentEniacSlide];
     const newFigure = eniacFigures[newIndex];
@@ -141,6 +162,9 @@ function changeEniacSlide(newIndex, goingNext) {
     newText.classList.add("active");
 
     currentEniacSlide = newIndex;
+
+    // Update stats for the new slide
+    updateStats(newIndex);
 
     // Clean up exit classes after transition
     setTimeout(() => oldFigure.classList.remove("exit-left", "exit-right"), 400);

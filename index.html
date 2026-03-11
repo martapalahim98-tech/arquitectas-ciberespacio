@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="">
     <title>ENIAC 6</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -32,40 +31,70 @@
             <h2>ENIAC 6</h2>
             <p>Las primeras programadoras del mundo.</p>
             <p>-Reivindicamos su impacto en la historia de la computación-</p>
-            <button><a href="#contexto">Conoce más</a></button>
+            <a href="#contexto" class="btn">Conoce más</a>
         </section>
 
-      <section id="contexto" class="section section--contexto">
-      </section>
+        <section id="contexto" class="section section--contexto">
+            <div id="intro">
+                <h2>Introducción</h2>
+                <p>En 1945, seis mujeres escribieron el futuro con sus manos. Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Ruth Lichterman y Frances Bilas cablearon, codificaron y ejecutaron los primeros programas de la historia de la computación moderna. El mundo aplaudió la máquina pero silenció sus nombres.</p>
+                <p>Durante décadas, la fotografía más famosa del ENIAC circuló sin pie de foto. Nadie preguntó quiénes eran las mujeres que aparecían en ella. Se asumió que eran modelos, decoración, fondo.</p>
+                <p>Este sitio existe para no olvidar. Para devolver el nombre a quienes el relato oficial convirtió en sombras. Porque la historia de la tecnología no puede contarse bien si se cuenta a medias.</p>
+            </div>
+        </section>
 
         <section id="eniac" class="section section--eniac">
             <div class="eniac--sticky">
                 <h2>Electronic Numerical Integrator and Computer</h2>
                 <div class="eniac--figure-area">
                     <div class="eniac--figures">
-                        <figure class="eniac--figure active">
+                        <figure class="eniac--figure active"
+                            data-stats='[
+                                {"number":"27",    "formatted":"27",     "label":"toneladas"},
+                                {"number":"167",   "formatted":"167",    "label":"metros cuadrados"},
+                                {"number":"5000",  "formatted":"5.000",  "label":"operaciones/seg"},
+                                {"number":"17468", "formatted":"17.468", "label":"tubos de vacío"}
+                            ]'>
                             <img src="assets/img/inventores-eniac.webp" alt="Inventores del ENIAC">
                             <figcaption>El físico John Mauchly y el ingeniero electrónico J. Presper Eckert</figcaption>
                         </figure>
-                        <figure class="eniac--figure">
+                        <figure class="eniac--figure"
+                            data-stats='[
+                                {"number":"1500",  "formatted":"1.500",  "label":"relés"},
+                                {"number":"70000", "formatted":"70.000", "label":"resistencias"},
+                                {"number":"10000", "formatted":"10.000", "label":"condensadores"},
+                                {"number":"7200",  "formatted":"7.200",  "label":"diodos de cristal"}
+                            ]'>
                             <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC">
                             <figcaption>Los 17.468 tubos de vacío que alimentaban el ENIAC</figcaption>
                         </figure>
-                        <figure class="eniac--figure">
-                            <img src="assets/img/ilustracion eniac.png" alt="Ilustración del ENIAC">
+                        <figure class="eniac--figure"
+                            data-stats='[
+                                {"number":"6000", "formatted":"6.000", "label":"interruptores"},
+                                {"number":"5000", "formatted":"5.000", "label":"sumas/seg"},
+                                {"number":"300",  "formatted":"300",   "label":"multiplicac./seg"},
+                                {"number":"2",    "formatted":"2",     "label":"semanas de config."}
+                            ]'>
+                            <img src="assets/img/ilustracion-eniac.png" alt="Ilustración del ENIAC">
                             <figcaption>Ilustración técnica del ENIAC</figcaption>
                         </figure>
-                        <figure class="eniac--figure">
+                        <figure class="eniac--figure"
+                            data-stats='[
+                                {"number":"150",  "formatted":"150",  "label":"kW de consumo"},
+                                {"number":"160",  "formatted":"160",  "label":"kW máximos"},
+                                {"number":"48",   "formatted":"48",   "label":"horas por fallo"},
+                                {"number":"1945", "formatted":"1945", "label":"año de creación"}
+                            ]'>
                             <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC">
                             <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
                         </figure>
                     </div>
                     <div class="eniac--nav">
                         <button class="eniac--btn eniac--btn-prev" aria-label="Anterior">
-                            <img src="assets/img/flecha-izq.svg" alt="Anterior">
+                            <img src="assets/img/flecha-izquierda-azul.svg" alt="Anterior">
                         </button>
                         <button class="eniac--btn eniac--btn-next" aria-label="Siguiente">
-                            <img src="assets/img/flecha-der.svg" alt="Siguiente">
+                            <img src="assets/img/flecha-derecha-azul.svg" alt="Siguiente">
                         </button>
                     </div>
                 </div>
@@ -126,12 +155,9 @@
             </div>
         </section>
 
+    <!-- SECCIÓN--INVISIBILIZACIÓN--TIMELINE -->
         <section id="secret" class="section section--secret">
-            <h2>Su Legado</h2>
-        </section>
-
-      <!-- SECCIÓN -- INVISIBILIZACIÓN -- TIMELINE -->
-        <section id="secret" class="section section--secret">
+            <h2>Secret Rosies</h2>
             <div class="secret-wrapper">
                 <!-- TIMELINE: historia oficial + olvido -->
                 <div class="secret-timeline">
