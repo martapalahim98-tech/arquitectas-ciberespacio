@@ -180,7 +180,10 @@ header a.active {
     letter-spacing: 0.15rem;
 }
 
+<<<<<<< ingrid
 /* Botón hero: <a class="btn"> en lugar de <button><a> */
+=======
+>>>>>>> main
 .section--hero .btn {
     display: inline-flex;
     align-items: center;
@@ -193,7 +196,10 @@ header a.active {
     height: 40px;
     border-radius: var(--radius);
     text-decoration: none;
+<<<<<<< ingrid
     opacity: 1;
+=======
+>>>>>>> main
     transition: ease-out 0.2s;
 }
 
@@ -274,7 +280,11 @@ header a.active {
     background: var(--color-card);
     border: none;
     border-radius: var(--radius);
+<<<<<<< ingrid
     padding: 0.5rem;
+=======
+    padding: 0.5rem 0.5rem;
+>>>>>>> main
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -286,7 +296,11 @@ header a.active {
 
 .eniac--btn:hover {
     opacity: 0.85;
+<<<<<<< ingrid
     transition: ease-in 0.2s;
+=======
+    transition:  ease-in 0.2s;
+>>>>>>> main
 }
 
 .eniac--btn img {
@@ -1114,6 +1128,13 @@ footer ul a:hover {
         align-self: center;
         margin-bottom: 5rem;
     }
+    .eniac--btn{
+        margin-bottom: 0.5rem;
+    }.eniac--btn img {
+        width: 3rem;
+        height: 3rem;
+    }
+
 
     .eniac--btn {
         margin-bottom: 0.5rem;
