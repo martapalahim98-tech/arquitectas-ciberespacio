@@ -1104,7 +1104,8 @@ footer ul a:hover {
             "h2     h2"
             "figure stats"
             "texts  texts";
-        gap: 0.5rem;
+        row-gap: 0.5rem;
+        column-gap: 2rem;
         padding: 5rem 10%;
     }
 
@@ -1113,6 +1114,7 @@ footer ul a:hover {
         flex-direction: column;
         gap: 0.5rem;
         align-self: stretch;
+        justify-content: center;
     }
 
     .eniac--btn img {

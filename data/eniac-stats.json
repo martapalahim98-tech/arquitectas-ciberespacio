@@ -1,0 +1,38 @@
+[
+    {
+        "slide": "Escala / Overview",
+        "stats": [
+            { "value": 27,    "label": "toneladas" },
+            { "value": 167,   "label": "metros cuadrados" },
+            { "value": 5000,  "label": "operaciones/seg" },
+            { "value": 17468, "label": "tubos de vacío" }
+        ]
+    },
+    {
+        "slide": "Componentes",
+        "stats": [
+            { "value": 1500,  "label": "relés" },
+            { "value": 70000, "label": "resistencias" },
+            { "value": 10000, "label": "condensadores" },
+            { "value": 7200,  "label": "diodos de cristal" }
+        ]
+    },
+    {
+        "slide": "Programación",
+        "stats": [
+            { "value": 6000, "label": "interruptores" },
+            { "value": 5000, "label": "sumas/seg" },
+            { "value": 300,  "label": "multiplicac./seg" },
+            { "value": 2,    "label": "semanas de config." }
+        ]
+    },
+    {
+        "slide": "Consumo energético",
+        "stats": [
+            { "value": 150,  "label": "kW de consumo" },
+            { "value": 160,  "label": "kW máximos" },
+            { "value": 48,   "label": "horas por fallo" },
+            { "value": 1945, "label": "año de creación" }
+        ]
+    }
+]
