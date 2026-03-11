@@ -181,7 +181,10 @@ header a.active {
     letter-spacing: 0.15rem;
 }
 
-.section--hero button{
+.section--hero .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 3rem;
     background-color: var(--color-secondary);
     color: var(--color-background-primary);
@@ -189,13 +192,11 @@ header a.active {
     width: 150px;
     height: 40px;
     border-radius: var(--radius);
-    font-size: var(--transition-base);
-    border: none;
+    text-decoration: none;
     transition: ease-out 0.2s;
-
 }
 
-.section--hero button:hover{
+.section--hero .btn:hover {
     background-color: var(--color-primary);
     transition: ease-in 0.2s;
 }
@@ -249,6 +250,7 @@ header a.active {
     grid-area: figure;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .eniac--figures {
@@ -256,31 +258,36 @@ header a.active {
 }
 
 .eniac--nav {
+    position: absolute;
+    bottom: 2rem;
+    right: 0.5rem;
     display: flex;
-    justify-content: flex-end;
     gap: 0.25rem;
-    margin-top: 0.25rem;
+    z-index: 2;
 }
 
 .eniac--btn {
-    background: none;
+    background: var(--color-card);
     border: none;
-    padding: 0;
+    border-radius: var(--radius);
+    padding: 0.5rem 0.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     color: var(--color-secondary);
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: 0.75;
+    transition: ease-out 0.2s;
+    box-shadow: var(--box-shadow);
 }
 
 .eniac--btn:hover {
-    opacity: 1;
+    opacity: 0.85;
+    transition:  ease-in 0.2s;
 }
 
 .eniac--btn img {
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
 }
 
 .eniac--figure {
@@ -320,6 +327,7 @@ header a.active {
     object-fit: cover;
     display: block;
     border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
 }
 
 .eniac--figure figcaption {
@@ -347,6 +355,7 @@ header a.active {
     padding: 0.6rem 0.75rem;
     border-radius: var(--radius);
     text-align: center;
+    box-shadow: var(--box-shadow);
 }
 
 .stat--number {
@@ -355,6 +364,11 @@ header a.active {
     font-size: clamp(1.2rem, 4vw, 1.6rem);
     font-weight: 700;
     color: var(--color-secondary);
+    transition: opacity 0.2s ease;
+}
+
+.stat--number.stat--fade {
+    opacity: 0;
 }
 
 .stat--label {
@@ -646,6 +660,129 @@ header a.active {
 }
 
 
+/* ── ENTREVISTA SECTION ──────────────────────────────────────────────────── */
+.section--entrevista {
+    background: var(--color-background-secondary);
+    color: var(--color-background-primary);
+    align-items: center;
+    padding: 4rem 6%;
+    gap: 1.25rem;
+}
+
+.section--entrevista h2 {
+    color: var(--color-background-primary);
+    margin-bottom: 0;
+}
+
+.section--entrevista small {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
+}
+
+/* AUDIO */
+.section--entrevista audio {
+    width: 100%;
+    max-width: 700px;
+    accent-color: var(--color-accent);
+    border-radius: var(--radius);
+    background: #1a1e22;
+    padding: 0.4rem 0.75rem;
+    color-scheme: dark;
+}
+
+/* TRANSCRIPT */
+.entrevista-transcript {
+    list-style: none;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: auto;
+    scroll-snap-type: both mandatory;
+    max-height: 60vh;
+    padding-right: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.entrevista-transcript li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    max-width: 88%;
+    scroll-snap-align: start;
+    animation: msgFadeIn 0.4s ease both;
+}
+
+@keyframes msgFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Entrevistadora: derecha */
+.entrevista-transcript li[data-role="periodista"] {
+    flex-direction: row-reverse;
+    align-self: flex-end;
+}
+
+/* Invitada: izquierda */
+.entrevista-transcript li[data-role="invitada"] {
+    align-self: flex-start;
+}
+
+/* Avatar circular */
+.entrevista-transcript li > img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.08);
+}
+
+/* Contenedor nombre + burbuja */
+.entrevista-transcript li article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.entrevista-transcript li article h4 {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    opacity: 0.85;
+}
+
+.entrevista-transcript li[data-role="periodista"] article h4 {
+    text-align: right;
+}
+
+/* Burbuja base — igual para ambos roles */
+.entrevista-transcript li article p {
+    background: #1e2428;
+    color: var(--color-background-primary);
+    border-radius: 0.75rem;
+    padding: 0.8rem 1rem;
+    font-size: clamp(0.85rem, 1.4vw, 0.975rem);
+    line-height: 1.7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Entrevistadora: esquina derecha recta */
+.entrevista-transcript li[data-role="periodista"] article p {
+    background: var(--color-primary);
+    border-top-right-radius: 0;
+}
+
+/* Invitada: esquina izquierda recta */
+.entrevista-transcript li[data-role="invitada"] article p {
+    border-top-left-radius: 0;
+}
 
 
 /* ── MEDIA QUERIES ──────────────────────────────────────────────────────── */
@@ -705,6 +842,13 @@ header a.active {
         font-size: 0.8rem;
     }
 
+    .section--entrevista {
+        padding: 5rem 10%;
+    }
+
+    .entrevista-transcript {
+        margin-top: 2rem;
+    }
 }
 
 /* Tablet landscape / small desktop (≥1024px) */
@@ -744,8 +888,8 @@ header a.active {
     }
 
     .eniac--btn img {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .stat {
@@ -801,6 +945,17 @@ header a.active {
     .eniac--text.active :nth-child(6) {
         transition-delay: 0.7s;
     }
+
+    .section--entrevista {
+        padding: 5rem 15%;
+    }
+
+    .entrevista-transcript {
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        max-height: 55vh;
+    }
 }
 
 /* Desktop (≥1280px) */
@@ -811,7 +966,7 @@ header a.active {
     }
 
     .eniac--texts {
-        margin-top: 0.5rem;
+        margin-top: 0.1rem;
     }
 
     .eniac--stats {
@@ -819,6 +974,13 @@ header a.active {
         align-self: center;
         margin-bottom: 5rem;
     }
+    .eniac--btn{
+        margin-bottom: 0.5rem;
+    }.eniac--btn img {
+        width: 3rem;
+        height: 3rem;
+    }
+
 
     .stat {
         padding: 0.7rem 0.7rem;
