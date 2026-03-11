@@ -115,8 +115,37 @@ const eniacFigures = document.querySelectorAll(".eniac--figure");
 const eniacTexts = document.querySelectorAll(".eniac--text");
 let currentEniacSlide = 0;
 
-/* Stats data read from each slide's data-stats attribute in the HTML */
-const slideStats = [...eniacFigures].map(fig => JSON.parse(fig.dataset.stats));
+/* Stats data for each slide */
+const slideStats = [
+    // Slide 0: Escala / Overview
+    [
+        { number: "27",     formatted: "27",      label: "toneladas" },
+        { number: "167",    formatted: "167",     label: "metros cuadrados" },
+        { number: "5000",   formatted: "5.000",   label: "operaciones/seg" },
+        { number: "17468",  formatted: "17.468",  label: "tubos de vacío" },
+    ],
+    // Slide 1: Componentes
+    [
+        { number: "1500",   formatted: "1.500",   label: "relés" },
+        { number: "70000",  formatted: "70.000",  label: "resistencias" },
+        { number: "10000",  formatted: "10.000",  label: "condensadores" },
+        { number: "7200",   formatted: "7.200",   label: "diodos de cristal" },
+    ],
+    // Slide 2: Programación
+    [
+        { number: "6000",   formatted: "6.000",   label: "interruptores" },
+        { number: "5000",   formatted: "5.000",   label: "sumas/seg" },
+        { number: "300",    formatted: "300",     label: "multiplicac./seg" },
+        { number: "2",      formatted: "2",       label: "semanas de config." },
+    ],
+    // Slide 3: Consumo energético
+    [
+        { number: "150",    formatted: "150",     label: "kW de consumo" },
+        { number: "160",    formatted: "160",     label: "kW máximos" },
+        { number: "48",     formatted: "48",      label: "horas por fallo" },
+        { number: "1945",   formatted: "1945",    label: "año de creación" },
+    ],
+];
 
 function updateStats(slideIndex) {
     const stats = slideStats[slideIndex];
