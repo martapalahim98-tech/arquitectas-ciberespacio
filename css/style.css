@@ -96,15 +96,15 @@ svg {
 /* ── Button Top ────────────────────────────────────────────────────────── */
 .btn-top {
     position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    width: 3.5rem;
-    height: 3.5rem;
+    right: 1rem;
+    bottom: 6rem;
+    width: 2rem;
+    height: 2rem;
     border: none;
     border-radius: 50%;
     background: var(--color-accent);
     color: var(--color-light);
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -139,6 +139,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
+}
+
+header a {
+    text-decoration: none;
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -323,6 +327,12 @@ header {
     transition: ease-in 0.2s;
 }
 
+/* ── INTRODUCCION SECTION ───────────────────────────────────────────────────── */
+#intro {
+    max-width: 1200px;
+    margin: 4rem;
+}
+
 /* ── CONTEXTO SECTION ───────────────────────────────────────────────────── */
 .section--contexto {
     min-height: auto;
@@ -356,6 +366,10 @@ header {
     width: 2px;
     background: var(--color-border);
     opacity: 0.8;
+}
+
+.contexto-wrapper h2 {
+    padding-left: 4rem;
 }
 
 .contexto-card {
@@ -732,8 +746,6 @@ header {
 }
 
 #rosies-gallery .cards-header {
-    text-align: center;
-    padding: 0 10%;
     margin-bottom: 2rem;
 }
 
@@ -956,28 +968,6 @@ header {
     display: none;
 }
 
-/* FRASE PUENTE */
-.secret-bridge {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 1rem;
-    margin: 2.5rem 0;
-}
-
-.secret-bridge span {
-    display: block;
-    height: 1px;
-    border-top: 2px dashed rgba(0, 0, 0, 0.35);
-}
-
-.secret-bridge p {
-    font-family: var(--font-subheading);
-    font-size: clamp(1.2rem, 5vw, 2rem);
-    text-align: center;
-    color: var(--color-text);
-    line-height: 1.2;
-}
 
 /* REDISCOVERY */
 .secret-rediscovery {
@@ -1403,6 +1393,10 @@ footer ul a:hover {
     overflow: hidden;
 }
 
+.modal p {
+    margin: 1rem 0;
+}
+
 .modal::backdrop {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
@@ -1664,9 +1658,9 @@ footer ul a:hover {
         padding: 1.75rem;
     }
 
-    /* .contexto-bottom-mark {
+    .contexto-bottom-mark {
         margin-top: 20%;
-    } */
+    }
 
     /* ENIAC SECTION */
     .eniac--sticky {
@@ -1754,6 +1748,13 @@ footer ul a:hover {
 
 /* Tablet landscape / small desktop (≥1024px) */
 @media (min-width: 1024px) {
+    .btn-top {
+        right: 3rem;
+        bottom: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
     header {
         padding: 0 10%;
     }
@@ -1831,7 +1832,6 @@ footer ul a:hover {
     .contexto-card--last {
         grid-column: 1;
         justify-self: end;
-        border: 1px solid var(--color-accent);
     }
 
     .contexto-claim {

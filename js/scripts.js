@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (data) {
                 modalImg.src = data.image;
                 modalTitle.textContent = data.title;
-                modalDetail.textContent = data.detail;
+                modalDetail.innerHTML = data.detail;
                 modal.showModal();
                 // Prevenir scroll del body al abrir
                 document.body.style.overflow = 'hidden';
