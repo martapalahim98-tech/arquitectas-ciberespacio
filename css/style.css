@@ -96,15 +96,15 @@ svg {
 /* ── Button Top ────────────────────────────────────────────────────────── */
 .btn-top {
     position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    width: 3.5rem;
-    height: 3.5rem;
+    right: 1rem;
+    bottom: 6rem;
+    width: 2rem;
+    height: 2rem;
     border: none;
     border-radius: 50%;
     background: var(--color-accent);
     color: var(--color-light);
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -138,6 +138,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
+}
+
+header a {
+    text-decoration: none;
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -423,8 +427,14 @@ header {
     z-index: 2;
 }
 
-.contexto-dot--1 { top: 2rem; }
-.contexto-dot--2 { top: 50%; }
+.contexto-dot--1 {
+    top: 2rem;
+}
+
+.contexto-dot--2 {
+    top: 50%;
+}
+
 .contexto-dot--3 {
     top: auto;
     bottom: 1rem;
@@ -472,7 +482,8 @@ header {
 
 .contexto-bottom-circle {
     position: absolute;
-    top: 3rem; /* aligned to the dashed line */
+    top: 3rem;
+    /* aligned to the dashed line */
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
@@ -704,8 +715,6 @@ header {
 }
 
 #rosies-gallery .cards-header {
-    text-align: center;
-    padding: 0 10%;
     margin-bottom: 2rem;
 }
 
@@ -908,8 +917,14 @@ header {
     z-index: 2;
 }
 
-.secret-dot--top    { top: 2rem; }
-.secret-dot--middle { top: 50%; }
+.secret-dot--top {
+    top: 2rem;
+}
+
+.secret-dot--middle {
+    top: 50%;
+}
+
 .secret-dot--bottom {
     top: auto;
     bottom: 1rem;
@@ -1003,7 +1018,9 @@ header {
     gap: 1rem;
 }
 
-.secret-feature__media figure { margin: 0; }
+.secret-feature__media figure {
+    margin: 0;
+}
 
 .secret-feature__media img {
     width: 100%;
@@ -1585,6 +1602,13 @@ footer ul a:hover {
 
 /* Tablet landscape / small desktop (≥1024px) */
 @media (min-width: 1024px) {
+    .btn-top {
+        right: 3rem;
+        bottom: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
     header {
         padding: 0 10%;
     }
@@ -1681,7 +1705,8 @@ footer ul a:hover {
         content: '';
         position: absolute;
         top: 2.5rem;
-        right: -2rem;        /* half the column gap */
+        right: -2rem;
+        /* half the column gap */
         width: 2rem;
         height: 2px;
         background: var(--color-border);
@@ -1732,7 +1757,9 @@ footer ul a:hover {
     }
 
     /* Remove the standalone dot spans — no longer needed */
-    .contexto-dot { display: none; }
+    .contexto-dot {
+        display: none;
+    }
 
     .contexto-bottom-circle {
         top: 3rem;
@@ -1924,8 +1951,8 @@ footer ul a:hover {
         z-index: 3;
     }
 
-    .secret-dot { 
-        display: none; 
+    .secret-dot {
+        display: none;
     }
 
     .secret-bridge {
@@ -2056,7 +2083,7 @@ footer ul a:hover {
         align-content: start;
     }
 
-    .eniac--sticky h2{
+    .eniac--sticky h2 {
         margin-bottom: 2rem;
     }
 
