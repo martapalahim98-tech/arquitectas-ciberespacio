@@ -1198,13 +1198,13 @@ header {
 }
 
 /* Contenedor nombre + burbuja */
-.entrevista-transcript li article {
+.entrevista-transcript li div {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
 }
 
-.entrevista-transcript li article .speaker-name {
+.entrevista-transcript li div .speaker-name {
     font-family: var(--font-heading);
     font-size: 0.65rem;
     letter-spacing: 0.12em;
@@ -1215,12 +1215,12 @@ header {
     line-height: 1.2;
 }
 
-.entrevista-transcript li[data-role="periodista"] article .speaker-name {
+.entrevista-transcript li[data-role="periodista"] div .speaker-name {
     text-align: right;
 }
 
 /* Burbuja — solo al párrafo de texto, no al nombre */
-.entrevista-transcript li article p:not(.speaker-name) {
+.entrevista-transcript li div p:not(.speaker-name) {
     background: #1e2428;
     color: var(--color-background-primary);
     border-radius: 0.75rem;
@@ -1231,13 +1231,13 @@ header {
 }
 
 /* Entrevistadora: esquina derecha recta */
-.entrevista-transcript li[data-role="periodista"] article p:not(.speaker-name) {
+.entrevista-transcript li[data-role="periodista"] div p:not(.speaker-name) {
     background: var(--color-primary);
     border-top-right-radius: 0;
 }
 
 /* Invitada: esquina izquierda recta */
-.entrevista-transcript li[data-role="invitada"] article p:not(.speaker-name) {
+.entrevista-transcript li[data-role="invitada"] div p:not(.speaker-name) {
     border-top-left-radius: 0;
 }
 
