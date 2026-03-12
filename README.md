@@ -10,6 +10,7 @@ El objetivo del proyecto es dar a conocer tanto la importancia tecnológica del 
 ---
 
 ## Integrantes del grupo
+
 - Marta  
 - Jose  
 - Germán  
@@ -19,35 +20,35 @@ El objetivo del proyecto es dar a conocer tanto la importancia tecnológica del 
 ---
 
 ## Contenido del proyecto
+
 La página web está organizada en varias secciones:
 
-### Hero
+### Hero/Inicio
 Sección introductoria de la página.
 
-### Contexto histórico (Timeline)
+### Contexto (Timeline)
 Explicación del momento histórico en el que se creó el ENIAC.
 
-### Proyecto ENIAC
+### ENIAC
 Descripción de qué era el ENIAC, cómo funcionaba y para qué se utilizaba.
 
-### Impacto Militar vs Tecnológico
-Análisis del uso militar del ENIAC y su impacto posterior en el desarrollo tecnológico.
-
-### Invisibilización
+### Secret Rosies
 Explicación sobre las mujeres que programaron el ENIAC y cómo su trabajo fue invisibilizado durante años.
 
-### La historia se reescribe
-
-### Secret Rosies (Las seis)
+### Rosies Gallery
+Presentacion biografica de las protagonistas de la página y su relacion con el proyecto.
 
 ### Entrevista
+Entrevista/dialogo proyectada en una pantalla smartphone. Y audio de la entrevista.
 
-### Legado Tecnológico
-Impacto del ENIAC en el desarrollo de la informática y de los ordenadores actuales.
+
+### Documental
+Presentamos y damos acceso al documental de Youtube sobre las Six Eniac.
 
 ---
 
 ## Tecnologías utilizadas
+
 Para desarrollar el proyecto se han utilizado:
 
 - **HTML** para la estructura de la página  
@@ -66,6 +67,7 @@ Para desarrollar el proyecto se han utilizado:
 ---
 
 ## Estado del proyecto
+
 Proyecto realizado como **trabajo académico**.
 
 ---
@@ -73,6 +75,7 @@ Proyecto realizado como **trabajo académico**.
 # Diseño y estilo visual
 
 ## Inspiración
+
 La paleta de colores utilizada en el proyecto está inspirada en los **carteles y diseños gráficos de los años 40**, la época en la que se desarrolló el ENIAC.
 
 Se han utilizado tonos sobrios y ligeramente desaturados que recuerdan a los carteles informativos y propagandísticos de esa década. Esta elección busca reforzar el contexto histórico del proyecto y situar visualmente al usuario en el periodo en el que surgió el ENIAC.
@@ -83,10 +86,44 @@ El objetivo es que el diseño acompañe el contenido histórico y ayude a crear 
 
 ## Tipografía
 
-- **Tipografía para títulos:** utilizada para destacar las secciones principales.  
-- **Tipografía para texto:** utilizada para los párrafos y explicaciones.
+Para mantener una jerarquía visual clara y mejorar la legibilidad del contenido se han utilizado tres tipografías principales:
+
+- **League Spartan** — utilizada para los **títulos principales y encabezados**. Su estilo geométrico y moderno permite destacar las secciones de la página.
+- **Playfair Display** — utilizada para **subtítulos y elementos destacados**, aportando un estilo más editorial que recuerda a publicaciones históricas.
+- **DM Sans** — utilizada para el **texto principal**, ya que ofrece una lectura clara y cómoda en pantalla.
+
+Además, el diseño tipográfico utiliza **tamaños fluidos con `clamp()`**, lo que permite que el texto se adapte automáticamente a distintos tamaños de pantalla y mejore la experiencia en dispositivos móviles.
+
+---
+
+## Paleta de colores
+
+La página utiliza una paleta de colores equilibrada que combina tonos neutros con acentos más marcados para destacar elementos importantes.
+
+### Colores principales
+
+- Verde oscuro: `#3d5552`
+- Azul oscuro: `#37557b`
+- Rojo acento: `#ef4035`
+
+### Colores neutros
+
+- Fondo claro: `#edeae1`
+- Fondo oscuro: `#06080a`
+- Texto principal: `#333333`
+- Blanco: `#ffffff`
+
+### Colores de interfaz
+
+- Superficie: `#f5f5f5`
+- Tarjetas: `#e3dacc`
+
+Estos colores permiten crear contraste entre secciones, mejorar la legibilidad del contenido y resaltar elementos importantes dentro de la interfaz.
 
 ---
 
 ## Diseño
-Desde un punto de vista técnico, se ha buscado conseguir un **diseño claro y estructurado** para facilitar la lectura del contenido y aportar dinamismo a la presentación.
+
+Desde un punto de vista técnico, se ha buscado conseguir un **diseño claro, estructurado y responsive** que facilite la lectura del contenido y permita navegar de forma intuitiva por las diferentes secciones de la página.
+
+El uso de **espaciados consistentes, bordes suaves, sombras ligeras y transiciones** ayuda a crear una interfaz visualmente equilibrada y dinámica. Además, el diseño se adapta a diferentes tamaños de pantalla para garantizar una experiencia correcta tanto en ordenador como en dispositivos móviles.
