@@ -302,21 +302,190 @@ header {
     transition: ease-in 0.2s;
 }
 
-/* ── CONTEXTO ───────────────────────────────────────────────────────────── */
-#contexto {
-    align-items: flex-start;
+/* ── CONTEXTO SECTION ───────────────────────────────────────────────────── */
+.section--contexto {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: flex-start;
+    padding: 4rem 6% 5rem;
+    background: var(--color-background-primary);
 }
 
-#intro {
-    margin-top: 3rem;
+.contexto-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#intro p {
-    font-size: var(--text-base);
-    width: 60%;
-    padding-bottom: 0.5rem;
+/* TIMELINE — MOBILE FIRST */
+.contexto-timeline {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    padding-left: 2rem;
 }
+
+.contexto-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.45rem;
+    width: 2px;
+    background: var(--color-border);
+    opacity: 0.8;
+}
+
+.contexto-card {
+    position: relative;
+    width: 100%;
+    background: var(--color-card);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--box-shadow);
+}
+
+.contexto-card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0.9rem 0;
+}
+
+.contexto-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+}
+
+.contexto-card p:last-child {
+    margin-bottom: 0;
+}
+
+.contexto-card figure {
+    margin: 0 0 1rem;
+}
+
+.contexto-card figure:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.contexto-card img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.contexto-card figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    opacity: 0.65;
+    text-align: center;
+}
+
+/* FIX: target only the first figure's img, not all figures */
+.contexto-card--left figure:first-of-type img,
+.contexto-card--right figure:first-of-type img {
+    filter: grayscale(100%);
+    transition: var(--transition-base);
+}
+
+.contexto-card--left:hover figure:first-of-type img,
+.contexto-card--right:hover figure:first-of-type img {
+    filter: grayscale(0%);
+}
+
+.contexto-year {
+    display: inline-block;
+    padding: 0.75rem 1rem 0.55rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color-light);
+    background: var(--color-accent);
+    border-radius: var(--radius);
+}
+
+/* PUNTOS — MOBILE FIRST */
+.contexto-dot {
+    position: absolute;
+    left: 0.45rem;
+    transform: translate(-50%, -50%);
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--color-text);
+    border: 2px solid var(--color-background-primary);
+    z-index: 2;
+}
+
+.contexto-dot--1 { top: 2rem; }
+.contexto-dot--2 { top: 50%; }
+.contexto-dot--3 {
+    top: auto;
+    bottom: 1rem;
+    transform: translate(-50%, 50%);
+}
+
+/* CLAIM CENTRAL */
+.contexto-claim {
+    display: grid;
+    gap: 0.35rem;
+    align-content: center;
+    padding: 0.5rem 0;
+    color: var(--color-text);
+}
+
+.contexto-claim p {
+    font-family: var(--font-subheading);
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    line-height: 1.2;
+}
+
+.contexto-claim strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 6vw, 2.3rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--color-accent);
+}
+
+/* CIERRE INFERIOR */
+/* FIX: use padding-top instead of margin-top % so it works regardless of layout mode */
+.contexto-bottom-mark {
+    position: relative;
+    padding-top: 3rem;
+    height: 2.25rem;
+}
+
+.contexto-bottom-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-top: 2px dashed rgba(0, 0, 0, 0.35);
+}
+
+.contexto-bottom-circle {
+    position: absolute;
+    top: 3rem; /* aligned to the dashed line */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-background-secondary);
+    color: var(--color-light);
+    font-size: 1rem;
+    line-height: 1;
+}
+
 
 /* ── ENIAC SECTION ──────────────────────────────────────────────────────── */
 .section--eniac {
@@ -633,7 +802,7 @@ header {
     margin: 0 auto;
 }
 
-/* TIMELINE MOBILE FIRST */
+/* TIMELINE — MOBILE FIRST */
 .secret-timeline {
     position: relative;
     display: grid;
@@ -676,7 +845,7 @@ header {
 .secret-card h3 {
     font-size: clamp(1.15rem, 4vw, 1.5rem);
     line-height: 1.1;
-    margin: 0.9rem 0 0.9rem;
+    margin: 0.9rem 0;
 }
 
 .secret-card p {
@@ -697,6 +866,7 @@ header {
     width: 100%;
     display: block;
     border-radius: var(--radius);
+    object-fit: cover;
 }
 
 .secret-card figcaption {
@@ -738,14 +908,8 @@ header {
     z-index: 2;
 }
 
-.secret-dot--top {
-    top: 2rem;
-}
-
-.secret-dot--middle {
-    top: 50%;
-}
-
+.secret-dot--top    { top: 2rem; }
+.secret-dot--middle { top: 50%; }
 .secret-dot--bottom {
     top: auto;
     bottom: 1rem;
@@ -839,14 +1003,13 @@ header {
     gap: 1rem;
 }
 
-.secret-feature__media figure {
-    margin: 0;
-}
+.secret-feature__media figure { margin: 0; }
 
 .secret-feature__media img {
     width: 100%;
     display: block;
     border-radius: var(--radius);
+    object-fit: cover;
 }
 
 .secret-feature__media figcaption {
@@ -857,9 +1020,9 @@ header {
 }
 
 /* RECOGNITION */
+
 .secret-recognition {
     position: relative;
-    padding-left: 2rem;
 }
 
 .secret-recognition__card {
@@ -887,6 +1050,7 @@ header {
 .secret-recognition__card p:last-child {
     margin-bottom: 0;
 }
+
 
 /* ── ENTREVISTA SECTION ──────────────────────────────────────────────────── */
 .section--entrevista {
@@ -1321,6 +1485,29 @@ footer ul a:hover {
 
 /* Tablet portrait (≥768px) */
 @media (min-width: 768px) {
+
+    /* CONTEXTO SECTION */
+    .section--contexto {
+        padding: 5rem 8% 6rem;
+    }
+
+    .contexto-timeline {
+        padding-left: 2.5rem;
+    }
+
+    .contexto-line {
+        left: 0.6rem;
+    }
+
+    .contexto-card {
+        padding: 1.75rem;
+    }
+
+    /* .contexto-bottom-mark {
+        margin-top: 20%;
+    } */
+
+    /* ENIAC SECTION */
     .eniac--sticky {
         padding: 2rem 8% 2rem;
         gap: 1rem;
@@ -1356,8 +1543,7 @@ footer ul a:hover {
     }
 
     .secret-timeline,
-    .secret-rediscovery,
-    .secret-recognition {
+    .secret-rediscovery {
         padding-left: 2.5rem;
     }
 
@@ -1436,6 +1622,123 @@ footer ul a:hover {
         padding: 5rem 10%;
     }
 
+    /* CONTEXTO SECTION */
+
+    .section--contexto {
+        padding: 5rem 10% 7rem;
+    }
+
+    .contexto-timeline {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem 4rem;
+        padding-left: 0;
+    }
+
+    .contexto-line {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+    }
+
+    .contexto-card {
+        position: relative;
+        width: 100%;
+        max-width: 31rem;
+        padding: 2rem;
+    }
+
+    .contexto-card--left {
+        grid-column: 1;
+        justify-self: end;
+    }
+
+    .contexto-card--right {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 8rem;
+    }
+
+    .contexto-card--last {
+        grid-column: 1;
+        justify-self: end;
+        border: 1px solid var(--color-accent);
+    }
+
+    .contexto-claim {
+        grid-column: 2;
+        justify-self: start;
+        align-self: center;
+        position: relative;
+        width: 100%;
+        max-width: 30rem;
+        padding: 0;
+    }
+
+    /* Connector lines — left cards */
+    .contexto-card--left::after,
+    .contexto-card--last::after {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        right: -2rem;        /* half the column gap */
+        width: 2rem;
+        height: 2px;
+        background: var(--color-border);
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    .contexto-card--left::before,
+    .contexto-card--last::before {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        right: -2.5rem;
+        transform: translateY(-50%);
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
+    }
+
+    /* Connector lines — right cards */
+    .contexto-card--right::after {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        left: -2rem;
+        width: 2rem;
+        height: 2px;
+        background: var(--color-border);
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    .contexto-card--right::before {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        left: -2.5rem;
+        transform: translateY(-50%);
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
+    }
+
+    /* Remove the standalone dot spans — no longer needed */
+    .contexto-dot { display: none; }
+
+    .contexto-bottom-circle {
+        top: 3rem;
+    }
+
+    /* ENIAC SECTION */
     .eniac--sticky {
         grid-template-columns: 1.5fr 1fr;
         grid-template-rows: auto auto auto;
@@ -1540,9 +1843,10 @@ footer ul a:hover {
     }
 
     .secret-timeline {
-        min-height: 52rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem 4rem;
         padding-left: 0;
-        display: block;
     }
 
     .secret-timeline-line {
@@ -1552,92 +1856,76 @@ footer ul a:hover {
     }
 
     .secret-card {
-        position: absolute;
-        width: calc(50% - 2rem);
+        position: relative;
+        width: 100%;
         max-width: 31rem;
         padding: 2rem;
     }
 
     .secret-card--left {
-        left: 0;
-        top: 2rem;
+        grid-column: 1;
+        justify-self: end;
     }
 
     .secret-card--right {
-        right: 0;
-        top: 16rem;
+        grid-column: 2;
+        justify-self: start;
     }
 
-    /* Horizontal connector lines from vertical center line to each card */
-    .secret-connector {
-        display: block;
+    .secret-card--left::after {
+        content: '';
         position: absolute;
+        top: 2.5rem;
+        right: -2rem;
+        width: 2rem;
         height: 2px;
         background: var(--color-border);
         opacity: 0.8;
         z-index: 1;
     }
 
-    /* Left connector: from card right edge → center line */
-    .secret-connector--left {
-        top: 4rem;
-        left: min(calc(50% - 2rem), 31rem);
-        right: 50%;
-    }
-
-    /* Right connector: from center line → card left edge */
-    .secret-connector--right {
-        top: 18rem;
-        left: 50%;
-        right: min(calc(50% - 2rem), 31rem);
-    }
-
-    /* Dot at card-side end of left connector */
-    .secret-connector--left::before {
+    .secret-card--left::before {
         content: '';
         position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 0.75rem;
-        height: 0.75rem;
+        top: 2.5rem;
+        right: -2.5rem;
+        transform: translateY(-50%);
+        width: 0.85rem;
+        height: 0.85rem;
         border-radius: 50%;
         background: var(--color-text);
         border: 2px solid var(--color-background-primary);
         z-index: 3;
     }
 
-    /* Dot at card-side end of right connector */
-    .secret-connector--right::after {
+    .secret-card--right::after {
         content: '';
         position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translate(50%, -50%);
-        width: 0.75rem;
-        height: 0.75rem;
+        top: 2.5rem;
+        left: -2rem;
+        width: 2rem;
+        height: 2px;
+        background: var(--color-border);
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    .secret-card--right::before {
+        content: '';
+        position: absolute;
+        top: 2.5rem;
+        left: -2.5rem;
+        transform: translateY(-50%);
+        width: 0.85rem;
+        height: 0.85rem;
         border-radius: 50%;
         background: var(--color-text);
         border: 2px solid var(--color-background-primary);
         z-index: 3;
     }
 
-    .secret-dot {
-        left: 50%;
-        width: 1rem;
-        height: 1rem;
-    }
-
-    .secret-dot--top {
-        top: 4rem;
-    }
-
-    .secret-dot--middle {
-        top: 18rem;
-    }
-
-    .secret-dot--bottom {
-        bottom: 1.5rem;
+    .secret-dot { 
+        display: none; 
     }
 
     .secret-bridge {
@@ -1646,6 +1934,7 @@ footer ul a:hover {
 
     .secret-rediscovery {
         padding-left: 0;
+        margin-bottom: 2.5rem;
     }
 
     .secret-rediscovery-line {
@@ -1674,6 +1963,7 @@ footer ul a:hover {
 
     .secret-recognition__card {
         max-width: 1000px;
+        width: 100%;
         padding: 2rem;
     }
 
@@ -1726,6 +2016,41 @@ footer ul a:hover {
 
 /* Desktop (≥1280px) */
 @media (min-width: 1280px) {
+
+    /* CONTEXTO SECTION */
+    .contexto-timeline {
+        gap: 3rem 5rem;
+    }
+
+    .contexto-card--right {
+        margin-top: 10rem;
+    }
+
+    .contexto-card--left::after,
+    .contexto-card--last::after {
+        right: -2.5rem;
+        width: 2.5rem;
+    }
+
+    .contexto-card--left::before,
+    .contexto-card--last::before {
+        right: -3rem;
+    }
+
+    .contexto-card--right::after {
+        left: -2.5rem;
+        width: 2.5rem;
+    }
+
+    .contexto-card--right::before {
+        left: -3rem;
+    }
+
+    .contexto-card p {
+        font-size: 1rem;
+    }
+
+    /* ENIAC SECTION */
     .eniac--sticky {
         padding-top: 4.5rem;
         align-content: start;
@@ -1778,15 +2103,26 @@ footer ul a:hover {
 
     /* SECRET SECTION */
     .secret-timeline {
-        min-height: 56rem;
+        gap: 3rem 5rem;
     }
 
-    .secret-card {
-        width: calc(50% - 2.5rem);
+    /* Update connectors to match wider gap */
+    .secret-card--left::after {
+        right: -2.5rem;
+        width: 2.5rem;
     }
 
-    .secret-card--right {
-        top: 17rem;
+    .secret-card--left::before {
+        right: -3rem;
+    }
+
+    .secret-card--right::after {
+        left: -2.5rem;
+        width: 2.5rem;
+    }
+
+    .secret-card--right::before {
+        left: -3rem;
     }
 
     /* Adjust connectors for wider card gap (2.5rem) */
