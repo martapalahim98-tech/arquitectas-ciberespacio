@@ -1,0 +1,28 @@
+# --- Entornos de Desarrollo / Editores ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Dependencias (si usas npm para herramientas de optimización) ---
+node_modules/
+package-lock.json
+
+# --- Compilación / Distribución ---
+# Si usas algún preprocesador como SASS o minificadores
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# --- Logs y Temporales ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Variables de entorno (Seguridad) ---
+.env
+.env.local
