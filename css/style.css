@@ -752,6 +752,11 @@ header {
     transform: translate(-50%, 50%);
 }
 
+/* CONNECTORS — hidden on mobile, shown via 1024px media query */
+.secret-connector {
+    display: none;
+}
+
 /* FRASE PUENTE */
 .secret-bridge {
     display: grid;
@@ -1563,6 +1568,60 @@ footer ul a:hover {
         top: 16rem;
     }
 
+    /* Horizontal connector lines from vertical center line to each card */
+    .secret-connector {
+        display: block;
+        position: absolute;
+        height: 2px;
+        background: var(--color-border);
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    /* Left connector: from card right edge → center line */
+    .secret-connector--left {
+        top: 4rem;
+        left: min(calc(50% - 2rem), 31rem);
+        right: 50%;
+    }
+
+    /* Right connector: from center line → card left edge */
+    .secret-connector--right {
+        top: 18rem;
+        left: 50%;
+        right: min(calc(50% - 2rem), 31rem);
+    }
+
+    /* Dot at card-side end of left connector */
+    .secret-connector--left::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
+    }
+
+    /* Dot at card-side end of right connector */
+    .secret-connector--right::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
+    }
+
     .secret-dot {
         left: 50%;
         width: 1rem;
@@ -1728,6 +1787,15 @@ footer ul a:hover {
 
     .secret-card--right {
         top: 17rem;
+    }
+
+    /* Adjust connectors for wider card gap (2.5rem) */
+    .secret-connector--left {
+        left: min(calc(50% - 2.5rem), 31rem);
+    }
+
+    .secret-connector--right {
+        right: min(calc(50% - 2.5rem), 31rem);
     }
 
     .secret-feature {
