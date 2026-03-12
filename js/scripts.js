@@ -3,110 +3,96 @@ const sections = document.querySelectorAll(".section");
 const navLinks = document.querySelectorAll(".nav-link");
 const progressBar = document.querySelector(".progress-bar");
 const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector("nav");
+const nav = document.querySelector(".nav");
+const btnTop = document.querySelector(".btn-top");
 
-let isScrolling = false;
-let scrollEndTimer;
+/* MENU TOGGLE */
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("open");
+  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", !expanded);
+});
 
-/* ===== MENU TOGGLE ===== */
-if (menuToggle) {
-    menuToggle.addEventListener("click", () => nav.classList.toggle("open"));
-}
-
-/* ===== NAV ACTIVE SECTION ===== */
-function updateActiveLink(id) {
-    navLinks.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-    });
-}
-
-/* ===== CLICK EN LINKS ===== */
+/* SCROLL A SECCIÓN */
 navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute("href").substring(1);
-        const targetSection = document.getElementById(targetId);
-        if (nav) nav.classList.remove("open");
-        targetSection.scrollIntoView({ behavior: "smooth" });
-        updateActiveLink(targetId);
-    });
-});
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
 
-/* ===== PROGRESS BAR ===== */
-container.addEventListener("scroll", () => {
-    if (progressBar) {
-        progressBar.style.width =
-            (container.scrollTop / (container.scrollHeight - container.clientHeight)) * 100 + "%";
+    const id = link.getAttribute("href").substring(1);
+    const section = document.getElementById(id);
+
+    if (section) {
+      nav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", false);
+      container.scrollTo({
+        top: section.offsetTop,
+        behavior: "smooth",
+      });
     }
+  });
 });
 
-/* ===== INTERSECTION OBSERVER – NAV ACTIVE ===== */
+/* CERRAR MENU AL TOCAR FUERA */
+document.addEventListener("click", (e) => {
+  if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+    nav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", false);
+  }
+});
+
+/* BARRA DE PROGRESO */
+container.addEventListener("scroll", () => {
+  const total = container.scrollHeight - container.clientHeight;
+  const progress = (container.scrollTop / total) * 100;
+
+  progressBar.style.width = progress + "%";
+});
+
+/* SECCIÓN ACTIVA */
 const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) updateActiveLink(entry.target.id);
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + id,
+          );
         });
-    },
-    { root: container, threshold: 0.6 }
+      }
+    });
+  },
+  {
+    root: container,
+    threshold: 0.5,
+  },
 );
 
 sections.forEach((section) => observer.observe(section));
 
-/* ===== SCROLL LOCK ===== */
-function releaseScrollLock() {
-    clearTimeout(scrollEndTimer);
-    scrollEndTimer = setTimeout(() => {
-        isScrolling = false;
-    }, 150);
-}
+/* LIMPIEZA EN RESIZE */
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024) {
+    nav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", false);
+  }
+});
 
-/* ===== SCROLL TO SECTION POR RUEDA ===== */
-function scrollToSection(index) {
-    if (index >= 0 && index < sections.length) {
-        isScrolling = true;
-        sections[index].scrollIntoView({ behavior: "smooth" });
-        updateActiveLink(sections[index].id);
-    }
-}
-
-container.addEventListener(
-    "wheel",
-    (e) => {
-        if (isScrolling) return;
-
-        const sectionsArray = [...sections];
-        const currentSection = sectionsArray.find((s) => {
-            const rect = s.getBoundingClientRect();
-            return rect.top >= -50 && rect.top <= 50;
-        });
-
-        if (!currentSection) return;
-        const currentIndex = sectionsArray.indexOf(currentSection);
-
-        if (e.deltaY > 0) {
-            if (
-                container.scrollTop + container.clientHeight >=
-                currentSection.offsetTop + currentSection.offsetHeight - 5
-            ) {
-                if (currentIndex < sections.length - 1) {
-                    e.preventDefault();
-                    scrollToSection(currentIndex + 1);
-                }
-            }
-        } else {
-            if (container.scrollTop <= currentSection.offsetTop + 5) {
-                if (currentIndex > 0) {
-                    e.preventDefault();
-                    scrollToSection(currentIndex - 1);
-                }
-            }
-        }
-    },
-    { passive: false }
-);
-
+/* BOTÓN VOLVER ARRIBA */
 container.addEventListener("scroll", () => {
-    if (isScrolling) releaseScrollLock();
+  if (container.scrollTop > 400) {
+    btnTop.classList.add("show");
+  } else {
+    btnTop.classList.remove("show");
+  }
+});
+
+btnTop.addEventListener("click", () => {
+  container.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
 /* ===== ENIAC SLIDESHOW ===== */

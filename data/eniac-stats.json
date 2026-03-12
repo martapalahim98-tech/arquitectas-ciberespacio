@@ -22,7 +22,7 @@
         "stats": [
             { "value": 6000, "label": "interruptores" },
             { "value": 5000, "label": "sumas/seg" },
-            { "value": 300,  "label": "multiplicac./seg" },
+            { "value": 300,  "label": "multiplicaciones/seg" },
             { "value": 2,    "label": "semanas de config." }
         ]
     },
