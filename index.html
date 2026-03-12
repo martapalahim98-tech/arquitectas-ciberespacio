@@ -35,6 +35,7 @@
                 <li><a href="#contexto" class="nav-link">Contexto</a></li>
                 <li><a href="#eniac" class="nav-link">ENIAC</a></li>
                 <li><a href="#secret" class="nav-link">Secret Rosies</a></li>
+                <li><a href="#rosies-gallery" class="nav-link">Rosies Gallery</a></li>
                 <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
                 <li><a href="#documental" class="nav-link">Documental</a></li>
             </ul>
@@ -50,7 +51,7 @@
             <a href="#contexto" class="btn">Conoce más</a>
         </section>
 
-       <!-- #Contexto -->
+        <!-- #Contexto -->
         <section id="contexto" class="section section--contexto">
             <div id="intro">
                 <h2>Introducción</h2>
@@ -324,6 +325,81 @@
             </div>
         </section>
 
+        <section id="rosies-gallery" class="section">
+
+            <div class="cards-header">
+                <h2>Secret Rosies</h2>
+                <p>Las mentes brillantes detrás de la programación de la ENIAC.</p>
+            </div>
+
+            <div class="cards-wrapper">
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600" alt="Kay McNulty">
+                    </figure>
+                    <section>
+                        <h3>Kay McNulty</h3>
+                        <button class="btn-open-modal" data-id="kay">Leer más</button>
+                    </section>
+                </article>
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600" alt="Betty Jennings">
+                    </figure>
+                    <section>
+                        <h3>Betty Jennings</h3>
+                        <button class="btn-open-modal" data-id="betty">Leer más</button>
+                    </section>
+                </article>
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600"
+                            alt="Marlyn Wescoff">
+                    </figure>
+                    <section>
+                        <h3>Marlyn Wescoff</h3>
+                        <button class="btn-open-modal" data-id="marlyn">Leer más</button>
+                    </section>
+                </article>
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600" alt="Kay McNulty">
+                    </figure>
+                    <section>
+                        <h3>Kay McNulty</h3>
+                        <button class="btn-open-modal" data-id="ruth">Leer más</button>
+                    </section>
+                </article>
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600"
+                            alt="Betty Jennings">
+                    </figure>
+                    <section>
+                        <h3>Betty Jennings</h3>
+                        <button class="btn-open-modal" data-id="frances">Leer más</button>
+                    </section>
+                </article>
+
+                <article>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600"
+                            alt="Marlyn Wescoff">
+                    </figure>
+                    <section>
+                        <h3>Marlyn Wescoff</h3>
+                        <button class="btn-open-modal" data-id="snyder">Leer más</button>
+                    </section>
+                </article>
+
+            </div>
+        </section>
+
         <!-- SECCIÓN -- ENTREVISTA -->
         <section id="entrevista" class="section section--entrevista">
             <h2>Entrevista a las ENIAC Six</h2>
@@ -575,6 +651,33 @@
             </div>
         </footer>
     </main>
+
+    <!-- Modal General -->
+    <dialog id="modal-gallery" class="modal">
+        <div class="modal__container">
+            <button class="modal__close" id="js-modal-close" aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </button>
+
+            <div class="modal__content">
+                <div class="modal__image-container">
+                    <img src="" alt="" id="modal-img">
+                </div>
+                <div class="modal__info">
+                    <h2 id="modal-title" class="modal__title"></h2>
+                    <div class="modal__scroll-area">
+                        <p id="modal-detail" class="modal__detail"></p>
+                    </div>
+                    <div class="modal__actions">
+                        <button class="btn-flat" id="js-modal-btn-close">CERRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
 
     <!-- Button Top -->
     <button class="btn-top" aria-label="Volver arriba">↑</button>
