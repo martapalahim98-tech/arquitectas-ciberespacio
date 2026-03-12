@@ -152,7 +152,7 @@ const eniacTexts = document.querySelectorAll(".eniac--text");
 let currentEniacSlide = 0;
 
 /* ===== ENIAC STATS COUNTER ===== */
-const statNumbers = document.querySelectorAll(".stat--number");
+let statNumbers = [];
 
 /* slideStats se carga desde data/eniac-stats.json */
 let slideStats = [];
@@ -226,12 +226,18 @@ const statsObserver = new IntersectionObserver(
 
 const eniacSection = document.getElementById("eniac");
 if (eniacSection) {
-    statNumbers.forEach((el) => { el.textContent = "0"; }); // oculta valores hasta que se inicie la animación
-
     fetch("data/eniac-stats.json")
         .then((response) => response.json())
         .then((data) => {
             slideStats = data;
+            const statsContainer = document.querySelector(".eniac--stats");
+            data[0].stats.forEach(() => {
+                const stat = document.createElement("div");
+                stat.className = "stat";
+                stat.innerHTML = '<span class="stat--number">0</span><span class="stat--label"></span>';
+                statsContainer.appendChild(stat);
+            });
+            statNumbers = document.querySelectorAll(".stat--number");
             statsObserver.observe(eniacSection);
         })
         .catch(() => {
