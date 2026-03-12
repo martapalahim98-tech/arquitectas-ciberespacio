@@ -423,8 +423,14 @@ header {
     z-index: 2;
 }
 
-.contexto-dot--1 { top: 2rem; }
-.contexto-dot--2 { top: 50%; }
+.contexto-dot--1 {
+    top: 2rem;
+}
+
+.contexto-dot--2 {
+    top: 50%;
+}
+
 .contexto-dot--3 {
     top: auto;
     bottom: 1rem;
@@ -472,7 +478,8 @@ header {
 
 .contexto-bottom-circle {
     position: absolute;
-    top: 3rem; /* aligned to the dashed line */
+    top: 3rem;
+    /* aligned to the dashed line */
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
@@ -908,8 +915,14 @@ header {
     z-index: 2;
 }
 
-.secret-dot--top    { top: 2rem; }
-.secret-dot--middle { top: 50%; }
+.secret-dot--top {
+    top: 2rem;
+}
+
+.secret-dot--middle {
+    top: 50%;
+}
+
 .secret-dot--bottom {
     top: auto;
     bottom: 1rem;
@@ -1003,7 +1016,9 @@ header {
     gap: 1rem;
 }
 
-.secret-feature__media figure { margin: 0; }
+.secret-feature__media figure {
+    margin: 0;
+}
 
 .secret-feature__media img {
     width: 100%;
@@ -1449,6 +1464,47 @@ footer ul a:hover {
     letter-spacing: 1px;
 }
 
+/* ── DOCUMENTAL ───────────────────────── */
+.section--documental {
+    align-items: flex-start;
+}
+
+.ficha-documental {
+    max-width: 60rem;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.video-doc img {
+    width: 100%;
+    max-width: 26rem;
+    height: auto;
+    margin: 1rem 0;
+    display: block;
+}
+
+/* BOTÓN DOCUMENTAL */
+.btn-documental {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    color: var(--color-light);
+    background-color: var(--color-secondary);
+    border-radius: 0.4rem;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+/* hover */
+.btn-documental:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-0.1rem);
+}
+
 /* ── MEDIA QUERIES ──────────────────────────────────────────────────────── */
 
 /* Mobile landscape (≥576px) */
@@ -1480,6 +1536,11 @@ footer ul a:hover {
 
     .eniac--text {
         font-size: 0.85rem;
+    }
+
+    /*DOCU*/
+    .video-doc img {
+        max-width: 25rem;
     }
 }
 
@@ -1570,6 +1631,14 @@ footer ul a:hover {
     /* ENTREVISTA SECTION */
     .entrevista-transcript {
         margin-top: 2rem;
+    }
+
+    /*DOCU*/
+    .video-doc img {
+        float: right;
+        width: 25rem;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
     }
 
     .footer__top {
@@ -1681,7 +1750,8 @@ footer ul a:hover {
         content: '';
         position: absolute;
         top: 2.5rem;
-        right: -2rem;        /* half the column gap */
+        right: -2rem;
+        /* half the column gap */
         width: 2rem;
         height: 2px;
         background: var(--color-border);
@@ -1732,7 +1802,9 @@ footer ul a:hover {
     }
 
     /* Remove the standalone dot spans — no longer needed */
-    .contexto-dot { display: none; }
+    .contexto-dot {
+        display: none;
+    }
 
     .contexto-bottom-circle {
         top: 3rem;
@@ -1924,8 +1996,8 @@ footer ul a:hover {
         z-index: 3;
     }
 
-    .secret-dot { 
-        display: none; 
+    .secret-dot {
+        display: none;
     }
 
     .secret-bridge {
@@ -2056,7 +2128,7 @@ footer ul a:hover {
         align-content: start;
     }
 
-    .eniac--sticky h2{
+    .eniac--sticky h2 {
         margin-bottom: 2rem;
     }
 
@@ -2142,5 +2214,10 @@ footer ul a:hover {
     .secret-recognition__card p,
     .secret-card p {
         font-size: 1rem;
+    }
+
+    /*DOCU*/
+    .video-doc img {
+        width: 25rem;
     }
 }
