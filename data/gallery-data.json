@@ -1,0 +1,38 @@
+[
+  {
+    "id": "kay",
+    "title": "Kay McNulty",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600",
+    "detail": "Kathleen 'Kay' McNulty fue una de las seis programadoras originales de la ENIAC. Destacó por su capacidad para transformar ecuaciones diferenciales complejas en diagramas lógicos que la máquina podía procesar, sentando las bases de la programación moderna."
+  },
+  {
+    "id": "betty",
+    "title": "Betty Jennings",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600",
+    "detail": "Jean Bartik (nacida Betty Jennings) lideró el equipo que convirtió la ENIAC en una computadora de programa almacenado. Fue una visionaria que predijo que las computadoras serían fundamentales para los negocios y la ciencia, no solo para la guerra."
+  },
+  {
+    "id": "marlyn",
+    "title": "Marlyn Wescoff",
+    "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600",
+    "detail": "Marlyn Meltzer fue responsable de los cálculos meteorológicos y de las tablas de tiro balístico. Su trabajo demostró que el software era tan crucial como el hardware, a pesar de que en su época se consideraba una tarea secundaria."
+  },
+  {
+    "id": "ruth",
+    "title": "Ruth Lichterman",
+    "image": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600",
+    "detail": "Ruth Teitelbaum (Lichterman) trabajó estrechamente con Marlyn Wescoff. Juntas perfeccionaron la precisión de los cálculos de la ENIAC, enfrentando el reto de programar una máquina que no tenía lenguaje de programación ni manual de instrucciones."
+  },
+  {
+    "id": "frances",
+    "title": "Frances Bilas",
+    "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600",
+    "detail": "Frances Spence (Bilas) destacó en el diseño de los paneles físicos y la interconexión de cables necesarios para configurar la ENIAC. Su comprensión profunda de la lógica de circuitos fue vital para el éxito del proyecto."
+  },
+  {
+    "id": "snyder",
+    "title": "Betty Snyder",
+    "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600",
+    "detail": "Elizabeth 'Betty' Holberton inventó el primer sistema de programación generativa y el primer paquete de análisis estadístico. También participó en la creación de los lenguajes COBOL y FORTRAN junto a Grace Hopper."
+  }
+]
