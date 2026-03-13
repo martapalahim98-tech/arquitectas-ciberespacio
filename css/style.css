@@ -1154,7 +1154,7 @@ header a {
 
 /* ── ENTREVISTA SECTION ──────────────────────────────────────────────────── */
 .section--entrevista {
-    background: var(--color-background-secondary);
+    background: #121212;
     color: var(--color-background-primary);
     align-items: center;
     padding: 4rem 6%;
@@ -1771,7 +1771,7 @@ footer ul a:hover {
     }
 
     .eniac--sticky {
-        padding: 0;
+        padding: 3rem;
         gap: 1rem;
     }
 
