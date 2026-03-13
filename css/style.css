@@ -1770,82 +1770,72 @@ footer ul a:hover {
     display: none;
 }
 
-/* ── DARK MODE OVERRIDES ────────────────────────────────────────────────── */
-[data-theme="dark"] {
+[data-theme="dark"] .contexto-bottom-line,
+[data-theme="dark"] .secret-bridge span {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
 
-    /* Dashed dividers */
-    .contexto-bottom-line,
-    .secret-bridge span {
-        border-top-color: rgba(255, 255, 255, 0.2);
-    }
+[data-theme="dark"] .contexto-bottom-circle {
+    background: rgba(255, 255, 255, 0.2);
+}
 
-    .contexto-bottom-circle {
-        background: rgba(255, 255, 255, 0.2);
-    }
+[data-theme="dark"] #rosies-gallery article {
+    background: var(--color-card);
+}
 
-    /* Gallery cards use --color-light (#fff) as bg */
-    #rosies-gallery article {
-        background: var(--color-card);
-    }
+[data-theme="dark"] .modal__container {
+    background: var(--color-surface);
+}
 
-    /* Modal */
-    .modal__container {
-        background: var(--color-surface);
-    }
+[data-theme="dark"] .modal__close {
+    background: var(--color-card);
+    color: var(--color-text);
+}
 
-    .modal__close {
-        background: var(--color-card);
-        color: var(--color-text);
-    }
+[data-theme="dark"] .modal__close:hover {
+    background: var(--color-border);
+}
 
-    .modal__close:hover {
-        background: var(--color-border);
-    }
+[data-theme="dark"] .modal__close path {
+    fill: var(--color-text);
+}
 
-    .modal__close path {
-        fill: var(--color-text);
-    }
+[data-theme="dark"] .modal__image-container {
+    background: var(--color-card);
+}
 
-    .modal__image-container {
-        background: var(--color-card);
-    }
+[data-theme="dark"] .modal__detail {
+    color: var(--color-text);
+}
 
-    .modal__detail {
-        color: var(--color-text);
-    }
+[data-theme="dark"] .section--hero > p,
+[data-theme="dark"] .section--hero .btn,
+[data-theme="dark"] .eniac--sticky,
+[data-theme="dark"] .section--entrevista,
+[data-theme="dark"] .section--entrevista h2,
+[data-theme="dark"] .entrevista-subtitulo,
+[data-theme="dark"] footer,
+[data-theme="dark"] footer a,
+[data-theme="dark"] footer input[type="email"] {
+    color: var(--color-text);
+}
 
-    /* Elements that use --color-background-primary as text: becomes dark on dark in dark mode */
-    .section--hero>p,
-    .section--hero .btn,
-    .eniac--sticky,
-    .section--entrevista,
-    .section--entrevista h2,
-    .entrevista-subtitulo,
-    footer,
-    footer a,
-    footer input[type="email"] {
-        color: var(--color-text);
-    }
+[data-theme="dark"] .footer__contact button,
+[data-theme="dark"] .contexto-year,
+[data-theme="dark"] .btn-top {
+    color: var(--color-background-primary);
+}
 
-    /* Elements with light text on a coloured/light bg: swap to dark text */
-    .footer__contact button,
-    .contexto-year,
-    .btn-top {
-        color: var(--color-background-primary);
-    }
+[data-theme="dark"] .entrevista-transcript p:not(.speaker-name) {
+    color: var(--color-text);
+}
 
-    /* Entrevista bubbles */
-    .entrevista-transcript p:not(.speaker-name) {
-        color: var(--color-text);
-    }
+[data-theme="dark"] .entrevista-transcript [data-role="periodista"] p:not(.speaker-name) {
+    color: var(--color-background-primary);
+}
 
-    .entrevista-transcript [data-role="periodista"] p:not(.speaker-name) {
-        color: var(--color-background-primary);
-    }
-
-    .entrevista-transcript .speaker-name {
-        opacity: 1;
-    }
+[data-theme="dark"] .entrevista-transcript .speaker-name {
+    opacity: 1;
 }
 
 

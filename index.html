@@ -33,7 +33,7 @@
             <span aria-hidden="true"></span>
         </button>
 
-        <nav class="nav" aria-label="Navegación principal">
+        <nav id="main-nav" class="nav" aria-label="Navegación principal">
             <ul>
                 <li><a href="#hero" class="nav-link">Inicio</a></li>
                 <li><a href="#contexto" class="nav-link">Contexto</a></li>
@@ -64,7 +64,7 @@
     <main class="scroll-container">
         <!-- #Hero -->
         <section id="hero" class="section section--hero" aria-labelledby="hero-title">
-            <h1><abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> 6</h1>
+            <h1 id="hero-title"><abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> 6</h1>
             <p>Las primeras programadoras del mundo.</p>
             <p>-Reivindicamos su impacto en la historia de la computación-</p>
             <a href="#contexto" class="btn">Conoce más</a>
@@ -74,7 +74,7 @@
         <section id="contexto" class="section section--contexto">
             <article id="intro">
                 <h2>Introducción</h2>
-                <p>En <time datetime="1945">1945</time>, seis mujeres codificaron y ejecutaron los primeros programas de la historia de la computación moderna. A pesar de sus notables logros, el gobierno de EE. UU. y los medios silenciaron sus nombres.</p>
+                <p>En <span>1945</span>, seis mujeres codificaron y ejecutaron los primeros programas de la historia de la computación moderna. A pesar de sus notables logros, el gobierno de EE. UU. y los medios silenciaron sus nombres.</p>
                 <p>Durante décadas, la fotografía más famosa del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> circuló sin pie de foto. Nadie preguntó quiénes eran las mujeres que aparecían en ella y muchos asumieron que eran modelos.</p>
                 <p>Este sitio existe para no olvidar: para devolver el nombre a quienes el relato oficial convirtió en sombras.</p>
             </article>
@@ -84,7 +84,7 @@
                     <div class="contexto-line" aria-hidden="true"></div>
                     <!-- CARD 1 -->
                     <article class="contexto-card contexto-card--left">
-                        <time datetime="1943" class="contexto-year">1943</time>
+                        <span class="contexto-year">1943</span>
                         <h4>LA GUERRA NECESITA CÁLCULOS</h4>
                         <figure>
                             <img src="assets/img/segunda-guerra-mundial.webp"
@@ -105,7 +105,7 @@
 
                     <!-- CARD 2 -->
                     <article class="contexto-card contexto-card--right">
-                        <time datetime="1944" class="contexto-year">1944</time>
+                        <span class="contexto-year">1944</span>
                         <h4>LOS HOMBRES ESTÁN EN EL FRENTE</h4>
                         <figure>
                             <img src="assets/img/eniac6-working.webp"
@@ -271,7 +271,7 @@
                     <div class="secret-timeline-line" aria-hidden="true"></div>
 
                     <article class="secret-card secret-card--left">
-                        <time datetime="1946" class="secret-year secret-year--red">1946</time>
+                        <span class="secret-year secret-year--red">1946</span>
                         <h3>EL <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> SE PRESENTA AL MUNDO</h3>
                         <figure>
                             <img src="assets/img/mauchly-eckert-color.webp" alt="John Mauchly y J. Presper Eckert" />
@@ -287,7 +287,7 @@
                     </article>
 
                     <article class="secret-card secret-card--right">
-                        <time datetime="1946-1980" class="secret-year secret-year--red">1946 - 1980</time>
+                        <span class="secret-year secret-year--red">1946 - 1980</span>
                         <h3>LA HISTORIA LAS OLVIDA</h3>
                         <figure>
                             <img src="assets/img/top-secret-rosies-color.webp" alt="Programadoras del ENIAC" />
@@ -316,7 +316,7 @@
 
                     <article class="secret-feature">
                         <div class="secret-feature__text">
-                            <time datetime="1986" class="secret-year secret-year--red">1986</time>
+                            <span class="secret-year secret-year--red">1986</span>
                             <h3>LA HISTORIA SE REESCRIBE</h3>
                             <p>
                                 En los años 80, la programadora <span lang="en">Kathy Kleiman</span> encontró una
@@ -359,7 +359,7 @@
                 <!-- RECONOCIMIENTO -->
                 <div class="secret-recognition">
                     <article class="secret-recognition__card">
-                        <time datetime="1997" class="secret-year secret-year--red">1997</time>
+                        <span class="secret-year secret-year--red">1997</span>
                         <h3>RECONOCIMIENTO OFICIAL</h3>
                         <p>
                             Las programadoras del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> fueron incluidas en el
@@ -614,10 +614,9 @@
                 <div class="video-doc">
                     <img src="assets/img/tele.webp" alt="Pantalla documental">
                 </div>
-
-                <p><strong>Año:</strong> <time datetime="2010">2010</time></p>
+                <p><strong>Año:</strong> <span>2010</span></p>
                 <p><strong>País:</strong> Estados Unidos</p>
-                <p><strong>Duración:</strong> <time datetime="PT65M">65 min</time></p>
+                <p><strong>Duración:</strong> <span>65 min</span></p>
                 <p><strong>Dirección:</strong> LeAnn Erickson</p>
                 <p><strong>Sinopsis:</strong></p>
 
@@ -734,7 +733,7 @@
 
             <div class="modal__content">
                 <div class="modal__image-container">
-                    <img src="" alt="" id="modal-img">
+                    <img src="assets/img/Kay-McNulty-Portrait.webp" alt="eniac" id="modal-img">
                 </div>
                 <div class="modal__info">
                     <h2 id="modal-title" class="modal__title"></h2>
@@ -753,7 +752,7 @@
     <dialog id="lightbox-gallery" class="lightbox">
         <button class="lightbox__close" id="js-lightbox-close">&times;</button>
         <div class="lightbox__container">
-            <img src="" alt="Imagen ampliada" id="lightbox-img">
+            <img src="assets/img/los-ingenieros.webp" alt="Imagen ampliada" id="lightbox-img">
         </div>
     </dialog>
 
