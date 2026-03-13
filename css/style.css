@@ -21,10 +21,10 @@
 
     /* Tamaños fluidos — escala lineal de 320px a 1280px */
     --text-base: clamp(1rem, calc(0.933rem + 0.333vw), 1.2rem);
-    --text-h1:   clamp(1.8rem, calc(1.4rem + 2vw), 3rem);
-    --text-h2:   clamp(1.4rem, calc(1.2rem + 1vw), 2rem);
-    --text-h3:   clamp(1.2rem, calc(1.067rem + 0.667vw), 1.6rem);
-    --text-h4:   clamp(1.1rem, calc(1.033rem + 0.333vw), 1.3rem);
+    --text-h1: clamp(1.8rem, calc(1.4rem + 2vw), 3rem);
+    --text-h2: clamp(1.4rem, calc(1.2rem + 1vw), 2rem);
+    --text-h3: clamp(1.2rem, calc(1.067rem + 0.667vw), 1.6rem);
+    --text-h4: clamp(1.1rem, calc(1.033rem + 0.333vw), 1.3rem);
 
     /* Colores */
     --color-light: #fff;
@@ -285,7 +285,6 @@ header a {
 
 /* ── SECTIONS (base) ────────────────────────────────────────────────────── */
 .section {
-    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -311,6 +310,7 @@ header a {
 
 /* ── HERO ───────────────────────────────────────────────────────────────── */
 .section--hero {
+    min-height: 100vh;
     background: var(--color-background-secondary);
     background-image: url(../assets/img/hero-eniac6.webp);
     background-repeat: no-repeat;
@@ -373,14 +373,6 @@ header a {
     transition: ease-in 0.2s;
 }
 
-/* ── INTRODUCCION SECTION ───────────────────────────────────────────────────── */
-#intro {
-    max-width: 60%;
-    margin: 2rem;
-    align-self: center;
-    padding-bottom: 2rem;
-}
-
 /* ── CONTEXTO SECTION ───────────────────────────────────────────────────── */
 .section--contexto {
     min-height: auto;
@@ -388,7 +380,7 @@ header a {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 4rem 6% 5rem;
+    padding: 2rem 6%;
     background: var(--color-background-primary);
 }
 
@@ -418,6 +410,10 @@ header a {
     width: 2px;
     background: var(--color-border);
     opacity: 0.8;
+}
+
+.contexto-wrapper h2 {
+    text-align: left;
 }
 
 .contexto-card {
@@ -513,71 +509,28 @@ header a {
     top: 50%;
 }
 
-.contexto-dot--3 {
-    top: auto;
-    bottom: 1rem;
-    transform: translate(-50%, 50%);
-}
 
-/* CLAIM CENTRAL */
-.contexto-claim {
-    display: grid;
-    gap: 0.35rem;
-    align-content: center;
-    padding: 0.5rem 0;
-    color: var(--color-text);
-}
-
-.contexto-claim p {
-    font-family: var(--font-subheading);
-    font-size: clamp(1.2rem, 5vw, 2rem);
-    line-height: 1.2;
-}
-
-.contexto-claim strong {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 6vw, 2.3rem);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    color: var(--color-accent);
-}
 
 /* CIERRE INFERIOR */
 .contexto-bottom-mark {
     position: relative;
-    padding-top: 3rem;
-    height: 2.25rem;
+    padding-top: 0;
+    height: 2rem;
 }
 
 .contexto-bottom-line {
-    display: block;
-    width: 100%;
-    height: 1px;
-    border-top: 2px dashed rgba(0, 0, 0, 0.35);
+    display: none;
 }
 
 .contexto-bottom-circle {
-    position: absolute;
-    top: 3rem;
-    /* aligned to the dashed line */
-    left: 0.45rem;
-    transform: translate(-50%, -50%);
-    display: grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.35);
-    font-size: 1rem;
-    line-height: 1;
+    display: none;
 }
 
 .contexto-bottom-mark::before {
     content: '';
     position: absolute;
     top: 0;
-    height: 3rem;
+    bottom: 0;
     left: 0.45rem;
     width: 2px;
     background: var(--color-border);
@@ -588,16 +541,51 @@ header a {
 /* ── ENIAC SECTION ──────────────────────────────────────────────────────── */
 .section--eniac {
     display: block;
-    padding: 5rem 6% 7rem;
-    padding: 0;
+    padding: 1rem 6%;
+    min-height: auto;
+    position: relative;
+}
+
+.section--eniac::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(6% + 0.45rem);
+    transform: translateX(-50%);
+    width: 2px;
+    background: var(--color-border);
+    opacity: 0.8;
+}
+
+.eniac-dot {
+    position: absolute;
+    left: calc(6% + 0.45rem);
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--color-text);
+    border: 2px solid var(--color-background-primary);
+    z-index: 3;
+}
+
+.eniac-dot--top {
+    top: 2rem;
+    transform: translate(-50%, -50%);
+}
+
+.eniac-dot--bottom {
+    bottom: 2rem;
+    transform: translate(-50%, 50%);
 }
 
 .eniac--sticky {
-    min-height: 100vh;
+    min-height: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas:
+        "year"
         "h2"
         "stats"
         "figure"
@@ -605,17 +593,26 @@ header a {
     gap: 0.7rem;
     align-items: start;
     align-content: start;
-    padding: 1.5rem 5% 1rem;
-    background: var(--color-background-primary);
+    padding: 1.25rem;
+    background: var(--color-card);
     color: var(--color-background-secondary);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
 }
 
-.eniac--sticky>h2 {
+.eniac--year {
+    grid-area: year;
+    justify-self: start;
+}
+
+.eniac--sticky>h3 {
     grid-area: h2;
-    color: var(--color-secondary);
+    color: var(--color-text);
     margin-top: 0;
     margin-bottom: 0;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
 }
 
 .eniac--figure-area {
@@ -725,7 +722,7 @@ header a {
 }
 
 .stat {
-    background: var(--color-card);
+    background: var(--color-background-primary);
     padding: 0.6rem 0.75rem;
     border-radius: var(--radius);
     text-align: center;
@@ -797,8 +794,21 @@ header a {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 4rem 6% 5rem;
+    padding: 2rem 6%;
     background: var(--color-background-primary);
+    position: relative;
+}
+
+.section--secret::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(6% + 0.45rem);
+    transform: translateX(-50%);
+    width: 2px;
+    height: 2rem;
+    background: var(--color-border);
+    opacity: 0.8;
 }
 
 .section--secret h2 {
@@ -953,29 +963,20 @@ header a {
     opacity: 0.8;
 }
 
-.secret-bridge > span {
+.secret-bridge>span {
     display: block;
     position: relative;
-    border-top: 2px dashed rgba(0, 0, 0, 0.35);
 }
 
 .secret-bridge > span::after {
-    content: '';
-    position: absolute;
-    left: 0.45rem;
-    top: 0;
-    transform: translate(-50%, -50%);
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: var(--color-background-secondary);
-    z-index: 2;
+    display: none;
 }
 
 /* REDISCOVERY */
 .secret-rediscovery {
     position: relative;
     padding-left: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 2.5rem;
 }
 
@@ -1089,22 +1090,23 @@ header a {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    background-color: var(--color-background-primary);
-    color: var(--color-secondary);
+    background-color: var(--color-secondary);
+    color: var(--color-background-primary);
     padding: .6rem 1rem;
-    border-radius: 6px;
-    transition: all ease 0.5s;
+    border-radius: var(--radius);
+    transition: ease-out 0.2s;
 }
 
 .section--secret button:hover {
-    border: 1px solid var(--color-secondary);
+    background-color: var(--color-primary);
+    transition: ease-in 0.2s;
 }
 
 /* ── GALLERY SECTION ─────────────────────────────────────────────────────── */
 #rosies-gallery {
     display: flex;
     flex-direction: column;
-    padding: 5rem 6% 7rem;
+    padding: 2rem 6%;
 }
 
 #rosies-gallery.section {
@@ -1176,14 +1178,16 @@ header a {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    color: var(--color-secondary);
+    background-color: var(--color-secondary);
+    color: var(--color-background-primary);
     padding: .6rem 1rem;
     border-radius: var(--radius);
-    transition: all ease 0.5s;
+    transition: ease-out 0.2s;
 }
 
 #rosies-gallery button:hover {
-    border: 1px solid var(--color-secondary);
+    background-color: var(--color-primary);
+    transition: ease-in 0.2s;
 }
 
 /* ── ENTREVISTA SECTION ──────────────────────────────────────────────────── */
@@ -1191,7 +1195,7 @@ header a {
     background: #121212;
     color: var(--color-background-primary);
     align-items: center;
-    padding: 4rem 6%;
+    padding: 2rem 6%;
     gap: 1.25rem;
 }
 
@@ -1404,7 +1408,7 @@ footer ul a:hover {
 .footer__contact button {
     background: var(--color-secondary);
     color: var(--color-background-primary);
-    font-family: var(--font-heading);
+    font-family: var(--font-text);
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1412,11 +1416,12 @@ footer ul a:hover {
     border-radius: 0 var(--radius) var(--radius) 0;
     padding: 0.55rem 1rem;
     cursor: pointer;
-    transition: background var(--transition-base);
+    transition: ease-out 0.2s;
 }
 
 .footer__contact button:hover {
     background: var(--color-primary);
+    transition: ease-in 0.2s;
 }
 
 .footer__bottom {
@@ -1471,14 +1476,13 @@ footer ul a:hover {
 /* ── MODAL GENERAL ──────────────────────────────────────────────────────── */
 .modal {
     border: none;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 0;
     width: 92%;
-    /* Mobile: casi todo el ancho */
     max-width: 500px;
-    max-height: 90vh;
-    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
-    /* Centrado absoluto */
+    height: 85vh;
+    max-height: 85vh;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1532,23 +1536,25 @@ footer ul a:hover {
 
 .modal__image-container {
     width: 100%;
-    height: 200px;
+    height: 40%;
     background: #eee;
+    flex-shrink: 0;
 }
 
 .modal__image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 15%;
 }
 
 .modal__info {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    overflow: hidden;
-    /* Para controlar el scroll interno */
+    flex: 1;
+    min-height: 0;
+    position: relative;
 }
 
 .modal__title {
@@ -1564,6 +1570,24 @@ footer ul a:hover {
     padding-right: 5px;
 }
 
+.modal__scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding-right: 10px;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.modal__scroll-area::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modal__scroll-area::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
 .modal__detail {
     font-family: var(--font-text);
     line-height: 1.6;
@@ -1577,19 +1601,22 @@ footer ul a:hover {
 }
 
 .btn-flat {
-    background: none;
+    background-color: var(--color-secondary);
     border: none;
-    color: var(--color-secondary);
+    color: var(--color-background-primary);
     font-weight: 700;
     padding: 0.8rem 1rem;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-radius: var(--radius);
+    transition: ease-out 0.2s;
 }
 
 .btn-flat:hover,
 .btn-flat:active {
-    color: var(--color-accent);
+    background-color: var(--color-primary);
+    transition: ease-in 0.2s;
 }
 
 /* --- LIGHTBOX INDEPENDIENTE --- */
@@ -1675,27 +1702,28 @@ footer ul a:hover {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.6rem 1.4rem;
-    font-family: var(--font-heading);
+    font-family: var(--font-text);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.08rem;
-    color: var(--color-light);
+    color: var(--color-background-primary);
     background-color: var(--color-secondary);
-    border-radius: 0.4rem;
+    border: none;
+    border-radius: var(--radius);
     text-decoration: none;
-    transition: 0.25s ease;
+    transition: ease-out 0.2s;
 }
 
 /* hover */
 .btn-documental:hover {
     background-color: var(--color-primary);
-    transform: translateY(-0.1rem);
+    transition: ease-in 0.2s;
 }
 
 
 /* ── THEME TOGGLE BUTTON ────────────────────────────────────────────────── */
 .theme-toggle {
-    order: -1; 
+    order: -1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1739,6 +1767,7 @@ footer ul a:hover {
 
 /* ── DARK MODE OVERRIDES ────────────────────────────────────────────────── */
 [data-theme="dark"] {
+
     /* Dashed dividers */
     .contexto-bottom-line,
     .secret-bridge span {
@@ -1750,18 +1779,38 @@ footer ul a:hover {
     }
 
     /* Gallery cards use --color-light (#fff) as bg */
-    #rosies-gallery article { background: var(--color-card); }
+    #rosies-gallery article {
+        background: var(--color-card);
+    }
 
     /* Modal */
-    .modal__container { background: var(--color-surface); }
-    .modal__close { background: var(--color-card); color: var(--color-text); }
-    .modal__close:hover { background: var(--color-border); }
-    .modal__close path { fill: var(--color-text); }
-    .modal__image-container { background: var(--color-card); }
-    .modal__detail { color: var(--color-text); }
+    .modal__container {
+        background: var(--color-surface);
+    }
+
+    .modal__close {
+        background: var(--color-card);
+        color: var(--color-text);
+    }
+
+    .modal__close:hover {
+        background: var(--color-border);
+    }
+
+    .modal__close path {
+        fill: var(--color-text);
+    }
+
+    .modal__image-container {
+        background: var(--color-card);
+    }
+
+    .modal__detail {
+        color: var(--color-text);
+    }
 
     /* Elements that use --color-background-primary as text: becomes dark on dark in dark mode */
-    .section--hero > p,
+    .section--hero>p,
     .section--hero .btn,
     .eniac--sticky,
     .section--entrevista,
@@ -1781,9 +1830,17 @@ footer ul a:hover {
     }
 
     /* Entrevista bubbles */
-    .entrevista-transcript p:not(.speaker-name) { color: var(--color-text); }
-    .entrevista-transcript [data-role="periodista"] p:not(.speaker-name) { color: var(--color-background-primary); }
-    .entrevista-transcript .speaker-name { opacity: 1; }
+    .entrevista-transcript p:not(.speaker-name) {
+        color: var(--color-text);
+    }
+
+    .entrevista-transcript [data-role="periodista"] p:not(.speaker-name) {
+        color: var(--color-background-primary);
+    }
+
+    .entrevista-transcript .speaker-name {
+        opacity: 1;
+    }
 }
 
 
@@ -1805,7 +1862,7 @@ footer ul a:hover {
     }
 
     .eniac--sticky {
-        padding: 3rem;
+        padding: 1.75rem;
         gap: 1rem;
     }
 
@@ -1835,6 +1892,11 @@ footer ul a:hover {
         padding: 5rem 8% 6rem;
     }
 
+    #intro {
+        margin-bottom: 4rem;
+        align-self: center;
+    }
+
     .contexto-timeline {
         padding-left: 2.5rem;
         padding-bottom: 20%;
@@ -1860,14 +1922,22 @@ footer ul a:hover {
         left: 0.6rem;
     }
 
+    .eniac-dot {
+        left: calc(8% + 0.6rem);
+    }
+
     /* ENIAC SECTION */
     .section--eniac {
-    padding: 5rem 8% 6rem;
+        padding: 1rem 8%;
+    }
+
+    .section--eniac::before {
+        left: calc(8% + 0.6rem);
     }
 
     .eniac--sticky {
-    padding: 0;
-    gap: 1rem;
+        padding: 1rem;
+        gap: 1rem;
     }
 
     .eniac--stats .stat:nth-child(5) {
@@ -1897,6 +1967,10 @@ footer ul a:hover {
 
     .section--secret>h2 {
         margin-bottom: 2.5rem;
+    }
+
+    .section--secret::before {
+        left: calc(8% + 0.6rem);
     }
 
     .secret-timeline,
@@ -1929,7 +2003,7 @@ footer ul a:hover {
         left: 0.6rem;
     }
 
-    .secret-bridge > span::after {
+    .secret-bridge>span::after {
         left: 0.6rem;
     }
 
@@ -2018,11 +2092,11 @@ footer ul a:hover {
     }
 
     .theme-toggle {
-        order: 2; /* after nav */
+        order: 2;
+        /* after nav */
         margin-left: 5rem;
         margin-right: 1rem;
     }
-
 
     .section {
         padding: 5rem 10%;
@@ -2038,9 +2112,8 @@ footer ul a:hover {
     }
 
     /* CONTEXTO SECTION */
-
     .section--contexto {
-        padding: 5rem 10% 7rem;
+        padding: 5rem 10% 0;
     }
 
     .contexto-timeline {
@@ -2048,7 +2121,7 @@ footer ul a:hover {
         grid-template-columns: 1fr 1fr;
         gap: 3rem 25rem;
         padding-left: 0;
-        padding-bottom: 20%;
+        padding-bottom: 0;
     }
 
     .contexto-line {
@@ -2075,23 +2148,8 @@ footer ul a:hover {
         margin-top: 8rem;
     }
 
-    .contexto-card--last {
-        grid-column: 1;
-        justify-self: end;
-    }
 
-    .contexto-claim {
-        grid-column: 2;
-        justify-self: start;
-        align-self: center;
-        position: relative;
-        width: 100%;
-        max-width: 30rem;
-        padding: 0;
-    }
-
-    .contexto-card--left::after,
-    .contexto-card--last::after {
+    .contexto-card--left::after {
         content: '';
         position: absolute;
         top: 8rem;
@@ -2103,8 +2161,7 @@ footer ul a:hover {
         z-index: 1;
     }
 
-    .contexto-card--left::before,
-    .contexto-card--last::before {
+    .contexto-card--left::before {
         content: '';
         position: absolute;
         top: 8rem;
@@ -2153,6 +2210,8 @@ footer ul a:hover {
     .contexto-bottom-circle {
         top: 3rem;
         left: 50%;
+        width: 0.9rem;
+        height: 0.9rem;
     }
 
     .contexto-bottom-mark::before {
@@ -2163,22 +2222,58 @@ footer ul a:hover {
 
     /* ENIAC SECTION */
     .section--eniac {
-        padding: 5rem 10% 7rem;
+        padding: 7rem 10% 7rem;
+        min-height: auto;
+    }
+
+    .section--eniac::before,
+    .section--eniac::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        background: var(--color-border);
+        opacity: 0.8;
+    }
+
+    .section--eniac::before {
+        top: 0;
+        height: 7rem;
+    }
+
+    .section--eniac::after {
+        bottom: 0;
+        height: 7rem;
+    }
+
+    .eniac-dot {
+        left: 50%;
+    }
+
+    .eniac-dot--top {
+        top: 7rem;
+    }
+
+    .eniac-dot--bottom {
+        bottom: 7rem;
     }
 
     .eniac--sticky {
+        min-height: auto;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         grid-template-columns: 1.5fr 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto auto auto;
         grid-template-areas:
+            "year   year"
             "h2     h2"
             "figure stats"
             "texts  texts";
         row-gap: 0.5rem;
         column-gap: 2rem;
-        padding: 0;
+        padding: 1.25rem;
     }
 
     .eniac--stats {
@@ -2273,7 +2368,13 @@ footer ul a:hover {
 
     /* SECRET SECTION */
     .section--secret {
-        padding: 2rem 10% 7rem;
+        padding: 0 10% 2rem;
+    }
+
+    .section--secret::before {
+        left: 50%;
+        width: 3px;
+        height: 0;
     }
 
     .secret-timeline {
@@ -2369,7 +2470,7 @@ footer ul a:hover {
 
     .secret-bridge {
         margin: 0;
-        padding-bottom: 5rem;
+        padding-bottom: 2rem;
     }
 
     .secret-bridge::before {
@@ -2378,7 +2479,7 @@ footer ul a:hover {
         width: 3px;
     }
 
-    .secret-bridge > span::after {
+    .secret-bridge>span::after {
         left: 50%;
     }
 
@@ -2477,6 +2578,12 @@ footer ul a:hover {
     /* ENTREVISTA SECTION */
     .section--entrevista {
         padding: 5rem 15%;
+        min-height: auto;
+    }
+
+    /* DOCUMENTAL SECTION */
+    .section--documental {
+        padding: 1rem 10% 5rem;
     }
 
     .entrevista-transcript {
@@ -2489,13 +2596,15 @@ footer ul a:hover {
     /* MODAL GENERAL */
     .modal {
         max-width: 1000px;
-        /* Más grande en Laptop */
         width: 80%;
-        height: 550px;
+        height: 600px;
+        border-radius: 24px;
+        overflow: hidden;
     }
 
     .modal__content {
         flex-direction: row;
+        height: 100%;
     }
 
     .modal__image-container {
@@ -2503,17 +2612,47 @@ footer ul a:hover {
         height: 100%;
     }
 
+    .modal__image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 15%;
+    }
+
     .modal__info {
         flex: 0 0 60%;
         padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        background-color: #fff;
     }
 
     .modal__title {
         font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal__scroll-area {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 20px;
+        margin-bottom: 1.5rem;
+        mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     }
 
     .modal__detail {
         font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+    }
+
+    .modal__actions {
+        margin-top: auto;
+        text-align: right;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
     }
 
     /* LIGHTBOX */
@@ -2537,7 +2676,9 @@ footer ul a:hover {
     .contexto-card--right {
         margin-top: 10rem;
     }
-
+    #intro{
+        max-width: 1200px;
+    }
     .contexto-card p {
         font-size: 1rem;
     }
@@ -2554,13 +2695,13 @@ footer ul a:hover {
     }
 
     .eniac--texts {
-        margin-top: 2rem;
+        margin-top: 0;
     }
 
     .eniac--stats {
-        gap: 2rem;
+        gap: 1rem;
         align-self: center;
-        margin-bottom: 5rem;
+        margin-bottom: 0;
     }
 
     .eniac--btn {
@@ -2633,23 +2774,43 @@ footer ul a:hover {
    ============================================================ */
 
 @keyframes tl-reveal-down {
-    from { clip-path: inset(0 0 100% 0); }
-    to   { clip-path: inset(0 0 0%   0); }
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0% 0);
+    }
 }
 
 @keyframes tl-reveal-right {
-    from { clip-path: inset(0 100% 0 0); }
-    to   { clip-path: inset(0 0%   0 0); }
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0% 0 0);
+    }
 }
 
 @keyframes tl-reveal-left {
-    from { clip-path: inset(0 0 0 100%); }
-    to   { clip-path: inset(0 0 0 0%  ); }
+    from {
+        clip-path: inset(0 0 0 100%);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0%);
+    }
 }
 
 @keyframes tl-dot-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -2660,8 +2821,7 @@ footer ul a:hover {
         clip-path: inset(0 0 100% 0);
     }
 
-    html.js-anim .contexto-card--left::after,
-    html.js-anim .contexto-card--last::after {
+    html.js-anim .contexto-card--left::after {
         clip-path: inset(0 0 0 100%);
     }
 
@@ -2670,8 +2830,7 @@ footer ul a:hover {
     }
 
     html.js-anim .contexto-card--left::before,
-    html.js-anim .contexto-card--right::before,
-    html.js-anim .contexto-card--last::before {
+    html.js-anim .contexto-card--right::before {
         opacity: 0;
     }
 
@@ -2691,7 +2850,7 @@ footer ul a:hover {
         clip-path: inset(0 0 100% 0);
     }
 
-    html.js-anim .secret-bridge > span {
+    html.js-anim .secret-bridge>span {
         clip-path: inset(0 100% 0 0);
     }
 
@@ -2732,92 +2891,118 @@ footer ul a:hover {
     /* ── Contexto timeline: triggered ────────────────────── */
 
     .contexto-timeline.anim-triggered .contexto-line {
-        animation: tl-reveal-down 3.5s ease-in-out both;
+        animation: tl-reveal-down 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
-    .contexto-timeline.anim-triggered .contexto-card--left::after,
-    .contexto-timeline.anim-triggered .contexto-card--last::after {
-        animation: tl-reveal-left 1.2s ease-out both 1s;
+    .contexto-timeline.anim-triggered .contexto-card--left::after {
+        animation: tl-reveal-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) both 0.5s;
     }
 
-    .contexto-timeline.anim-triggered .contexto-card--left::before,
-    .contexto-timeline.anim-triggered .contexto-card--last::before {
-        animation: tl-dot-in 0.5s ease-out both 2s;
+    .contexto-timeline.anim-triggered .contexto-card--left::before {
+        animation: tl-dot-in 0.25s ease-out both 1s;
     }
 
     .contexto-timeline.anim-triggered .contexto-card--right::after {
-        animation: tl-reveal-right 1.2s ease-out both 1.5s;
+        animation: tl-reveal-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) both 0.8s;
     }
 
     .contexto-timeline.anim-triggered .contexto-card--right::before {
-        animation: tl-dot-in 0.5s ease-out both 2.5s;
+        animation: tl-dot-in 0.25s ease-out both 1.3s;
     }
 
     /* ── Contexto bottom mark: triggered ─────────────────── */
 
     .contexto-bottom-mark.anim-triggered::before {
-        animation: tl-reveal-down 0.8s ease-out both;
+        animation: tl-reveal-down 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     .contexto-bottom-mark.anim-triggered .contexto-bottom-line {
-        animation: tl-reveal-right 1s ease-out both 0.6s;
+        animation: tl-reveal-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both 0.4s;
     }
 
     .contexto-bottom-mark.anim-triggered .contexto-bottom-circle {
-        animation: tl-dot-in 0.5s ease-out both 1.4s;
+        animation: tl-dot-in 0.25s ease-out both 0.8s;
     }
 
     /* ── Secret bridge + timeline: triggered ─────────────── */
 
-    .secret-wrapper.anim-triggered .secret-bridge::before {
-        animation: tl-reveal-down 1.5s ease-in-out both;
+    .secret-bridge.anim-triggered::before {
+        animation: tl-reveal-down 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
-    .secret-wrapper.anim-triggered .secret-bridge > span {
-        animation: tl-reveal-right 1s ease-out both 1.3s;
+    .secret-bridge.anim-triggered > span {
+        animation: tl-reveal-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) both 0.6s;
     }
 
     .secret-wrapper.anim-triggered .secret-timeline-line {
-        animation: tl-reveal-down 3s ease-in-out both 2s;
+        animation: tl-reveal-down 1.2s cubic-bezier(0.22, 1, 0.36, 1) both 1.2s;
     }
 
     .secret-wrapper.anim-triggered .secret-card--left::after {
-        animation: tl-reveal-left 1.2s ease-out both 2.8s;
+        animation: tl-reveal-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) both 1.7s;
     }
 
     .secret-wrapper.anim-triggered .secret-card--left::before {
-        animation: tl-dot-in 0.5s ease-out both 3.8s;
+        animation: tl-dot-in 0.25s ease-out both 2.2s;
     }
 
     .secret-wrapper.anim-triggered .secret-card--right::after {
-        animation: tl-reveal-right 1.2s ease-out both 3.2s;
+        animation: tl-reveal-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) both 2s;
     }
 
     .secret-wrapper.anim-triggered .secret-card--right::before {
-        animation: tl-dot-in 0.5s ease-out both 4.2s;
+        animation: tl-dot-in 0.25s ease-out both 2.5s;
     }
 
     /* ── Secret rediscovery: triggered ───────────────────── */
 
     .secret-rediscovery.anim-triggered .secret-rediscovery-line {
-        animation: tl-reveal-down 1.5s ease-in-out both;
+        animation: tl-reveal-down 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     .secret-rediscovery.anim-triggered .secret-feature::before {
-        animation: tl-dot-in 0.5s ease-out both 1.3s;
+        animation: tl-dot-in 0.25s ease-out both 0.65s;
     }
 
     .secret-rediscovery.anim-triggered .secret-feature::after {
-        animation: tl-dot-in 0.5s ease-out both 1.6s;
+        animation: tl-dot-in 0.25s ease-out both 0.85s;
     }
 
     /* ── Secret recognition: triggered ───────────────────── */
 
     .secret-recognition.anim-triggered::before {
-        animation: tl-reveal-down 1.2s ease-out both;
+        animation: tl-reveal-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     .secret-recognition.anim-triggered .secret-recognition__card::before {
-        animation: tl-dot-in 0.5s ease-out both 1s;
+        animation: tl-dot-in 0.25s ease-out both 0.55s;
     }
+}
+
+/* ── MOBILE + TABLET PORTRAIT: hide timeline lines and connectors (< 1024px) */
+@media (max-width: 1023px) {
+    .contexto-line,
+    .contexto-dot,
+    .contexto-bottom-mark,
+    .section--eniac::before,
+    .eniac-dot,
+    .section--secret::before,
+    .secret-bridge,
+    .secret-timeline-line,
+    .secret-rediscovery-line,
+    .secret-dot {
+        display: none;
+    }
+
+    /* Remove timeline left-indent so cards fill the same width as ENIAC */
+    .contexto-timeline,
+    .secret-timeline,
+    .secret-rediscovery {
+        padding-left: 0;
+    }
+
+    /* Collapse gaps above and below ENIAC section to 1rem */
+    .contexto-timeline { padding-bottom: 0; }
+    .section--contexto { padding-bottom: 0; }
+    .section--secret { padding-top: 0; padding-bottom: 1rem; }
 }
