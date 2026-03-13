@@ -2,37 +2,37 @@
   {
     "id": "kay",
     "title": "Kathleen McNulty",
-    "image": "assets/img/Kay-McNulty-Portrait.jpg",
+    "image": "assets/img/Kay-McNulty-Portrait.webp",
     "detail": "<h3><p>Biografía</h3>Nació en 1921 en Donegal (Irlanda). Cuando tenía tres años emigró con su familia a Filadelfia, donde creció y destacó especialmente en matemáticas. Se graduó en esta disciplina durante la Segunda Guerra Mundial y comenzó a trabajar para el ejército realizando cálculos balísticos en la Universidad de Pensilvania.</p> <p>Fue una de las seis mujeres seleccionadas para programar el ENIAC. Durante el proyecto desarrolló técnicas fundamentales de programación, entre ellas la idea de subrutina, que permitía reutilizar partes del programa para resolver cálculos complejos de forma más eficiente.</p>" 
   },
   {
     "id": "betty",
     "title": "Betty Holberton",
-    "image": "assets/img/Betty-Holberton-Portrait.jpg",
+    "image": "assets/img/Betty-Holberton-Portrait.webp",
     "detail": "<h3>Biografía</h3><p>Nació en Filadelfia a principios del siglo XX. Estudió periodismo, aunque desde joven destacó por su gran capacidad lógica y matemática. A pesar de la presión social para seguir el rol tradicional de la época, desarrolló una fuerte inquietud intelectual. Durante la Segunda Guerra Mundial fue contratada como computadora humana, realizando cálculos matemáticos para el ejército.</p> <p>Es considerada una de las líderes del equipo de programación. Entre sus aportaciones destaca el desarrollo de técnicas de depuración de programas, similares a lo que hoy conocemos como breakpoints. También trabajó junto a John Mauchly en el conjunto de instrucciones C-10, que influiría en los primeros lenguajes de programación.</p>"
   },
   {
     "id": "marlyn",
     "title": "Marlyn Wescoff",
-    "image": "assets/img/Marlyn-Meltzer-Portrait.png",
+    "image": "assets/img/Marlyn-Meltzer-Portrait.webp",
     "detail": "<h3>Biografía</h3><p>Nació en 1922 en Filadelfia, en una época en la que las oportunidades científicas para las mujeres eran muy limitadas. Aun así decidió estudiar matemáticas en la Temple University. Tras graduarse, fue contratada por el ejército estadounidense para realizar cálculos balísticos.</p> <p>Su habilidad en el análisis matemático la llevó a formar parte del equipo del ENIAC. Contribuyó al desarrollo de algoritmos y procesos de cálculo necesarios para que la máquina pudiera resolver los complejos problemas matemáticos para los que había sido diseñada.</p>"
   },
   {
     "id": "ruth",
     "title": "Ruth Teitelbaum",
-    "image": "assets/img/Ruth-Teitelbaum-Portrait.jpg",
+    "image": "assets/img/Ruth-Teitelbaum-Portrait.webp",
     "detail": "<h3>Biografía</h3><p>Nació en Dallas en 1924. Desde joven destacó por su gran capacidad lógico-matemática. Estudió matemáticas en el Hunter College de Nueva York y, gracias a su formación, fue reclutada por la Universidad de Pensilvania para trabajar como computadora humana realizando cálculos balísticos para el ejército durante la Segunda Guerra Mundial.</p> <p>Fue una de las seis programadoras seleccionadas para trabajar en el ENIAC. Participó en la programación y configuración de la máquina, y posteriormente desempeñó un papel importante en la divulgación y enseñanza del funcionamiento del ENIAC, ayudando a formar a nuevos operadores y técnicos.</p>"
   },
   {
     "id": "frances",
     "title": "Frances Bilas",
-    "image": "assets/img/Frances-Spence-Portrait.jpg",
+    "image": "assets/img/Frances-Spence-Portrait.webp",
     "detail": "<h3>Biografía</h3><p>Nació en 1922 en Filadelfia. Desde joven mostró una gran habilidad para las matemáticas y estudió esta disciplina en el Chestnut Hill College. Como muchas de sus compañeras, fue contratada durante la guerra para realizar cálculos de trayectorias balísticas para el ejército estadounidense.</p> <p>Participó en el equipo encargado de programar el ENIAC y desempeñó un papel importante en la coordinación del trabajo técnico. El proceso requería manejar miles de interruptores, cables y paneles para dirigir los datos a través de la máquina, por lo que la organización y el trabajo en equipo eran esenciales.</p>"
   },
   {
     "id": "jean",
     "title": "Jean Bartik",
-    "image": "assets/img/Jean-Bartik-Portrait.jpg",
+    "image": "assets/img/Jean-Bartik-Portrait.webp",
     "detail": "<h3>Biografía</h3><p>Nació en una zona rural de Missouri en la década de 1920. Gracias al apoyo de su familia pudo acceder a la universidad, donde estudió matemáticas y se graduó en 1945. Tras terminar sus estudios fue contratada por el ejército estadounidense como computadora humana en la Universidad de Pensilvania, realizando cálculos balísticos junto a otras mujeres.</p> <p>Fue una de las seis programadoras seleccionadas para trabajar en el ENIAC. Aunque no tenía experiencia previa en programación, su sólida formación matemática le permitió aprender rápidamente y convertirse en una de las figuras clave en el desarrollo técnico de la máquina.</p>"
   }
 ]
