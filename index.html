@@ -5,46 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Revista digital que reivindica los aportes de las mujeres en la tecnología y su integración en el presente y futuro de la informática">
+        content="Las ENIAC 6, primeras programadoras del mundo: un reconocimiento a sus aportes y a su legado en la historia de la informática.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <title>ENIAC 6</title>
+    <title>ENIAC Six</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!-- Progress Bar -->
-    <div class="progress-bar"></div>
+    <div class="progress-bar" aria-hidden="true"></div>
 
     <!-- Header -->
     <header>
-        <a href="index.html"><h1>Legado</h1></a>
+        <p class="site-logo">
+            <a href="index.html" lang="en">
+                <abbr title="Electronic Numerical Integrator and Computer">ENIAC</abbr> 6
+            </a>
+        </p>
 
-        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </button>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Navegación principal">
             <ul>
                 <li><a href="#hero" class="nav-link">Inicio</a></li>
                 <li><a href="#contexto" class="nav-link">Contexto</a></li>
-                <li><a href="#rosies-gallery" class="nav-link">Secret Rosies</a></li>
+                <li><a href="#rosies-gallery" class="nav-link" lang="en">Secret Rosies</a></li>
                 <li><a href="#entrevista" class="nav-link">Entrevista</a></li>
                 <li><a href="#documental" class="nav-link">Documental</a></li>
                 <li><a href="#legado" class="nav-link">Legado</a></li>
             </ul>
         </nav>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" width="18" height="18">
+                <circle cx="12" cy="12" r="5" fill="currentColor" stroke="none"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </button>
     </header>
 
     <main class="scroll-container">
         <!-- #Hero -->
-        <section id="hero" class="section section--hero">
-            <h2>ENIAC 6</h2>
+        <section id="hero" class="section section--hero" aria-labelledby="hero-title">
+            <h1><abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> 6</h1>
             <p>Las primeras programadoras del mundo.</p>
             <p>-Reivindicamos su impacto en la historia de la computación-</p>
             <a href="#contexto" class="btn">Conoce más</a>
@@ -52,20 +73,20 @@
 
         <!-- #Contexto -->
         <section id="contexto" class="section section--contexto">
-            <div id="intro">
+            <article id="intro">
                 <h2>Introducción</h2>
-                <p>En 1945, seis mujeres escribieron el futuro con sus manos. Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Ruth Lichterman y Frances Bilas cablearon, codificaron y ejecutaron los primeros programas de la historia de la computación moderna. El mundo aplaudió la máquina pero silenció sus nombres.</p>
-                <p>Durante décadas, la fotografía más famosa del ENIAC circuló sin pie de foto. Nadie preguntó quiénes eran las mujeres que aparecían en ella. Se asumió que eran modelos, decoración, fondo.</p>
+                <p>En <time datetime="1945">1945</time>, seis mujeres escribieron el futuro con sus manos. Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Ruth Lichterman y Frances Bilas cablearon, codificaron y ejecutaron los primeros programas de la historia de la computación moderna. El mundo aplaudió la máquina pero silenció sus nombres.</p>
+                <p>Durante décadas, la fotografía más famosa del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> circuló sin pie de foto. Nadie preguntó quiénes eran las mujeres que aparecían en ella. Se asumió que eran modelos, decoración, fondo.</p>
                 <p>Este sitio existe para no olvidar. Para devolver el nombre a quienes el relato oficial convirtió en sombras. Porque la historia de la tecnología no puede contarse bien si se cuenta a medias.</p>
-            </div>
+            </article>
             <div class="contexto-wrapper">
-                <h2>Contexto histórico</h2>
+                <h3>Contexto histórico</h3>
                 <div class="contexto-timeline">
-                    <div class="contexto-line"></div>
+                    <div class="contexto-line" aria-hidden="true"></div>
                     <!-- CARD 1 -->
                     <article class="contexto-card contexto-card--left">
-                        <span class="contexto-year">1943</span>
-                        <h3>LA GUERRA NECESITA CÁLCULOS</h3>
+                        <time datetime="1943" class="contexto-year">1943</time>
+                        <h4>LA GUERRA NECESITA CÁLCULOS</h4>
                         <figure>
                             <img src="assets/img/segunda-guerra-mundial.jpg"
                                 alt="Escena urbana durante la Segunda Guerra Mundial" />
@@ -85,15 +106,15 @@
 
                     <!-- CARD 2 -->
                     <article class="contexto-card contexto-card--right">
-                        <span class="contexto-year">1944</span>
-                        <h3>LOS HOMBRES ESTÁN EN EL FRENTE</h3>
+                        <time datetime="1944" class="contexto-year">1944</time>
+                        <h4>LOS HOMBRES ESTÁN EN EL FRENTE</h4>
                         <figure>
                             <img src="assets/img/eniac6-working.webp"
                                 alt="Mujeres trabajando con cableado y paneles de una máquina" />
                         </figure>
                         <p>
                             Muchos ingenieros habían sido enviados a la guerra. Las universidades comenzaron a contratar
-                            jóvenes matemáticas como “computadoras humanas”.
+                            jóvenes matemáticas como "computadoras humanas".
                         </p>
                         <p>
                             No eran consideradas ingenieras. Solo asistentes técnicas.
@@ -108,11 +129,10 @@
 
                     <!-- CARD 3 -->
                     <article class="contexto-card contexto-card--last">
-                        <span class="contexto-year">1945</span>
-                        <h3>NACE ENIAC</h3>
-
+                        <time datetime="1945" class="contexto-year">1945</time>
+                        <h4>NACE ENIAC</h4>
                         <p>
-                            El ENIAC fue el primer ordenador electrónico de gran escala.
+                            El <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> fue el primer ordenador electrónico de gran escala.
                         </p>
                         <p>
                             Diseñado para cálculos militares, y programado manualmente con cables y paneles.
@@ -124,9 +144,9 @@
                     </article>
 
                     <!-- puntos -->
-                    <span class="contexto-dot contexto-dot--1"></span>
-                    <span class="contexto-dot contexto-dot--2"></span>
-                    <span class="contexto-dot contexto-dot--3"></span>
+                    <span class="contexto-dot contexto-dot--1" aria-hidden="true"></span>
+                    <span class="contexto-dot contexto-dot--2" aria-hidden="true"></span>
+                    <span class="contexto-dot contexto-dot--3" aria-hidden="true"></span>
                 </div>
 
                 <div class="contexto-bottom-mark">
@@ -137,8 +157,9 @@
         </section>
 
         <section id="eniac" class="section section--eniac">
+            <span class="eniac-dot eniac-dot--top"></span>
             <div class="eniac--sticky">
-                <h2>Electronic Numerical Integrator and Computer</h2>
+                <h2 lang="en">Electronic Numerical Integrator and Computer</h2>
                 <div class="eniac--figure-area">
                     <div class="eniac--figures">
                         <figure class="eniac--figure active">
@@ -151,16 +172,16 @@
                         <figure class="eniac--figure">
                             <img src="assets/img/tubos-eniac.webp" alt="Tubos de vacío del ENIAC" />
                             <figcaption>
-                                Los 17.468 tubos de vacío que alimentaban el ENIAC
+                                Los 17.468 tubos de vacío que alimentaban el <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>
                             </figcaption>
                         </figure>
                         <figure class="eniac--figure">
-                            <img src="assets/img/ilustracion-eniac.png" alt="Ilustración del ENIAC" />
-                            <figcaption>Ilustración técnica del ENIAC</figcaption>
+                            <img src="assets/img/eniac-archivo.webp" alt="Fotografía del ENIAC" />
+                            <figcaption>Fotografía de cableado y conexiones del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr></figcaption>
                         </figure>
                         <figure class="eniac--figure">
                             <img src="assets/img/diagrama-eniac.webp" alt="Diagrama del ENIAC" />
-                            <figcaption>Diagrama de funcionamiento del ENIAC</figcaption>
+                            <figcaption>Diagrama de funcionamiento del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr></figcaption>
                         </figure>
                     </div>
                     <div class="eniac--nav">
@@ -179,7 +200,7 @@
                     <div class="eniac--text active">
                         <h3>Creadores</h3>
                         <p>
-                            John Mauchly y John Presper Eckert diseñaron la ENIAC en la
+                            John Mauchly y John Presper Eckert diseñaron la <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> en la
                             Universidad de Pensilvania para el ejército estadounidense con
                             el objetivo de calcular trayectorias balísticas.
                         </p>
@@ -191,7 +212,7 @@
                         </p>
                         <h3>Escala</h3>
                         <p>
-                            ENIAC ocupaba 167 metros cuadrados y pesaba aproximadamente 27
+                            <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> ocupaba 167 metros cuadrados y pesaba aproximadamente 27
                             toneladas. Era una de las computadoras más grandes construidas
                             hasta ese momento, distribuyéndose a lo largo de una gran sala.
                         </p>
@@ -199,7 +220,7 @@
                     <div class="eniac--text">
                         <h3>Componentes</h3>
                         <p>
-                            ENIAC contaba con 17,468 tubos de vacío, 70,000 resistencias,
+                            <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> contaba con 17,468 tubos de vacío, 70,000 resistencias,
                             10,000 condensadores y 7,200 diodos de cristal.
                         </p>
                         <h3>Funcionamiento</h3>
@@ -210,14 +231,14 @@
                         <h3>Digitalización</h3>
                         <p>
                             En lugar de utilizar métodos mecánicos o electromagnéticos para
-                            representar datos, ENIAC usaba pulsos eléctricos para manipular
+                            representar datos, <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> usaba pulsos eléctricos para manipular
                             la información en binario (1 y 0).
                         </p>
                     </div>
                     <div class="eniac--text">
                         <h3>Programación</h3>
                         <p>
-                            Para programar ENIAC, sus operadoras debían manipular más de
+                            Para programar <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>, sus operadoras debían manipular más de
                             6,000 interruptores y conectar un entramado de cables de manera
                             física.
                         </p>
@@ -257,19 +278,24 @@
                     </div>
                 </div>
             </div>
+            <span class="eniac-dot eniac-dot--bottom"></span>
         </section>
 
         <!-- #Secret -->
         <section id="secret" class="section section--secret">
-            <h2>Secret Rosies</h2>
+            <h2>Invisibilizadas</h2>
             <div class="secret-wrapper">
+                <div class="secret-bridge" aria-hidden="true">
+                    <span></span>
+                </div>
+
                 <!-- TIMELINE: historia oficial + olvido -->
                 <div class="secret-timeline">
-                    <div class="secret-timeline-line"></div>
+                    <div class="secret-timeline-line" aria-hidden="true"></div>
 
                     <article class="secret-card secret-card--left">
-                        <span class="secret-year secret-year--red">1946</span>
-                        <h3>EL ENIAC SE PRESENTA AL MUNDO</h3>
+                        <time datetime="1946" class="secret-year secret-year--red">1946</time>
+                        <h3>EL <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> SE PRESENTA AL MUNDO</h3>
                         <figure>
                             <img src="assets/img/mauchly-eckert-color.png" alt="John Mauchly y J. Presper Eckert" />
                             <figcaption></figcaption>
@@ -284,27 +310,27 @@
                     </article>
 
                     <article class="secret-card secret-card--right">
-                        <span class="secret-year secret-year--red">1946 - 1980</span>
+                        <time datetime="1946-1980" class="secret-year secret-year--red">1946 - 1980</time>
                         <h3>LA HISTORIA LAS OLVIDA</h3>
                         <figure>
                             <img src="assets/img/top-secret-rosies-color.png" alt="Programadoras del ENIAC" />
                             <figcaption></figcaption>
                         </figure>
-                        <p>En muchas fotografías aparecen junto al ENIAC.</p>
+                        <p>En muchas fotografías aparecen junto al <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>.</p>
                         <p>Pero son descritas como operadoras o modelos.</p>
-                        <p>Incluso se utilizó el término "refrigerator ladies".</p>
+                        <p>Incluso se utilizó el término <q lang="en">refrigerator ladies</q>.</p>
                         <button type="button" class="btn-lightbox" data-src="assets/img/las-seis-eniac.webp">Conoce
                             más</button>
                     </article>
 
                     <!-- puntos timeline -->
-                    <span class="secret-dot secret-dot--top"></span>
-                    <span class="secret-dot secret-dot--middle"></span>
-                    <span class="secret-dot secret-dot--bottom"></span>
+                    <span class="secret-dot secret-dot--top" aria-hidden="true"></span>
+                    <span class="secret-dot secret-dot--middle" aria-hidden="true"></span>
+                    <span class="secret-dot secret-dot--bottom" aria-hidden="true"></span>
 
                     <!-- conectores horizontales (solo tablet/desktop) -->
-                    <span class="secret-connector secret-connector--left"></span>
-                    <span class="secret-connector secret-connector--right"></span>
+                    <span class="secret-connector secret-connector--left" aria-hidden="true"></span>
+                    <span class="secret-connector secret-connector--right" aria-hidden="true"></span>
                 </div>
 
                 <div class="secret-bridge">
@@ -317,11 +343,11 @@
 
                     <article class="secret-feature">
                         <div class="secret-feature__text">
-                            <span class="secret-year secret-year--red">1980</span>
+                            <time datetime="1986" class="secret-year secret-year--red">1986</time>
                             <h3>LA HISTORIA SE REESCRIBE</h3>
                             <p>
-                                En los años 80, la programadora Kathy Kleiman encontró una
-                                fotografía del ENIAC con varias mujeres junto a la máquina.
+                                En los años 80, la programadora <span lang="en">Kathy Kleiman</span> encontró una
+                                fotografía del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> con varias mujeres junto a la máquina.
                             </p>
                             <p>
                                 Cuando preguntó quiénes eran, le dijeron que solo eran
@@ -329,7 +355,7 @@
                             </p>
                             <p>
                                 Pero investigó más y descubrió la verdad: habían sido las
-                                programadoras del ENIAC.
+                                programadoras del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>.
                             </p>
 
                             <blockquote>
@@ -342,7 +368,7 @@
                             <figure>
                                 <img src="assets/img/kathy-kleiman.jpg" alt="Kathy Kleiman" />
                                 <figcaption>
-                                    Kathy Kleiman. Abogada, desarrolladora de software y
+                                    <span lang="en">Kathy Kleiman</span>. Abogada, desarrolladora de software y
                                     documentalista
                                 </figcaption>
                             </figure>
@@ -350,8 +376,7 @@
                                 <img src="assets/img/kathy-kleyman-kay-mcnulty.jpg"
                                     alt="Kathy Kleiman (izquierda) con Kay McNulty Mauchly Antonelli, una de las seis programadoras del ENIAC" />
                                 <figcaption>
-                                    Kathy Kleiman (izquierda) con Kay McNulty Mauchly Antonelli,
-                                    una de las seis programadoras del ENIAC
+                                    <span lang="en">Kathy Kleiman</span> (izquierda) con <span lang="en">Kay McNulty</span>, una de las seis programadoras del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>
                                 </figcaption>
                             </figure>
                         </div>
@@ -361,96 +386,89 @@
                 <!-- RECONOCIMIENTO -->
                 <div class="secret-recognition">
                     <article class="secret-recognition__card">
-                        <span class="secret-year secret-year--red">1997</span>
+                        <time datetime="1997" class="secret-year secret-year--red">1997</time>
                         <h3>RECONOCIMIENTO OFICIAL</h3>
                         <p>
-                            Las programadoras del ENIAC fueron incluidas en el
-                            <strong>Women in Technology International Hall of Fame</strong>.
+                            Las programadoras del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> fueron incluidas en el
+                            <strong lang="en">Women in Technology International Hall of Fame</strong>.
                         </p>
                         <p>Décadas después, la historia empezaba a corregirse.</p>
+                        <img src="assets/img/WITI-eniac.jpg"
+                            alt="Kathy Kleiman (izquierda) con Kay McNulty Mauchly Antonelli, una de las seis programadoras del ENIAC" />
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- #Rosies Gallery -->
         <section id="rosies-gallery" class="section">
-
-            <div class="cards-header">
-                <h2>Secret Rosies</h2>
-                <p>Las mentes brillantes detrás de la programación de la ENIAC.</p>
-            </div>
-
-            <div class="cards-wrapper">
-
-                <article>
-                    <figure>
-                        <img src="assets/img/Kay-McNulty-Illustration.png" alt="Kay McNulty">
-                    </figure>
-                    <section>
-                        <h3>Kathleen McNulty</h3>
-                        <button class="btn-open-modal" data-id="kay">Leer más</button>
-                    </section>
-                </article>
-
-                <article>
-                    <figure>
-                        <img src="assets/img/Betty-Holberton-Illustration2.png" alt="Betty Sydner">
-                    </figure>
-                    <section>
-                        <h3>Betty Sydner</h3>
-                        <button class="btn-open-modal" data-id="betty">Leer más</button>
-                    </section>
-                </article>
-
-                <article>
-                    <figure>
-                        <img src="assets/img/Marlyn-Meltzer-Illustration.png"
-                            alt="Marlyn Wescoff">
-                    </figure>
-                    <section>
-                        <h3>Marlyn Wescoff</h3>
-                        <button class="btn-open-modal" data-id="marlyn">Leer más</button>
-                    </section>
-                </article>
-
-                <article>
-                    <figure>
-                        <img src="assets/img/Ruth-Teitelbaum-Illustration.png"
-                        alt="Ruth Teitelbaum">
-                    </figure>
-                    <section>
-                        <h3>Ruth Teitelbaum</h3>
-                        <button class="btn-open-modal" data-id="ruth">Leer más</button>
-                    </section>
-                </article>
-
-                <article>
-                    <figure>
-                        <img src="assets/img/Frances-Spence-Illustration.png" 
-                        alt="Frances Bilas Spence">
-                    </figure>
-                    <section>
-                        <h3>Frances Bilas</h3>
-                        <button class="btn-open-modal" data-id="frances">Leer más</button>
-                    </section>
-                </article>
-
-                <article>
-                    <figure>
-                        <img src="assets/img/Jean-Bartik-Illustration.png"
-                            alt="Jean Bartik">
-                    </figure>
-                    <section>
-                        <h3>Jean Bartik</h3>
-                        <button class="btn-open-modal" data-id="jean">Leer más</button>
-                    </section>
-                </article>
+            <div class="cards-container">
+                <div class="cards-header">
+                    <h2 lang="en">Secret Rosies</h2>
+                    <p>Los nombres, rostros y aportes de las seis mujeres que programaron el <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> y cambiaron para siempre la historia de la computación.</p>
+                </div>
+                <div class="cards-wrapper">
+                    <article>
+                        <figure>
+                            <img src="assets/img/Kay-McNulty-Illustration.png" alt="Kay McNulty">
+                        </figure>
+                        <div>
+                            <h3>Kathleen McNulty</h3>
+                            <button class="btn-open-modal" data-id="kay">Leer más</button>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="assets/img/Betty-Holberton-Illustration2.png" alt="Betty Sydner">
+                        </figure>
+                        <div>
+                            <h3>Betty Sydner</h3>
+                            <button class="btn-open-modal" data-id="betty">Leer más</button>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="assets/img/Marlyn-Meltzer-Illustration.png" alt="Marlyn Wescoff">
+                        </figure>
+                        <div>
+                            <h3>Marlyn Wescoff</h3>
+                            <button class="btn-open-modal" data-id="marlyn">Leer más</button>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="assets/img/Ruth-Teitelbaum-Illustration.png" alt="Ruth Teitelbaum">
+                        </figure>
+                        <div>
+                            <h3>Ruth Teitelbaum</h3>
+                            <button class="btn-open-modal" data-id="ruth">Leer más</button>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="assets/img/Frances-Spence-Illustration.png" alt="Frances Bilas Spence">
+                        </figure>
+                        <div>
+                            <h3>Frances Bilas</h3>
+                            <button class="btn-open-modal" data-id="frances">Leer más</button>
+                        </div>
+                    </article>
+                    <article>
+                        <figure>
+                            <img src="assets/img/Jean-Bartik-Illustration.png" alt="Jean Bartik">
+                        </figure>
+                        <div>
+                            <h3>Jean Bartik</h3>
+                            <button class="btn-open-modal" data-id="jean">Leer más</button>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN -- ENTREVISTA -->
+        <!-- SECCIÓN -- ENTREVISTA (de la teva branca) -->
         <section id="entrevista" class="section section--entrevista">
-            <h2>Entrevista a las ENIAC Six</h2>
+            <h2>Entrevista a las <span lang="en"><abbr title="Electronic Numerical Integrator and Computer">ENIAC</abbr> Six</span></h2>
             <h3 class="entrevista-subtitulo">
                 Transcripción completa · 22 min · 1986
             </h3>
@@ -461,14 +479,14 @@
                 Tu navegador no soporta el elemento de audio.
             </audio>
 
-            <!-- TRANSCRIPT -->
+            <!-- TRANSCRIPT — imatges .webp de la teva branca -->
             <ol class="entrevista-transcript">
                 <li data-role="periodista">
-                    <img src="assets/img/kathy-kleiman.jpg" alt="Kathy Kleiman" />
+                    <img src="assets/img/kathy-kleiman.webp" alt="Kathy Kleiman" />
                     <div>
-                        <p class="speaker-name">KATHY KLEIMAN</p>
+                        <p class="speaker-name" lang="en">KATHY KLEIMAN</p>
                         <p>
-                            Llevamos décadas oyendo hablar del ENIAC como si lo hubieran
+                            Llevamos décadas oyendo hablar del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> como si lo hubieran
                             construido solos dos ingenieros. Pero vosotras estabais ahí.
                             ¿Cómo acabasteis trabajando en ese proyecto?
                         </p>
@@ -476,22 +494,22 @@
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Kay-McNulty-Illustration.png" alt="Kay McNulty" />
+                    <img src="assets/img/Kay-McNulty-Illustration.webp" alt="Kay McNulty" />
                     <div>
-                        <p class="speaker-name">KAY MCNULTY</p>
+                        <p class="speaker-name" lang="en">KAY MCNULTY</p>
                         <p>
                             El Ejército necesitaba gente que supiera matemáticas y buscaba
                             mujeres con carrera universitaria para calcular tablas de tiro.
                             Me enteré por un anuncio, me presenté y me contrataron. Estuve
                             haciendo esos cálculos a mano durante meses, ecuación por
-                            ecuación, antes de que nos asignaran al ENIAC. Una sola
+                            ecuación, antes de que nos asignaran al <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>. Una sola
                             trayectoria balística te llevaba más de cuarenta horas.
                         </p>
                     </div>
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Jean-Bartik-Illustration.png" alt="Jean Jennings" />
+                    <img src="assets/img/Jean-Bartik-Illustration.webp" alt="Jean Jennings" />
                     <div>
                         <p class="speaker-name">JEAN JENNINGS</p>
                         <p>
@@ -506,9 +524,9 @@
                 </li>
 
                 <li data-role="periodista">
-                    <img src="assets/img/kathy-kleiman.jpg" alt="Kathy Kleiman" />
+                    <img src="assets/img/kathy-kleiman.webp" alt="Kathy Kleiman" />
                     <div>
-                        <p class="speaker-name">KATHY KLEIMAN</p>
+                        <p class="speaker-name" lang="en">KATHY KLEIMAN</p>
                         <p>
                             Y una vez allí, ¿cómo se programaba aquello? No había software,
                             no había lenguajes de programación...
@@ -517,7 +535,7 @@
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Betty-Holberton-Illustration2.png" alt="Betty Holberton" />
+                    <img src="assets/img/Betty-Holberton-Illustration2.webp" alt="Betty Holberton" />
                     <div>
                         <p class="speaker-name">BETTY HOLBERTON</p>
                         <p>
@@ -532,14 +550,14 @@
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Frances-Spence-Illustration.png" alt="Frances Bilas" />
+                    <img src="assets/img/Frances-Spence-Illustration.webp" alt="Frances Bilas" />
                     <div>
                         <p class="speaker-name">FRANCES BILAS</p>
                         <p>
                             La primera demostración pública fue en febrero del 46. La
                             máquina resolvió en segundos lo que a nosotras nos habría
                             llevado horas. La sala se quedó en silencio. Pero cuando los
-                            periodistas preguntaron quién había programado el ENIAC, las
+                            periodistas preguntaron quién había programado el <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>, las
                             cámaras fueron directas a los ingenieros. Nosotras estábamos a
                             dos metros y nadie nos preguntó nada.
                         </p>
@@ -547,9 +565,9 @@
                 </li>
 
                 <li data-role="periodista">
-                    <img src="assets/img/kathy-kleiman.jpg" alt="Kathy Kleiman" />
+                    <img src="assets/img/kathy-kleiman.webp" alt="Kathy Kleiman" />
                     <div>
-                        <p class="speaker-name">KATHY KLEIMAN</p>
+                        <p class="speaker-name" lang="en">KATHY KLEIMAN</p>
                         <p>
                             Han pasado cuarenta años desde entonces. ¿Cómo habéis vivido ese
                             borrado de la historia?
@@ -558,7 +576,7 @@
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Marlyn-Meltzer-Illustration.png" alt="Marlyn Wescoff" />
+                    <img src="assets/img/Marlyn-Meltzer-Illustration.webp" alt="Marlyn Wescoff" />
                     <div>
                         <p class="speaker-name">MARLYN WESCOFF</p>
                         <p>
@@ -572,11 +590,11 @@
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Ruth-Teitelbaum-Illustration.png" alt="Ruth Lichterman" />
+                    <img src="assets/img/Ruth-Teitelbaum-Illustration.webp" alt="Ruth Lichterman" />
                     <div>
                         <p class="speaker-name">RUTH LICHTERMAN</p>
                         <p>
-                            Después del ENIAC seguí trabajando en el sector, formando a los
+                            Después del <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> seguí trabajando en el sector, formando a los
                             primeros técnicos del UNIVAC, el ordenador comercial que vino
                             después. Pero cuando mis hijos estudiaban informática, en los
                             libros de texto no aparecíamos por ningún sitio. Es una
@@ -587,9 +605,9 @@
                 </li>
 
                 <li data-role="periodista">
-                    <img src="assets/img/kathy-kleiman.jpg" alt="Kathy Kleiman" />
+                    <img src="assets/img/kathy-kleiman.webp" alt="Kathy Kleiman" />
                     <div>
-                        <p class="speaker-name">KATHY KLEIMAN</p>
+                        <p class="speaker-name" lang="en">KATHY KLEIMAN</p>
                         <p>
                             Para cerrar, ¿qué les diríais a las mujeres que hoy se están
                             abriendo camino en la tecnología?
@@ -598,9 +616,9 @@
                 </li>
 
                 <li data-role="invitada">
-                    <img src="assets/img/Kay-McNulty-Illustration.png" alt="Kay McNulty" />
+                    <img src="assets/img/Kay-McNulty-Illustration.webp" alt="Kay McNulty" />
                     <div>
-                        <p class="speaker-name">KAY MCNULTY</p>
+                        <p class="speaker-name" lang="en">KAY MCNULTY</p>
                         <p>
                             Que no esperen que nadie les dé permiso. Nosotras tampoco lo
                             pedimos. Simplemente llegamos, aprendimos y lo hicimos mejor que
@@ -615,23 +633,21 @@
         <!-- #Documental -->
         <section id="documental" class="section section--documental">
             <div class="ficha-documental">
-
-                <h2 class="titulo-doc">Top Secret Rosies: The Female Computers of WWII</h2>
-
+                <h2 class="titulo-doc"><cite lang="en">Top Secret Rosies: The Female Computers of WWII</cite></h2>
                 <div class="video-doc">
                     <img src="assets/img/tele.png" alt="Pantalla documental">
                 </div>
 
-                <p><strong>Año:</strong> 2010</p>
+                <p><strong>Año:</strong> <time datetime="2010">2010</time></p>
                 <p><strong>País:</strong> Estados Unidos</p>
-                <p><strong>Duración:</strong> 65 min</p>
+                <p><strong>Duración:</strong> <time datetime="PT65M">65 min</time></p>
                 <p><strong>Dirección:</strong> LeAnn Erickson</p>
                 <p><strong>Sinopsis:</strong></p>
 
                 <p>
                     Este documental cuenta la historia de seis mujeres matemáticas que
                     trabajaron durante la Segunda Guerra Mundial programando el ordenador
-                    ENIAC. Su trabajo fue fundamental para el desarrollo de la informática
+                    <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr>. Su trabajo fue fundamental para el desarrollo de la informática
                     moderna, aunque durante décadas permaneció prácticamente desconocido.
                 </p>
 
@@ -647,8 +663,7 @@
             </div>
         </section>
 
-
-        <!-- #Legado -->
+        <!-- #Legado (de la teva branca) -->
         <section id="legado" class="section section--legado">
           <div class="legado">
 
@@ -727,7 +742,7 @@
                       <p>1930 – 2026</p>
                     </div>
                   </div>
-                  <div class="fc-back">
+                  <div class="fc-back" style="background-color: var(--color-bg-card, var(--color-surface)); color: var(--color-text);">
                     <h4>Gladys West</h4>
                     <p>Sus modelos matemáticos son la base del GPS que usamos hoy. Afroamericana en la Marina durante la segregación: trabajo invisible, impacto universal. Un eco directo de las ENIAC Six.</p>
                     <small>GPS · Geodesia · Hidden Figure</small>
@@ -746,7 +761,7 @@
                       <p>1932 – 2020</p>
                     </div>
                   </div>
-                  <div class="fc-back">
+                  <div class="fc-back" style="background-color: var(--color-bg-card, var(--color-surface)); color: var(--color-text);">
                     <h4>Frances Allen</h4>
                     <p>Primera mujer en ganar el Premio Turing (2006). Pionera en optimización de compiladores en IBM durante cuatro décadas. Mentora de generaciones de ingenieras.</p>
                     <small>Turing Award · Compiladores · IBM</small>
@@ -765,7 +780,7 @@
                       <p>1936 – Actualidad</p>
                     </div>
                   </div>
-                  <div class="fc-back">
+                  <div class="fc-back" style="background-color: var(--color-bg-card, var(--color-surface)); color: var(--color-text);">
                     <h4>Margaret Hamilton</h4>
                     <p>Directora del software del Apollo 11. Acuñó el término <em>"ingeniería del software"</em>. Ha señalado que la historia de las ENIAC Six demostró que las mujeres debían estar en el centro técnico, no en la periferia.</p>
                     <small>Apollo 11 · Software Engineering · NASA</small>
@@ -784,7 +799,7 @@
                       <p>1949 – 2003</p>
                     </div>
                   </div>
-                  <div class="fc-back">
+                  <div class="fc-back" style="background-color: var(--color-bg-card, var(--color-surface)); color: var(--color-text);">
                     <h4>Anita Borg</h4>
                     <p>Fundó Systers (1987), la primera comunidad en línea para mujeres en tecnología, y el Instituto para la Mujer y la Tecnología. Dedicó su vida a demostrar que la informática necesitaba más voces femeninas.</p>
                     <small>Systers · Diversidad · Liderazgo</small>
@@ -803,7 +818,7 @@
                       <p>1951 – Actualidad</p>
                     </div>
                   </div>
-                  <div class="fc-back">
+                  <div class="fc-back" style="background-color: var(--color-bg-card, var(--color-surface)); color: var(--color-text);">
                     <h4>Radia Perlman</h4>
                     <p>Conocida como "la madre de Internet". Inventó el protocolo <em>Spanning Tree (STP)</em> sin el cual las redes Ethernet no podrían escalar. Defiende que recuperar la historia de las pioneras es clave para atraer más mujeres a la tecnología.</p>
                     <small>STP · Ethernet · Redes</small>
@@ -822,7 +837,7 @@
                       <p>1964 – Actualidad</p>
                     </div>
                   </div>
-                  <div class="fc-back">
+                  <div class="fc-back" style="background-color: var(--color-bg-card, var(--color-surface)); color: var(--color-text);">
                     <h4>Megan Smith</h4>
                     <p>Primera CTO de Estados Unidos (Obama, 2014–2017). Vicepresidenta en Google durante una década. Lleva años rescatando del olvido las historias de pioneras como las ENIAC Six para visibilizarlas en libros de historia y currículos escolares.</p>
                     <small>CTO USA · Google · Visibilidad</small>
@@ -852,7 +867,7 @@
                       <p>CIFO La Violeta · 2026</p>
                     </div>
                   </div>
-                  <div class="fc-back fc-back--autora">
+                  <div class="fc-back fc-back--autora" style="background-color: var(--color-bg-card-autora, var(--color-accent, var(--color-surface))); color: var(--color-text);">
                     <h4>Marta Palahí</h4>
                     <p>Diseñadora de formación y desarrolladora web por elección. Tras estudiar Diseño en ESDAP y especializarse en el ámbito creativo, descubrió en la programación una nueva forma de construir ideas.</p>
                     <p>Entre el diseño y el código, Marta une creatividad y lógica para transformar conceptos en experiencias digitales. Para ella, el desarrollo web es otro tipo de diseño: uno que también se escribe.</p>
@@ -871,7 +886,7 @@
                       <p>CIFO La Violeta · 2026</p>
                     </div>
                   </div>
-                  <div class="fc-back fc-back--autora">
+                  <div class="fc-back fc-back--autora" style="background-color: var(--color-bg-card-autora, var(--color-accent, var(--color-surface))); color: var(--color-text);">
                     <h4>Íngrid Palomino</h4>
                     <p>Con formación científica y especialización en análisis de datos y marketing digital, Íngrid encontró en el desarrollo front-end un punto de encuentro entre lógica y creatividad.</p>
                     <p>Le gusta explorar los datos para detectar tendencias, entender el mercado y convertir esa información en ideas digitales nuevas, creativas y con intención.</p>
@@ -889,7 +904,7 @@
         <footer>
             <div class="footer__top">
                 <div class="footer__brand">
-                    <h3>Las Seis de ENIAC</h3>
+                    <h3>Las Seis de <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr></h3>
                     <p>
                         Proyecto educativo del curso de
                         <em>Confección de páginas web</em> del
@@ -902,8 +917,7 @@
                     <h3>Más información</h3>
                     <ul>
                         <li>
-                            <a href="https://eniacprogrammers.org" target="_blank" rel="noopener">ENIAC Programmers
-                                Project</a>
+                            <a href="https://eniacprogrammers.org" target="_blank" rel="noopener" lang="en"><abbr title="Electronic Numerical Integrator and Computer">ENIAC</abbr> Programmers Project</a>
                         </li>
                         <li>
                             <a href="https://es.wikipedia.org/wiki/ENIAC" target="_blank" rel="noopener">ENIAC —
@@ -911,11 +925,11 @@
                         </li>
                         <li>
                             <a href="https://www.computer.org/volunteering/awards/pioneer/about-women-of-eniac"
-                                target="_blank" rel="noopener">IEEE — Women of ENIAC</a>
+                                target="_blank" rel="noopener">IEEE — Women of <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr></a>
                         </li>
                         <li>
                             <a href="https://www.seas.upenn.edu/about/history-heritage/eniac/" target="_blank"
-                                rel="noopener">UPenn — ENIAC Heritage</a>
+                                rel="noopener">UPenn — <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> Heritage</a>
                         </li>
                         <li>
                             <a href="https://www.witi.com/halloffame/298369/ENIAC-Programmers-Kathleen-McNulty,-Mauchly-Antonelli,-Jean-Jennings-Bartik,-Frances-Synder-Holber-Marlyn-Wescoff-Meltzer,-Frances-Bilas-Spence-and-Ruth-Lichterman-Teitelbaum/"
@@ -956,13 +970,13 @@
                             d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                     </svg>
                     <a href="https://github.com/orbuxedaco-cell" target="_blank" rel="noopener">Oriol Buxeda</a>
-                    <a href="https://github.com/germansango01" target="_blank" rel="noopener">German Contreras</a>
+                    <a href="https://github.com/germansango01" target="_blank" rel="noopener">Germán Contreras</a>
                     <a href="https://github.com/martapalahim98-tech" target="_blank" rel="noopener">Marta Palahí</a>
                     <a href="https://github.com/ingbiop" target="_blank" rel="noopener">Íngrid Palomino</a>
-                    <a href="https://github.com/josesalazar2025" target="_blank" rel="noopener">Jose Salazar</a>
+                    <a href="https://github.com/josesalazar2025" target="_blank" rel="noopener">José Salazar</a>
                 </div>
                 <p class="footer__copyright">
-                    &copy; 2026 Las Seis de ENIAC &middot; CIFO La Violeta
+                    &copy; 2026 Las Seis de <abbr lang="en" title="Electronic Numerical Integrator and Computer">ENIAC</abbr> &middot; CIFO La Violeta
                 </p>
             </div>
         </footer>

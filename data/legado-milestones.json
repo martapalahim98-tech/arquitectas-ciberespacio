@@ -1,0 +1,44 @@
+[
+  {
+    "year":  "1945",
+    "title": "Predicción meteorológica militar",
+    "text":  "El ENIAC fue utilizado para realizar las primeras simulaciones numéricas del clima, una capacidad crítica para planificar operaciones militares como desembarcos y ofensivas aéreas. Por primera vez, una máquina podía anticipar la naturaleza.",
+    "tag":   "Meteorología · Simulación · Ejército"
+  },
+  {
+    "year":  "1946",
+    "title": "Cálculos de la bomba de hidrógeno",
+    "text":  "El matemático John von Neumann utilizó el ENIAC para realizar los primeros cálculos termonucleares, determinando la viabilidad de la bomba de hidrógeno y marcando el inicio de la era nuclear computacional.",
+    "tag":   "Von Neumann · Fisión nuclear · Guerra Fría"
+  },
+  {
+    "year":  "1949",
+    "title": "Diseño de túneles de viento",
+    "text":  "El ENIAC permitió simular flujos aerodinámicos complejos, acelerando el diseño de aviones supersónicos y cohetes que serían esenciales en la Guerra Fría y la carrera espacial. La ingeniería dejaba de depender solo del ensayo y error.",
+    "tag":   "Aerodinámica · Supersónico · Cohetes"
+  },
+  {
+    "year":  "1950s",
+    "title": "Nacimiento de la programación moderna",
+    "text":  "Las técnicas inventadas por las ENIAC Six —subrutinas, bucles anidados, depuración sistemática— se convirtieron en los fundamentos de la ingeniería de software que usamos hoy. Programar dejó de ser un arte improvisado para convertirse en una disciplina.",
+    "tag":   "ENIAC Six · Subrutinas · Ingeniería de software"
+  },
+  {
+    "year":  "1957",
+    "title": "Carrera espacial",
+    "text":  "Los sucesores directos del ENIAC calcularon las trayectorias orbitales del programa espacial. Sin la computación que nació con el ENIAC, ni el Sputnik ni el Apollo habrían existido. El código que comenzó en un sótano de Filadelfia llegó a la Luna.",
+    "tag":   "Sputnik · Apollo · NASA"
+  },
+  {
+    "year":  "1969",
+    "title": "ARPANET y los orígenes de Internet",
+    "text":  "La red ARPANET, precursora de Internet, fue posible gracias a la computación digital nacida del ENIAC. Los principios de conmutación de paquetes se calcularon en máquinas herederas directas. Ese mismo año, el ser humano pisaba la Luna.",
+    "tag":   "ARPANET · Internet · Redes"
+  },
+  {
+    "year":  "1970s",
+    "title": "Criptografía computacional",
+    "text":  "Los sistemas de cifrado militar evolucionaron de mecánicos a digitales gracias a la potencia de cálculo inaugurada por el ENIAC, revolucionando la inteligencia y la seguridad nacional. La privacidad digital que protege internet hoy tiene su raíz aquí.",
+    "tag":   "Cifrado · Seguridad · Inteligencia"
+  }
+]
