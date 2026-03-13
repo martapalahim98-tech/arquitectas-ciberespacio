@@ -79,7 +79,9 @@ h1 {
     font-family: var(--font-heading);
     font-size: var(--text-h1);
     text-transform: uppercase;
-    color: #0891B2;
+    color: var(--color-accent);
+    font-weight: 700;
+    line-height: 1;
 }
 
 h2 {
@@ -107,6 +109,10 @@ svg {
 :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+abbr {
+    text-decoration: none;
 }
 
 /* ── Button Top ────────────────────────────────────────────────────────── */
@@ -155,6 +161,22 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
+}
+
+.site-logo {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #0891B2;
+}
+
+.site-logo a,
+.site-logo a:visited {
+    color: inherit;
+    text-decoration: none;
 }
 
 header a {
@@ -298,9 +320,17 @@ header a {
     padding: 2rem 6%;
 }
 
-.section--hero>h2,
+.section--hero>h1,
 .section--hero>p {
     text-align: center;
+}
+
+.section--hero > h1 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-top: 2rem;
+    line-height: 1;
+    font-size: clamp(3.5rem, 18vw, 10rem);
 }
 
 .section--hero>h2 {
@@ -311,7 +341,7 @@ header a {
     line-height: 1;
 }
 
-.section--hero>p {
+.section--hero > p {
     font-family: var(--font-subheading);
     font-size: clamp(0.85rem, 2.5vw, 1.2rem);
     color: var(--color-background-primary);
@@ -360,6 +390,10 @@ header a {
     margin: 0 auto;
 }
 
+.contexto-wrapper h3{
+    padding-bottom: 2rem;
+}
+
 /* TIMELINE — MOBILE FIRST */
 .contexto-timeline {
     position: relative;
@@ -391,7 +425,7 @@ header a {
     box-shadow: var(--box-shadow);
 }
 
-.contexto-card h3 {
+.contexto-card h4 {
     font-family: var(--font-heading);
     color: var(--color-text);
     text-transform: uppercase;
@@ -1047,6 +1081,10 @@ header a {
     margin-bottom: 0;
 }
 
+.secret-recognition__card img {
+    border-radius: var(--radius);
+}
+
 .section--secret button {
     border: none;
     font-weight: bold;
@@ -1154,7 +1192,7 @@ header a {
 
 /* ── ENTREVISTA SECTION ──────────────────────────────────────────────────── */
 .section--entrevista {
-    background: var(--color-background-secondary);
+    background: #121212;
     color: var(--color-background-primary);
     align-items: center;
     padding: 2rem 6%;
@@ -2344,6 +2382,7 @@ footer ul a:hover {
         grid-template-columns: 1fr 1fr;
         gap: 3rem 25rem;
         padding-left: 0;
+        align-items: start;
     }
 
     .secret-timeline-line {
@@ -2357,6 +2396,7 @@ footer ul a:hover {
         width: 100%;
         max-width: 31rem;
         padding: 2rem;
+        align-self: start;
     }
 
     .secret-card--left {
