@@ -354,7 +354,7 @@ function applyTheme(isDark) {
 }
 
 function getStoredTheme() {
-    return localStorage.getItem(THEME_KEY); // "dark" | "light" | null
+    return localStorage.getItem(THEME_KEY); // "dark" | "light" || null
 }
 
 const stored = getStoredTheme();
