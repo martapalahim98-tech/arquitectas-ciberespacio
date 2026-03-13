@@ -115,6 +115,11 @@ abbr {
     text-decoration: none;
 }
 
+cite {
+    font-style: normal;
+    font-weight: inherit;
+}
+
 /* ── Button Top ────────────────────────────────────────────────────────── */
 .btn-top {
     position: fixed;
