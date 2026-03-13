@@ -345,9 +345,7 @@ header a {
 
 /* ── INTRODUCCION SECTION ───────────────────────────────────────────────────── */
 #intro {
-    max-width: 60%;
-    margin: 2rem;
-    align-self: center;
+    width: 100%;
 }
 
 /* ── CONTEXTO SECTION ───────────────────────────────────────────────────── */
@@ -357,7 +355,7 @@ header a {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 4rem 6% 5rem;
+    padding: 2rem 6%;
     background: var(--color-background-primary);
 }
 
@@ -386,7 +384,7 @@ header a {
 }
 
 .contexto-wrapper h2 {
-    padding-left: 4rem;
+    text-align: left;
 }
 
 .contexto-card {
@@ -559,10 +557,11 @@ header a {
     display: block;
     padding: 5rem 6% 7rem;
     padding: 0;
+    min-height: auto;
 }
 
 .eniac--sticky {
-    min-height: 100vh;
+    min-height: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
@@ -766,7 +765,7 @@ header a {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    padding: 4rem 6% 5rem;
+    padding: 2rem 6%;
     background: var(--color-background-primary);
 }
 
@@ -945,6 +944,7 @@ header a {
 .secret-rediscovery {
     position: relative;
     padding-left: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 2.5rem;
 }
 
@@ -1069,7 +1069,7 @@ header a {
 #rosies-gallery {
     display: flex;
     flex-direction: column;
-    padding: 5rem 6% 7rem;
+    padding: 2rem 6%;
 }
 
 #rosies-gallery.section {
@@ -1156,7 +1156,7 @@ header a {
     background: var(--color-background-secondary);
     color: var(--color-background-primary);
     align-items: center;
-    padding: 4rem 6%;
+    padding: 2rem 6%;
     gap: 1.25rem;
 }
 
@@ -1800,6 +1800,12 @@ footer ul a:hover {
         padding: 5rem 8% 6rem;
     }
 
+    #intro {
+        max-width: 60%;
+        margin: 2rem;
+        align-self: center;
+    }
+
     .contexto-timeline {
         padding-left: 2.5rem;
         padding-bottom: 20%;
@@ -2129,9 +2135,11 @@ footer ul a:hover {
     /* ENIAC SECTION */
     .section--eniac {
         padding: 5rem 10% 7rem;
+        min-height: 100vh;
     }
 
     .eniac--sticky {
+        min-height: 100vh;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
