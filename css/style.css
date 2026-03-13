@@ -348,6 +348,7 @@ header a {
     max-width: 60%;
     margin: 2rem;
     align-self: center;
+    padding-bottom: 2rem;
 }
 
 /* ── CONTEXTO SECTION ───────────────────────────────────────────────────── */
@@ -365,6 +366,10 @@ header a {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.contexto-wrapper h3{
+    padding-bottom: 2rem;
 }
 
 /* TIMELINE — MOBILE FIRST */
@@ -385,10 +390,6 @@ header a {
     opacity: 0.8;
 }
 
-.contexto-wrapper h2 {
-    padding-left: 4rem;
-}
-
 .contexto-card {
     position: relative;
     width: 100%;
@@ -398,7 +399,7 @@ header a {
     box-shadow: var(--box-shadow);
 }
 
-.contexto-card h3 {
+.contexto-card h4 {
     font-family: var(--font-heading);
     color: var(--color-text);
     text-transform: uppercase;
@@ -2246,6 +2247,7 @@ footer ul a:hover {
         grid-template-columns: 1fr 1fr;
         gap: 3rem 25rem;
         padding-left: 0;
+        align-items: start;
     }
 
     .secret-timeline-line {
@@ -2259,6 +2261,7 @@ footer ul a:hover {
         width: 100%;
         max-width: 31rem;
         padding: 2rem;
+        align-self: start;
     }
 
     .secret-card--left {
