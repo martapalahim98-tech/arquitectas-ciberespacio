@@ -299,6 +299,7 @@ if (btnPrev && btnNext) {
 /* TIMELINE ANIMATIONS*/
 document.documentElement.classList.add('js-anim');
 
+
 const tlObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -321,6 +322,19 @@ const tlObserver = new IntersectionObserver((entries) => {
   const el = document.querySelector(sel);
   if (el) tlObserver.observe(el);
 });
+
+/* Bridge fires as soon as it enters the viewport */
+const bridgeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('anim-triggered');
+      bridgeObserver.unobserve(entry.target);
+    }
+  });
+}, { root: container, threshold: 0 });
+
+const secretBridge = document.querySelector('.secret-bridge');
+if (secretBridge) bridgeObserver.observe(secretBridge);
 
 /* ===== DARK MODE ===== */
 const THEME_DARK = "dark";
