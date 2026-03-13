@@ -30,29 +30,31 @@ La web está diseñada como una **one-page interactiva**, combinando narrativa h
 # 🛠 Tecnologías utilizadas
 
 - **HTML5**
-  - estructura semántica del documento
 
+  - estructura semántica del documento
 - **CSS3**
+
   - Flexbox
   - CSS Grid
   - Scroll Snap
   - clamp()
   - Transiciones y transformaciones
-
 - **JavaScript**
+
   - pequeñas interacciones
   - control de algunos elementos dinámicos
-
 - **Figma**
-  - prototipo visual y diseño previo
 
+  - prototipo visual y diseño previo
 - **Git & GitHub**
+
   - control de versiones
   - trabajo colaborativo con ramas
 
 ---
 
 # 📂 Estructura del proyecto
+
 arquitectas-ciberespacio
 │
 ├── index.html
@@ -66,19 +68,12 @@ arquitectas-ciberespacio
 │ └── icons/
 └── README.md
 
-
 **Explicación de la organización:**
 
-- **index.html**  
-  estructura principal de la web.
-
-- **css/**  
-  hojas de estilo del proyecto.
-
-- **js/**  
-  scripts para pequeñas funcionalidades interactivas.
-
-- **assets/**  
+- **index.html**estructura principal de la web.
+- **css/**hojas de estilo del proyecto.
+- **js/**scripts para pequeñas funcionalidades interactivas.
+- **assets/**
   recursos gráficos utilizados en la web.
 
 ---
@@ -89,9 +84,9 @@ El proyecto se ha desarrollado siguiendo un enfoque **Mobile First**.
 
 **Breakpoints principales:**
 
-- Mobile → diseño base  
-- Tablet → reorganización del layout  
-- Desktop → ampliación del grid y distribución avanzada  
+- Mobile → diseño base
+- Tablet → reorganización del layout
+- Desktop → ampliación del grid y distribución avanzada
 
 Para garantizar la escalabilidad se utilizan:
 
@@ -115,10 +110,10 @@ Esto permite que la narrativa funcione como un **recorrido cronológico continuo
 
 Las ventajas de este enfoque son:
 
-- experiencia de lectura más fluida  
-- continuidad narrativa  
-- navegación sencilla  
-- mejor adaptación al consumo en dispositivos móviles  
+- experiencia de lectura más fluida
+- continuidad narrativa
+- navegación sencilla
+- mejor adaptación al consumo en dispositivos móviles
 
 Cada sección funciona como un **capítulo de la historia**.
 
@@ -132,9 +127,9 @@ Esta técnica permite que cada sección se **alineé automáticamente en pantall
 
 Ventajas de esta decisión:
 
-- mejora la navegación  
-- refuerza la estructura narrativa  
-- permite que cada sección se perciba como un bloque independiente  
+- mejora la navegación
+- refuerza la estructura narrativa
+- permite que cada sección se perciba como un bloque independiente
 
 ---
 
@@ -144,9 +139,9 @@ El contexto histórico se presenta mediante un **timeline**.
 
 Este componente permite explicar de forma clara y visual:
 
-- el contexto de la Segunda Guerra Mundial  
-- el desarrollo del proyecto ENIAC  
-- el papel de las mujeres en el proyecto  
+- el contexto de la Segunda Guerra Mundial
+- el desarrollo del proyecto ENIAC
+- el papel de las mujeres en el proyecto
 
 El timeline aporta dinamismo visual y facilita la comprensión cronológica de los acontecimientos.
 
@@ -160,9 +155,9 @@ Durante esta década la fotografía era mayoritariamente en blanco y negro, mien
 
 La web combina:
 
-- fotografías históricas  
-- ilustración editorial  
-- composiciones inspiradas en revistas  
+- fotografías históricas
+- ilustración editorial
+- composiciones inspiradas en revistas
 
 El objetivo es reforzar el contexto histórico del proyecto a través del diseño.
 
@@ -172,9 +167,9 @@ El objetivo es reforzar el contexto histórico del proyecto a través del diseñ
 
 Tipografías utilizadas en el proyecto:
 
-- **Playfair Display** → títulos principales  
-- **League Spartan** → encabezados destacados  
-- **DM Sans** → textos de lectura  
+- **Playfair Display** → títulos principales
+- **League Spartan** → encabezados destacados
+- **DM Sans** → textos de lectura
 
 Esta combinación permite mantener una estética editorial manteniendo buena legibilidad.
 
@@ -199,7 +194,6 @@ Esta combinación permite mantener una estética editorial manteniendo buena leg
 #edeae1;
 #06080a;
 
-
 La paleta está inspirada en la ilustración y la publicidad gráfica de mediados del siglo XX.
 
 ---
@@ -209,24 +203,31 @@ La paleta está inspirada en la ilustración y la publicidad gráfica de mediado
 La web está organizada como una **one-page con scroll vertical**.
 
 ### Hero
+
 Introducción al proyecto y presentación del tema.
 
 ### Contexto histórico
+
 Timeline sobre el contexto de la Segunda Guerra Mundial y el desarrollo del ENIAC.
 
 ### Proyecto ENIAC
+
 Explicación del funcionamiento del ENIAC y su uso en cálculos militares.
 
 ### Invisibilización
+
 Reflexión sobre la invisibilización histórica de las programadoras.
 
 ### Las seis programadoras
+
 Presentación de las **ENIAC Six**.
 
 ### Entrevista
+
 Sección interactiva basada en preguntas y respuestas.
 
 ### Documental
+
 Sección donde se puede acceder al documental de Secret Rosies para darlas a conocer.
 
 ---
@@ -235,8 +236,8 @@ Sección donde se puede acceder al documental de Secret Rosies para darlas a con
 
 Las siguientes secciones forman parte del planteamiento del proyecto pero **no están implementadas todavía**:
 
-- Impacto militar vs tecnológico  
-- Legado tecnológico  
+- Impacto militar vs tecnológico
+- Legado tecnológico
 
 Estas secciones ampliarán la reflexión sobre el impacto del ENIAC en el desarrollo de la informática moderna.
 
@@ -246,10 +247,10 @@ Estas secciones ampliarán la reflexión sobre el impacto del ENIAC en el desarr
 
 Durante el desarrollo del proyecto surgieron varios retos:
 
-- adaptar el **timeline** para que funcionara correctamente en móvil  
-- mantener una estética editorial compleja sin perder legibilidad  
-- coordinar el trabajo del equipo mediante **ramas de Git**  
-- integrar secciones desarrolladas por diferentes miembros del grupo  
+- adaptar el **timeline** para que funcionara correctamente en móvil
+- mantener una estética editorial compleja sin perder legibilidad
+- coordinar el trabajo del equipo mediante **ramas de Git**
+- integrar secciones desarrolladas por diferentes miembros del grupo
 
 Estos retos ayudaron a mejorar la organización del proyecto y el trabajo colaborativo.
 
@@ -276,23 +277,25 @@ El proyecto podrá visualizarse mediante **GitHub Pages** una vez finalizado.
 
 Proyecto realizado por:
 
-- Marta  
-- Jose  
-- Germán  
-- Ingrid  
-- Uri  
+- Marta
+- Jose
+- Germán
+- Ingrid
+- Uri
 
-Curso: **Confección y Publicación de Páginas Web**  
-CIFO Barcelona La Violeta  
+Curso: **Confección y Publicación de Páginas Web**
+CIFO Barcelona La Violeta
 2026
 
 ---
 
 # 📊 Validación
 
-- HTML validado con W3C ✔  
-- CSS validado ✔  
-- Lighthouse Performance: —  
-- Lighthouse Accessibility: —
+- HTML validado con W3C ✔
+- CSS validado ✔
+- Lighthouse Performance: 97
+- Lighthouse Accessibility: 100
+- Best practices: 96
+- CEO: 100
 
 ---
