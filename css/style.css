@@ -557,6 +557,7 @@ header a {
 /* ── ENIAC SECTION ──────────────────────────────────────────────────────── */
 .section--eniac {
     display: block;
+    padding: 5rem 6% 7rem;
     padding: 0;
 }
 
@@ -758,93 +759,6 @@ header a {
     opacity: 1;
 }
 
-/* ── GALLERY SECTION ─────────────────────────────────────────────────────── */
-#rosies-gallery {
-    display: flex;
-    flex-direction: column;
-    padding: 5rem 6% 7rem;
-}
-
-#rosies-gallery.section {
-    display: block;
-    min-height: auto;
-    scroll-snap-align: start;
-}
-
-#rosies-gallery .cards-header {
-    margin-bottom: 2rem;
-}
-
-#rosies-gallery .cards-wrapper {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 1rem 6%;
-    -webkit-overflow-scrolling: touch;
-}
-
-#rosies-gallery .cards-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-#rosies-gallery article {
-    flex: 0 0 280px;
-    min-width: 280px;
-    scroll-snap-align: center;
-    background: var(--color-light);
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transition: transform .25s ease, box-shadow .25s ease;
-}
-
-#rosies-gallery article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-#rosies-gallery figure {
-    margin: 0;
-}
-
-#rosies-gallery img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-}
-
-#rosies-gallery article section {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-}
-
-#rosies-gallery h3 {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-#rosies-gallery button {
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    background-color: var(--color-secondary);
-    color: var(--color-background-primary);
-    padding: .6rem 1rem;
-    border-radius: 6px;
-    transition: all ease 0.5s;
-}
-
-#rosies-gallery button:hover {
-    background-color: var(--color-primary);
-}
-
 /* ── SECRET SECTION ─────────────────────────────────────────────────────── */
 .section--secret {
     min-height: auto;
@@ -856,11 +770,8 @@ header a {
     background: var(--color-background-primary);
 }
 
-.section--secret>h2 {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 2rem;
-    text-align: left;
+.section--secret h2 {
+    display: none;
 }
 
 .secret-wrapper {
@@ -1143,15 +1054,101 @@ header a {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    background-color: var(--color-secondary);
-    color: var(--color-background-primary);
+    background-color: var(--color-background-primary);
+    color: var(--color-secondary);
     padding: .6rem 1rem;
     border-radius: 6px;
     transition: all ease 0.5s;
 }
 
 .section--secret button:hover {
-    background-color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+}
+
+/* ── GALLERY SECTION ─────────────────────────────────────────────────────── */
+#rosies-gallery {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 6% 7rem;
+}
+
+#rosies-gallery.section {
+    display: block;
+    min-height: auto;
+    scroll-snap-align: start;
+}
+
+#rosies-gallery .cards-header {
+    margin-bottom: 2rem;
+}
+
+#rosies-gallery .cards-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 6%;
+    -webkit-overflow-scrolling: touch;
+}
+
+#rosies-gallery .cards-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#rosies-gallery article {
+    flex: 0 0 17.5rem;
+    min-width: 17.5rem;
+    scroll-snap-align: center;
+    background: var(--color-light);
+    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#rosies-gallery article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#rosies-gallery figure {
+    margin: 0;
+}
+
+#rosies-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+#rosies-gallery article section {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#rosies-gallery h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#rosies-gallery button {
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--color-secondary);
+    padding: .6rem 1rem;
+    border-radius: var(--radius);
+    transition: all ease 0.5s;
+}
+
+#rosies-gallery button:hover {
+    border: 1px solid var(--color-secondary);
 }
 
 /* ── ENTREVISTA SECTION ──────────────────────────────────────────────────── */
@@ -1773,7 +1770,7 @@ footer ul a:hover {
     }
 
     .eniac--sticky {
-        padding: 3rem 6% 1.5rem;
+        padding: 0;
         gap: 1rem;
     }
 
@@ -1829,10 +1826,13 @@ footer ul a:hover {
     }
 
     /* ENIAC SECTION */
+    .section--eniac {
+    padding: 5rem 8% 6rem;
+    }
+
     .eniac--sticky {
-        padding: 2rem 8% 2rem;
-        gap: 1rem;
-        min-height: auto;
+    padding: 0;
+    gap: 1rem;
     }
 
     .eniac--stats .stat:nth-child(5) {
@@ -1896,6 +1896,32 @@ footer ul a:hover {
 
     .secret-bridge > span::after {
         left: 0.6rem;
+    }
+
+    /* GALLERY */
+    #rosies-gallery {
+        padding: 5rem 8% 6rem;
+    }
+
+    #rosies-gallery .cards-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    #rosies-gallery .cards-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        overflow: visible;
+        scroll-snap-type: none;
+        padding: 0;
+    }
+
+    #rosies-gallery article {
+        width: 100%;
+        min-width: 0;
+        flex: initial;
     }
 
     /* ENTREVISTA SECTION */
@@ -2101,7 +2127,14 @@ footer ul a:hover {
     }
 
     /* ENIAC SECTION */
+    .section--eniac {
+        padding: 5rem 10% 7rem;
+    }
+
     .eniac--sticky {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
         grid-template-columns: 1.5fr 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas:
@@ -2110,8 +2143,7 @@ footer ul a:hover {
             "texts  texts";
         row-gap: 0.5rem;
         column-gap: 2rem;
-        padding: 2rem 10% 0.5rem;
-        min-height: auto;
+        padding: 0;
     }
 
     .eniac--stats {
@@ -2142,11 +2174,15 @@ footer ul a:hover {
         font-size: var(--text-base);
     }
 
+    .eniac--texts {
+        margin-top: 1rem;
+    }
+
     .eniac--text {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto auto;
         grid-auto-flow: column;
-        column-gap: 2rem;
+        column-gap: 3rem;
         row-gap: 0.4rem;
         font-size: var(--text-base);
     }
@@ -2185,19 +2221,19 @@ footer ul a:hover {
         padding: 5rem 10% 7rem;
     }
 
-    #rosies-gallery .cards-wrapper {
-        overflow: visible;
-        scroll-snap-type: none;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0;
-        gap: 2rem;
-
+    #rosies-gallery .cards-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
-    #rosies-gallery article {
-        min-width: 31%;
-        flex: 0 1 320px;
+    #rosies-gallery .cards-header {
+        width: 100%;
+    }
+
+    #rosies-gallery .cards-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
     }
 
     /* SECRET SECTION */
@@ -2471,7 +2507,7 @@ footer ul a:hover {
 
     /* ENIAC SECTION */
     .eniac--sticky {
-        padding-top: 4.5rem;
+        /* padding-top: 4.5rem; */
         align-content: start;
         min-height: auto;
     }
@@ -2542,6 +2578,11 @@ footer ul a:hover {
     .secret-recognition__card p,
     .secret-card p {
         font-size: 1rem;
+    }
+
+    /* GALLERY */
+    #rosies-gallery .cards-wrapper {
+        gap: 3rem;
     }
 
     /*DOCU*/
