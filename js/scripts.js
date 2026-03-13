@@ -295,111 +295,69 @@ if (btnPrev && btnNext) {
         changeEniacSlide((currentEniacSlide + 1) % eniacFigures.length, true);
     });
 }
-/* ============================================================
-   LEGADO — TIMELINE
-============================================================ */
-const legadoMilestones = [
-  {
-    year:  '1945',
-    title: 'Predicción meteorológica militar',
-    text:  'El ENIAC fue utilizado para realizar las primeras simulaciones numéricas del clima, una capacidad crítica para planificar operaciones militares como desembarcos y ofensivas aéreas. Por primera vez, una máquina podía anticipar la naturaleza.',
-    tag:   'Meteorología · Simulación · Ejército'
-  },
-  {
-    year:  '1946',
-    title: 'Cálculos de la bomba de hidrógeno',
-    text:  'El matemático John von Neumann utilizó el ENIAC para realizar los primeros cálculos termonucleares, determinando la viabilidad de la bomba de hidrógeno y marcando el inicio de la era nuclear computacional.',
-    tag:   'Von Neumann · Fisión nuclear · Guerra Fría'
-  },
-  {
-    year:  '1949',
-    title: 'Diseño de túneles de viento',
-    text:  'El ENIAC permitió simular flujos aerodinámicos complejos, acelerando el diseño de aviones supersónicos y cohetes que serían esenciales en la Guerra Fría y la carrera espacial. La ingeniería dejaba de depender solo del ensayo y error.',
-    tag:   'Aerodinámica · Supersónico · Cohetes'
-  },
-  {
-    year:  '1950s',
-    title: 'Nacimiento de la programación moderna',
-    text:  'Las técnicas inventadas por las ENIAC Six —subrutinas, bucles anidados, depuración sistemática— se convirtieron en los fundamentos de la ingeniería de software que usamos hoy. Programar dejó de ser un arte improvisado para convertirse en una disciplina.',
-    tag:   'ENIAC Six · Subrutinas · Ingeniería de software'
-  },
-  {
-    year:  '1957',
-    title: 'Carrera espacial',
-    text:  'Los sucesores directos del ENIAC calcularon las trayectorias orbitales del programa espacial. Sin la computación que nació con el ENIAC, ni el Sputnik ni el Apollo habrían existido. El código que comenzó en un sótano de Filadelfia llegó a la Luna.',
-    tag:   'Sputnik · Apollo · NASA'
-  },
-  {
-    year:  '1969',
-    title: 'ARPANET y los orígenes de Internet',
-    text:  'La red ARPANET, precursora de Internet, fue posible gracias a la computación digital nacida del ENIAC. Los principios de conmutación de paquetes se calcularon en máquinas herederas directas. Ese mismo año, el ser humano pisaba la Luna.',
-    tag:   'ARPANET · Internet · Redes'
-  },
-  {
-    year:  '1970s',
-    title: 'Criptografía computacional',
-    text:  'Los sistemas de cifrado militar evolucionaron de mecánicos a digitales gracias a la potencia de cálculo inaugurada por el ENIAC, revolucionando la inteligencia y la seguridad nacional. La privacidad digital que protege internet hoy tiene su raíz aquí.',
-    tag:   'Cifrado · Seguridad · Inteligencia'
-  }
-];
 
-const legBtnPrev  = document.getElementById('leg-tl-prev');
-const legBtnNext  = document.getElementById('leg-tl-next');
-const legFill     = document.getElementById('leg-tl-fill');
-const legDetail   = document.getElementById('leg-tl-detail');
-const legHitos    = document.querySelectorAll('.legado-hito');
-const legNavDots  = document.querySelectorAll('.legado-nav__dot');
+/* TIMELINE ANIMATIONS*/
+document.documentElement.classList.add('js-anim');
 
-let legCurrent = 0;
-
-const legGoTo = (index) => {
-  legHitos.forEach((hito, i) => {
-    hito.classList.toggle('is-active', i === index);
-    hito.classList.toggle('is-past',   i < index);
-  });
-
-  legNavDots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
-
-  legFill.style.width = index === 0 ? '0%' : `${index / (legHitos.length - 1) * 100}%`;
-
-  legBtnPrev.disabled = index === 0;
-  legBtnNext.disabled = index === legHitos.length - 1;
-
-  legDetail.classList.remove('is-visible');
-
-  setTimeout(() => {
-    document.getElementById('leg-tl-year').textContent  = legadoMilestones[index].year;
-    document.getElementById('leg-tl-title').textContent = legadoMilestones[index].title;
-    document.getElementById('leg-tl-text').textContent  = legadoMilestones[index].text;
-    document.getElementById('leg-tl-tag').textContent   = legadoMilestones[index].tag;
-    legDetail.classList.add('is-visible');
-  }, 160);
-
-  legCurrent = index;
-};
-
-legBtnNext.addEventListener('click', () => legGoTo(legCurrent + 1));
-legBtnPrev.addEventListener('click', () => legGoTo(legCurrent - 1));
-
-legHitos.forEach((hito, i) => hito.addEventListener('click', () => legGoTo(i)));
-
-document.addEventListener('keydown', (e) => {
-  if (!document.getElementById('legado')?.contains(document.activeElement)) return;
-  if (e.key === 'ArrowRight' && legCurrent < legHitos.length - 1) legGoTo(legCurrent + 1);
-  if (e.key === 'ArrowLeft'  && legCurrent > 0)                   legGoTo(legCurrent - 1);
-});
-
-legGoTo(0);
-
-/* ============================================================
-   LEGADO — FLIP CARDS
-============================================================ */
-document.querySelectorAll('.flip-card').forEach((card) => {
-  card.addEventListener('click', () => card.classList.toggle('flipped'));
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      card.classList.toggle('flipped');
+const tlObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('anim-triggered');
+      tlObserver.unobserve(entry.target);
     }
   });
+}, {
+  root: container,
+  threshold: 0.15,
+});
+
+[
+  '.contexto-timeline',
+  '.contexto-bottom-mark',
+  '.secret-wrapper',
+  '.secret-rediscovery',
+  '.secret-recognition',
+].forEach(sel => {
+  const el = document.querySelector(sel);
+  if (el) tlObserver.observe(el);
+});
+
+/* ===== DARK MODE ===== */
+const THEME_DARK = "dark";
+const THEME_LIGHT = "light";
+const THEME_KEY = "theme";
+
+const themeToggle = document.getElementById("theme-toggle");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function applyTheme(isDark) {
+    document.documentElement.dataset.theme = isDark ? THEME_DARK : THEME_LIGHT;
+    themeToggle.setAttribute("aria-pressed", isDark);
+    themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Activar modo claro" : "Activar modo oscuro"
+    );
+}
+
+function getStoredTheme() {
+    return localStorage.getItem(THEME_KEY); // "dark" | "light" | null
+}
+
+const stored = getStoredTheme();
+if (stored) {
+    applyTheme(stored === THEME_DARK);
+} else {
+    applyTheme(prefersDark.matches);
+}
+
+themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.dataset.theme === THEME_DARK;
+    localStorage.setItem(THEME_KEY, isDark ? THEME_LIGHT : THEME_DARK);
+    applyTheme(!isDark);
+});
+
+prefersDark.addEventListener("change", (e) => {
+    if (!getStoredTheme()) {
+        applyTheme(e.matches);
+    }
 });
