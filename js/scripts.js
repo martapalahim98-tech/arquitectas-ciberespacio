@@ -9,8 +9,9 @@ const btnTop = document.querySelector(".btn-top");
 /* MENU TOGGLE */
 menuToggle.addEventListener("click", () => {
     nav.classList.toggle("open");
-    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", !expanded);
+    const isOpen = nav.classList.contains("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "";
 });
 
 /* SCROLL A SECCIÓN */
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (data) {
                 modalImg.src = data.image;
                 modalTitle.textContent = data.title;
-                modalDetail.textContent = data.detail;
+                modalDetail.innerHTML = data.detail;
                 modal.showModal();
                 // Prevenir scroll del body al abrir
                 document.body.style.overflow = 'hidden';
@@ -143,6 +144,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cerrar al hacer click en el fondo oscuro
     modal.addEventListener('click', (e) => {
         if (e.target === modal) handleClose();
+    });
+});
+
+/* LIGHTBOX */
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById('lightbox-gallery');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.getElementById('js-lightbox-close');
+
+    // Escuchar clicks en botones "Conoce más"
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-lightbox');
+        if (btn) {
+            const imgSrc = btn.getAttribute('data-src');
+            if (imgSrc) {
+                lightboxImg.src = imgSrc;
+                lightbox.showModal();
+                document.body.style.overflow = 'hidden'; // Bloquea scroll fondo
+            }
+        }
+    });
+
+    // Cerrar Lightbox
+    const handleCloseLightbox = () => {
+        lightbox.close();
+        document.body.style.overflow = ''; // Libera scroll
+        lightboxImg.src = ''; // Limpia la imagen para la próxima carga
+    };
+
+    closeLightbox.addEventListener('click', handleCloseLightbox);
+
+    // Cerrar al hacer click fuera de la imagen
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) handleCloseLightbox();
     });
 });
 
@@ -260,3 +295,69 @@ if (btnPrev && btnNext) {
         changeEniacSlide((currentEniacSlide + 1) % eniacFigures.length, true);
     });
 }
+
+/* TIMELINE ANIMATIONS*/
+document.documentElement.classList.add('js-anim');
+
+const tlObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('anim-triggered');
+      tlObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  root: container,
+  threshold: 0.15,
+});
+
+[
+  '.contexto-timeline',
+  '.contexto-bottom-mark',
+  '.secret-wrapper',
+  '.secret-rediscovery',
+  '.secret-recognition',
+].forEach(sel => {
+  const el = document.querySelector(sel);
+  if (el) tlObserver.observe(el);
+});
+
+/* ===== DARK MODE ===== */
+const THEME_DARK = "dark";
+const THEME_LIGHT = "light";
+const THEME_KEY = "theme";
+
+const themeToggle = document.getElementById("theme-toggle");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function applyTheme(isDark) {
+    document.documentElement.dataset.theme = isDark ? THEME_DARK : THEME_LIGHT;
+    themeToggle.setAttribute("aria-pressed", isDark);
+    themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Activar modo claro" : "Activar modo oscuro"
+    );
+}
+
+function getStoredTheme() {
+    return localStorage.getItem(THEME_KEY); // "dark" | "light" | null
+}
+
+const stored = getStoredTheme();
+if (stored) {
+    applyTheme(stored === THEME_DARK);
+} else {
+    applyTheme(prefersDark.matches);
+}
+
+themeToggle.addEventListener("click", () => {
+    const isDark = document.documentElement.dataset.theme === THEME_DARK;
+    localStorage.setItem(THEME_KEY, isDark ? THEME_LIGHT : THEME_DARK);
+    applyTheme(!isDark);
+});
+
+prefersDark.addEventListener("change", (e) => {
+    if (!getStoredTheme()) {
+        applyTheme(e.matches);
+    }
+});
