@@ -19,12 +19,12 @@
     --font-subheading: "Playfair Display", serif;
     --font-text: "DM Sans", sans-serif;
 
-    /* Tamaños fluidos */
-    --text-base: clamp(1rem, 2vw, 1.2rem);
-    --text-h1: clamp(1.8rem, 4vw, 3rem);
-    --text-h2: clamp(1.4rem, 3vw, 2rem);
-    --text-h3: clamp(1.2rem, 2.5vw, 1.6rem);
-    --text-h4: clamp(1rem, 2vw, 1.2rem);
+    /* Tamaños fluidos — escala lineal de 320px a 1280px */
+    --text-base: clamp(1rem, calc(0.933rem + 0.333vw), 1.2rem);
+    --text-h1:   clamp(1.8rem, calc(1.4rem + 2vw), 3rem);
+    --text-h2:   clamp(1.4rem, calc(1.2rem + 1vw), 2rem);
+    --text-h3:   clamp(1.2rem, calc(1.067rem + 0.667vw), 1.6rem);
+    --text-h4:   clamp(1.1rem, calc(1.033rem + 0.333vw), 1.3rem);
 
     /* Colores */
     --color-light: #fff;
@@ -52,6 +52,21 @@
     --box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+/* ── DARK MODE VARIABLES ────────────────────────────────────────────────── */
+[data-theme="dark"] {
+    --color-text: #e2ddd4;
+    --color-surface: #252017;
+    --color-border: #7a7060;
+    --color-card: #282828;
+    --color-primary: #6c726b;
+    --color-secondary: #0891B2;
+    --color-background-primary: #121212;
+    --color-background-secondary: #06080a;
+    --box-shadow: rgba(29, 29, 29, 0.45) 1.95px 1.95px 2.6px;
+}
+
+
+
 /* ── BASE ───────────────────────────────────────────────────────────────── */
 body {
     font-family: var(--font-text);
@@ -62,8 +77,9 @@ body {
 
 h1 {
     font-family: var(--font-heading);
+    font-size: var(--text-h1);
     text-transform: uppercase;
-    color: #37557b;
+    color: #0891B2;
 }
 
 h2 {
@@ -329,8 +345,9 @@ header a {
 
 /* ── INTRODUCCION SECTION ───────────────────────────────────────────────────── */
 #intro {
-    max-width: 1200px;
-    margin: 4rem;
+    max-width: 60%;
+    margin: 2rem;
+    align-self: center;
 }
 
 /* ── CONTEXTO SECTION ───────────────────────────────────────────────────── */
@@ -422,7 +439,6 @@ header a {
     text-align: center;
 }
 
-/* FIX: target only the first figure's img, not all figures */
 .contexto-card--left figure:first-of-type img,
 .contexto-card--right figure:first-of-type img {
     filter: grayscale(100%);
@@ -497,7 +513,6 @@ header a {
 }
 
 /* CIERRE INFERIOR */
-/* FIX: use padding-top instead of margin-top % so it works regardless of layout mode */
 .contexto-bottom-mark {
     position: relative;
     padding-top: 3rem;
@@ -515,17 +530,27 @@ header a {
     position: absolute;
     top: 3rem;
     /* aligned to the dashed line */
-    left: 50%;
+    left: 0.45rem;
     transform: translate(-50%, -50%);
     display: grid;
     place-items: center;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background: var(--color-background-secondary);
-    color: var(--color-light);
+    background: rgba(0, 0, 0, 0.35);
     font-size: 1rem;
     line-height: 1;
+}
+
+.contexto-bottom-mark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 3rem;
+    left: 0.45rem;
+    width: 2px;
+    background: var(--color-border);
+    opacity: 0.8;
 }
 
 
@@ -718,6 +743,7 @@ header a {
 
 .eniac--text p,
 .eniac--text h3 {
+    color: var(--color-text);
     opacity: 0;
     transition: opacity 0.6s ease;
     margin: 0;
@@ -879,6 +905,41 @@ header a {
     display: none;
 }
 
+/* BRIDGE — marks start of secret section, sits below eniac section */
+.secret-bridge {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.secret-bridge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0.45rem;
+    width: 2px;
+    background: var(--color-border);
+    opacity: 0.8;
+}
+
+.secret-bridge > span {
+    display: block;
+    position: relative;
+    border-top: 2px dashed rgba(0, 0, 0, 0.35);
+}
+
+.secret-bridge > span::after {
+    content: '';
+    position: absolute;
+    left: 0.45rem;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-background-secondary);
+    z-index: 2;
+}
 
 /* REDISCOVERY */
 .secret-rediscovery {
@@ -1596,6 +1657,102 @@ footer ul a:hover {
     transform: translateY(-0.1rem);
 }
 
+
+/* ── THEME TOGGLE BUTTON ────────────────────────────────────────────────── */
+.theme-toggle {
+    order: -1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-light);
+    transition: var(--transition-base);
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* Show moon in light mode, sun in dark mode */
+.icon-sun {
+    display: none;
+}
+
+.icon-moon {
+    display: block;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .icon-moon {
+    display: none;
+}
+
+/* ── DARK MODE OVERRIDES ────────────────────────────────────────────────── */
+[data-theme="dark"] {
+    /* Dashed dividers */
+    .contexto-bottom-line,
+    .secret-bridge span {
+        border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .contexto-bottom-circle {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Gallery cards use --color-light (#fff) as bg */
+    #rosies-gallery article { background: var(--color-card); }
+
+    /* Modal */
+    .modal__container { background: var(--color-surface); }
+    .modal__close { background: var(--color-card); color: var(--color-text); }
+    .modal__close:hover { background: var(--color-border); }
+    .modal__close path { fill: var(--color-text); }
+    .modal__image-container { background: var(--color-card); }
+    .modal__detail { color: var(--color-text); }
+
+    /* Elements that use --color-background-primary as text: becomes dark on dark in dark mode */
+    .section--hero > p,
+    .section--hero .btn,
+    .eniac--sticky,
+    .section--entrevista,
+    .section--entrevista h2,
+    .entrevista-subtitulo,
+    footer,
+    footer a,
+    footer input[type="email"] {
+        color: var(--color-text);
+    }
+
+    /* Elements with light text on a coloured/light bg: swap to dark text */
+    .footer__contact button,
+    .contexto-year,
+    .btn-top {
+        color: var(--color-background-primary);
+    }
+
+    /* Entrevista bubbles */
+    .entrevista-transcript p:not(.speaker-name) { color: var(--color-text); }
+    .entrevista-transcript [data-role="periodista"] p:not(.speaker-name) { color: var(--color-background-primary); }
+    .entrevista-transcript .speaker-name { opacity: 1; }
+}
+
+
+
 /* ── MEDIA QUERIES ──────────────────────────────────────────────────────── */
 
 /* Mobile landscape (≥576px) */
@@ -1645,6 +1802,7 @@ footer ul a:hover {
 
     .contexto-timeline {
         padding-left: 2.5rem;
+        padding-bottom: 20%;
     }
 
     .contexto-line {
@@ -1656,7 +1814,15 @@ footer ul a:hover {
     }
 
     .contexto-bottom-mark {
-        margin-top: 20%;
+        margin-top: 0;
+    }
+
+    .contexto-bottom-mark::before {
+        left: 0.6rem;
+    }
+
+    .contexto-bottom-circle {
+        left: 0.6rem;
     }
 
     /* ENIAC SECTION */
@@ -1691,7 +1857,7 @@ footer ul a:hover {
 
     /* SECRET SECTION */
     .section--secret {
-        padding: 5rem 8% 6rem;
+        padding: 2rem 8% 6rem;
     }
 
     .section--secret>h2 {
@@ -1720,7 +1886,16 @@ footer ul a:hover {
     }
 
     .secret-bridge {
-        margin: 3rem 0;
+        margin: 0;
+        padding-bottom: 3rem;
+    }
+
+    .secret-bridge::before {
+        left: 0.6rem;
+    }
+
+    .secret-bridge > span::after {
+        left: 0.6rem;
     }
 
     /* GALLERY */
@@ -1807,12 +1982,20 @@ footer ul a:hover {
         padding: 0;
     }
 
+    .theme-toggle {
+        order: 2; /* after nav */
+        margin-left: 5rem;
+        margin-right: 1rem;
+    }
+
+
     .section {
         padding: 5rem 10%;
     }
 
     .section--eniac {
         padding: 0;
+        min-height: auto;
     }
 
     .section--hero {
@@ -1828,8 +2011,9 @@ footer ul a:hover {
     .contexto-timeline {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3rem 4rem;
+        gap: 3rem 25rem;
         padding-left: 0;
+        padding-bottom: 20%;
     }
 
     .contexto-line {
@@ -1871,15 +2055,13 @@ footer ul a:hover {
         padding: 0;
     }
 
-    /* Connector lines — left cards */
     .contexto-card--left::after,
     .contexto-card--last::after {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        right: -2rem;
-        /* half the column gap */
-        width: 2rem;
+        top: 8rem;
+        right: -12.5rem;
+        width: 12.5rem;
         height: 2px;
         background: var(--color-border);
         opacity: 0.8;
@@ -1890,24 +2072,24 @@ footer ul a:hover {
     .contexto-card--last::before {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        right: -2.5rem;
-        transform: translateY(-50%);
+        top: 8rem;
+        right: 0;
+        transform: translate(50%, -50%);
         width: 0.85rem;
         height: 0.85rem;
         border-radius: 50%;
         background: var(--color-text);
         border: 2px solid var(--color-background-primary);
+        box-shadow: 12.5rem 0 0 0 var(--color-text), 12.5rem 0 0 2px var(--color-background-primary);
         z-index: 3;
     }
 
-    /* Connector lines — right cards */
     .contexto-card--right::after {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        left: -2rem;
-        width: 2rem;
+        top: 8rem;
+        left: -12.5rem;
+        width: 12.5rem;
         height: 2px;
         background: var(--color-border);
         opacity: 0.8;
@@ -1917,24 +2099,31 @@ footer ul a:hover {
     .contexto-card--right::before {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        left: -2.5rem;
-        transform: translateY(-50%);
+        top: 8rem;
+        left: 0;
+        transform: translate(-50%, -50%);
         width: 0.85rem;
         height: 0.85rem;
         border-radius: 50%;
         background: var(--color-text);
         border: 2px solid var(--color-background-primary);
+        box-shadow: -12.5rem 0 0 0 var(--color-text), -12.5rem 0 0 2px var(--color-background-primary);
         z-index: 3;
     }
 
-    /* Remove the standalone dot spans — no longer needed */
     .contexto-dot {
         display: none;
     }
 
     .contexto-bottom-circle {
         top: 3rem;
+        left: 50%;
+    }
+
+    .contexto-bottom-mark::before {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
     }
 
     /* ENIAC SECTION */
@@ -2049,13 +2238,13 @@ footer ul a:hover {
 
     /* SECRET SECTION */
     .section--secret {
-        padding: 5rem 10% 7rem;
+        padding: 2rem 10% 7rem;
     }
 
     .secret-timeline {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3rem 4rem;
+        gap: 3rem 25rem;
         padding-left: 0;
     }
 
@@ -2080,14 +2269,15 @@ footer ul a:hover {
     .secret-card--right {
         grid-column: 2;
         justify-self: start;
+        margin-top: 8rem;
     }
 
     .secret-card--left::after {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        right: -2rem;
-        width: 2rem;
+        top: 8rem;
+        right: -12.5rem;
+        width: 12.5rem;
         height: 2px;
         background: var(--color-border);
         opacity: 0.8;
@@ -2097,23 +2287,24 @@ footer ul a:hover {
     .secret-card--left::before {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        right: -2.5rem;
-        transform: translateY(-50%);
+        top: 8rem;
+        right: 0;
+        transform: translate(50%, -50%);
         width: 0.85rem;
         height: 0.85rem;
         border-radius: 50%;
         background: var(--color-text);
         border: 2px solid var(--color-background-primary);
+        box-shadow: 12.5rem 0 0 0 var(--color-text), 12.5rem 0 0 2px var(--color-background-primary);
         z-index: 3;
     }
 
     .secret-card--right::after {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        left: -2rem;
-        width: 2rem;
+        top: 8rem;
+        left: -12.5rem;
+        width: 12.5rem;
         height: 2px;
         background: var(--color-border);
         opacity: 0.8;
@@ -2123,14 +2314,15 @@ footer ul a:hover {
     .secret-card--right::before {
         content: '';
         position: absolute;
-        top: 2.5rem;
-        left: -2.5rem;
-        transform: translateY(-50%);
+        top: 8rem;
+        left: 0;
+        transform: translate(-50%, -50%);
         width: 0.85rem;
         height: 0.85rem;
         border-radius: 50%;
         background: var(--color-text);
         border: 2px solid var(--color-background-primary);
+        box-shadow: -12.5rem 0 0 0 var(--color-text), -12.5rem 0 0 2px var(--color-background-primary);
         z-index: 3;
     }
 
@@ -2139,11 +2331,23 @@ footer ul a:hover {
     }
 
     .secret-bridge {
-        margin: 4rem 0 5rem;
+        margin: 0;
+        padding-bottom: 5rem;
+    }
+
+    .secret-bridge::before {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+    }
+
+    .secret-bridge > span::after {
+        left: 50%;
     }
 
     .secret-rediscovery {
         padding-left: 0;
+        margin-top: 8rem;
         margin-bottom: 2.5rem;
     }
 
@@ -2151,6 +2355,7 @@ footer ul a:hover {
         left: 50%;
         transform: translateX(-50%);
         width: 3px;
+        top: -8rem;
     }
 
     .secret-feature {
@@ -2161,6 +2366,34 @@ footer ul a:hover {
         margin: 0 auto;
     }
 
+    .secret-feature::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
+    }
+
+    .secret-feature::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
+    }
+
     .secret-feature__media {
         grid-template-columns: 1fr;
     }
@@ -2169,12 +2402,39 @@ footer ul a:hover {
         padding-left: 0;
         display: flex;
         justify-content: center;
+        margin-top: 8rem;
+    }
+
+    .secret-recognition::before {
+        content: '';
+        position: absolute;
+        top: -8rem;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        background: var(--color-border);
+        opacity: 0.8;
     }
 
     .secret-recognition__card {
         max-width: 1000px;
         width: 100%;
         padding: 2rem;
+    }
+
+    .secret-recognition__card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+        background: var(--color-text);
+        border: 2px solid var(--color-background-primary);
+        z-index: 3;
     }
 
     /* ENTREVISTA SECTION */
@@ -2234,31 +2494,11 @@ footer ul a:hover {
 
     /* CONTEXTO SECTION */
     .contexto-timeline {
-        gap: 3rem 5rem;
+        gap: 3rem 25rem;
     }
 
     .contexto-card--right {
         margin-top: 10rem;
-    }
-
-    .contexto-card--left::after,
-    .contexto-card--last::after {
-        right: -2.5rem;
-        width: 2.5rem;
-    }
-
-    .contexto-card--left::before,
-    .contexto-card--last::before {
-        right: -3rem;
-    }
-
-    .contexto-card--right::after {
-        left: -2.5rem;
-        width: 2.5rem;
-    }
-
-    .contexto-card--right::before {
-        left: -3rem;
     }
 
     .contexto-card p {
@@ -2269,6 +2509,7 @@ footer ul a:hover {
     .eniac--sticky {
         /* padding-top: 4.5rem; */
         align-content: start;
+        min-height: auto;
     }
 
     .eniac--sticky h2 {
@@ -2318,29 +2559,9 @@ footer ul a:hover {
 
     /* SECRET SECTION */
     .secret-timeline {
-        gap: 3rem 5rem;
+        gap: 3rem 25rem;
     }
 
-    /* Update connectors to match wider gap */
-    .secret-card--left::after {
-        right: -2.5rem;
-        width: 2.5rem;
-    }
-
-    .secret-card--left::before {
-        right: -3rem;
-    }
-
-    .secret-card--right::after {
-        left: -2.5rem;
-        width: 2.5rem;
-    }
-
-    .secret-card--right::before {
-        left: -3rem;
-    }
-
-    /* Adjust connectors for wider card gap (2.5rem) */
     .secret-connector--left {
         left: min(calc(50% - 2.5rem), 31rem);
     }
@@ -2367,5 +2588,199 @@ footer ul a:hover {
     /*DOCU*/
     .video-doc img {
         width: 25rem;
+    }
+}
+
+/* ============================================================
+   TIMELINE ANIMATIONS
+   ============================================================ */
+
+@keyframes tl-reveal-down {
+    from { clip-path: inset(0 0 100% 0); }
+    to   { clip-path: inset(0 0 0%   0); }
+}
+
+@keyframes tl-reveal-right {
+    from { clip-path: inset(0 100% 0 0); }
+    to   { clip-path: inset(0 0%   0 0); }
+}
+
+@keyframes tl-reveal-left {
+    from { clip-path: inset(0 0 0 100%); }
+    to   { clip-path: inset(0 0 0 0%  ); }
+}
+
+@keyframes tl-dot-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@media (min-width: 1024px) {
+
+    /* ── Initial hidden states ────────────────────────────── */
+
+    html.js-anim .contexto-line {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    html.js-anim .contexto-card--left::after,
+    html.js-anim .contexto-card--last::after {
+        clip-path: inset(0 0 0 100%);
+    }
+
+    html.js-anim .contexto-card--right::after {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    html.js-anim .contexto-card--left::before,
+    html.js-anim .contexto-card--right::before,
+    html.js-anim .contexto-card--last::before {
+        opacity: 0;
+    }
+
+    html.js-anim .contexto-bottom-mark::before {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    html.js-anim .contexto-bottom-line {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    html.js-anim .contexto-bottom-circle {
+        opacity: 0;
+    }
+
+    html.js-anim .secret-bridge::before {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    html.js-anim .secret-bridge > span {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    html.js-anim .secret-timeline-line {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    html.js-anim .secret-card--left::after {
+        clip-path: inset(0 0 0 100%);
+    }
+
+    html.js-anim .secret-card--right::after {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    html.js-anim .secret-card--left::before,
+    html.js-anim .secret-card--right::before {
+        opacity: 0;
+    }
+
+    html.js-anim .secret-rediscovery-line {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    html.js-anim .secret-feature::before,
+    html.js-anim .secret-feature::after {
+        opacity: 0;
+    }
+
+    html.js-anim .secret-recognition::before {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    html.js-anim .secret-recognition__card::before {
+        opacity: 0;
+    }
+
+    /* ── Contexto timeline: triggered ────────────────────── */
+
+    .contexto-timeline.anim-triggered .contexto-line {
+        animation: tl-reveal-down 3.5s ease-in-out both;
+    }
+
+    .contexto-timeline.anim-triggered .contexto-card--left::after,
+    .contexto-timeline.anim-triggered .contexto-card--last::after {
+        animation: tl-reveal-left 1.2s ease-out both 1s;
+    }
+
+    .contexto-timeline.anim-triggered .contexto-card--left::before,
+    .contexto-timeline.anim-triggered .contexto-card--last::before {
+        animation: tl-dot-in 0.5s ease-out both 2s;
+    }
+
+    .contexto-timeline.anim-triggered .contexto-card--right::after {
+        animation: tl-reveal-right 1.2s ease-out both 1.5s;
+    }
+
+    .contexto-timeline.anim-triggered .contexto-card--right::before {
+        animation: tl-dot-in 0.5s ease-out both 2.5s;
+    }
+
+    /* ── Contexto bottom mark: triggered ─────────────────── */
+
+    .contexto-bottom-mark.anim-triggered::before {
+        animation: tl-reveal-down 0.8s ease-out both;
+    }
+
+    .contexto-bottom-mark.anim-triggered .contexto-bottom-line {
+        animation: tl-reveal-right 1s ease-out both 0.6s;
+    }
+
+    .contexto-bottom-mark.anim-triggered .contexto-bottom-circle {
+        animation: tl-dot-in 0.5s ease-out both 1.4s;
+    }
+
+    /* ── Secret bridge + timeline: triggered ─────────────── */
+
+    .secret-wrapper.anim-triggered .secret-bridge::before {
+        animation: tl-reveal-down 1.5s ease-in-out both;
+    }
+
+    .secret-wrapper.anim-triggered .secret-bridge > span {
+        animation: tl-reveal-right 1s ease-out both 1.3s;
+    }
+
+    .secret-wrapper.anim-triggered .secret-timeline-line {
+        animation: tl-reveal-down 3s ease-in-out both 2s;
+    }
+
+    .secret-wrapper.anim-triggered .secret-card--left::after {
+        animation: tl-reveal-left 1.2s ease-out both 2.8s;
+    }
+
+    .secret-wrapper.anim-triggered .secret-card--left::before {
+        animation: tl-dot-in 0.5s ease-out both 3.8s;
+    }
+
+    .secret-wrapper.anim-triggered .secret-card--right::after {
+        animation: tl-reveal-right 1.2s ease-out both 3.2s;
+    }
+
+    .secret-wrapper.anim-triggered .secret-card--right::before {
+        animation: tl-dot-in 0.5s ease-out both 4.2s;
+    }
+
+    /* ── Secret rediscovery: triggered ───────────────────── */
+
+    .secret-rediscovery.anim-triggered .secret-rediscovery-line {
+        animation: tl-reveal-down 1.5s ease-in-out both;
+    }
+
+    .secret-rediscovery.anim-triggered .secret-feature::before {
+        animation: tl-dot-in 0.5s ease-out both 1.3s;
+    }
+
+    .secret-rediscovery.anim-triggered .secret-feature::after {
+        animation: tl-dot-in 0.5s ease-out both 1.6s;
+    }
+
+    /* ── Secret recognition: triggered ───────────────────── */
+
+    .secret-recognition.anim-triggered::before {
+        animation: tl-reveal-down 1.2s ease-out both;
+    }
+
+    .secret-recognition.anim-triggered .secret-recognition__card::before {
+        animation: tl-dot-in 0.5s ease-out both 1s;
     }
 }
