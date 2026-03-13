@@ -267,6 +267,35 @@ Posibles mejoras del proyecto:
 
 ---
 
+# 📸 Capturas del proyecto
+
+### Hero
+
+![Hero](assets/capturas/hero-mvl.png)
+![Hero](assets/capturas/hero-desktop.png)
+
+### Contexto histórico (timeline)
+
+![Timeline](assets/capturas/timeline-mvl.png)
+![Timeline](assets/capturas/timeline-desktop.png)
+
+### Proyecto ENIAC
+
+![ENIAC](assets/capturas/eniac-mvl.png)
+![ENIAC](assets/capturas/eniac-desktop.png)
+
+### Las seis programadoras
+
+![ENIAC Six](assets/capturas/gallery-mvl.png)
+![ENIAC Six](assets/capturas/gallery-desktop.png)
+
+### Entrevista
+
+![Entrevista](assets/capturas/entrevista-mvl.png)
+![Entrevista](assets/capturas/entrevista-desktop.png)
+
+### documental  y footer
+
 # 🔗 Demo
 
 El proyecto podrá visualizarse mediante **GitHub Pages** una vez finalizado.
